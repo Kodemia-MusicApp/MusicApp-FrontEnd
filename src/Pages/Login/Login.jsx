@@ -1,6 +1,5 @@
 import React from 'react'
 import './Login.scss'
-import { Boton } from '../../Components/Navbar/Boton/Boton'
 
 export const Login = () => {
     return (
@@ -14,7 +13,7 @@ export const Login = () => {
 
                     <p>Contraseña</p>
                     <input type="password" className="input-password" />
-                    <Boton />
+
                     <p className="Login-footer">
                         ¿No tiene contraseña? Crear cuenta
                     </p>
