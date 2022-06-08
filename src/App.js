@@ -3,7 +3,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { Login } from './Pages/Login/Login'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     return (
         <div>
