@@ -1,8 +1,8 @@
-import React from 'react';
-import './Login.scss';
-import Boton from '../Boton/Boton';
+import React from "react";
+import "./Login.scss";
+import { Boton } from "../../Components/Navbar/Boton/Boton";
 
-const Login = () => {
+export const Login = () => {
   return (
     <div className="Login">
       <div className="Login-Container">
@@ -21,5 +21,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;

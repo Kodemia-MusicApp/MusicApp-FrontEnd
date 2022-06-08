@@ -1,7 +1,7 @@
-import React from 'react';
-import './Boton.scss';
+import React from "react";
+import "./Boton.scss";
 
-const Boton = () => {
+export const Boton = () => {
   return (
     <div className="Boton">
       <div className="Boton-Container">
@@ -10,5 +10,3 @@ const Boton = () => {
     </div>
   );
 };
-
-export default Boton;
