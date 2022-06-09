@@ -1,5 +1,5 @@
 import React, { useContext, useEffects } from 'react'
-import './Login.scss'
+import './LoginMusician.scss'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'

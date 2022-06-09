@@ -5,7 +5,7 @@ import { Login } from './Pages/Login/Login'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { CreateAccount } from './Pages/CreateAccount/CreateAccount'
 import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
-import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
+import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     return (
