@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Login } from './Pages/Login/Login'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { CreateAccount } from './Pages/CreateAccount/CreateAccount'
+import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     return (
@@ -19,6 +20,10 @@ function App() {
                 <Route
                     path="/crearcuenta/musican"
                     element={<CreateAccount />}
+                />
+                <Route
+                    path="/crearcuenta/musican"
+                    element={<InicioSesion />}
                 />
             </Routes>
         </div>
