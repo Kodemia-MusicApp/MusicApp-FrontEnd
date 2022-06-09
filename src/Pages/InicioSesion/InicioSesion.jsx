@@ -1,8 +1,12 @@
 import React from 'react'
 import './InicioSesion.scss'
 import { Link } from 'react-router-dom'
+import { Navbar } from '../../Components/Navbar/Navbar'
+
 export const InicioSesion = () => {
     return (
+        <div>
+            <Navbar/>
         <div className="InicioSesion">
             <div className="InicioSesion-Container">
                 <p className="InicioSesion-Title">INICIAR SESIÓN</p>
@@ -15,6 +19,7 @@ export const InicioSesion = () => {
                     <button className="BotonInicio">SOY MUSICO</button>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
