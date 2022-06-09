@@ -18,7 +18,7 @@ export const Navbar = () => {
                 Crear cuenta
             </Link>
             <Link to="/login/client" className="text-decoration-none">
-                Iniciar session
+                Iniciar sesión
             </Link>
             {context.user.userId != '' ? <p>Mi Perfil</p> : <></>}
             <img src="" alt="" />
