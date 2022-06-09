@@ -5,6 +5,7 @@ import { Login } from './Pages/Login/Login'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { CreateAccount } from './Pages/CreateAccount/CreateAccount'
 import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
+import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
@@ -13,7 +14,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login/client" element={<Login />} />
-                <Route path="/login/musican" element={<Login />} />
+                <Route path="/login/musican" element={<LoginMusician />} />
                 <Route
                     path="/crearcuenta/cliente"
                     element={<CreateAccount />}
