@@ -16,7 +16,9 @@ export const InicioSesion = () => {
                         <Link to="/login/client">
                             <button className="BotonInicio">SOY CLIENTE</button>
                         </Link>
-                        <button className="BotonInicio">SOY MÚSICO</button>
+                        <Link to="/login/musican">
+                            <button className="BotonInicio">SOY MÚSICO</button>
+                        </Link>
                     </div>
                 </div>
             </div>
