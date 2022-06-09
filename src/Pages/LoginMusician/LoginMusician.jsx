@@ -17,33 +17,15 @@ return (
 
                 <form className="LoginMusician-Form">
                     <label>Correo electronico</label>
-                    <input
-                        type="text"
-                        onChange={({ target }) => {
-                            setUser({
-                                ...user,
-                                email: target.value,
-                            })
-                        }}
-                        className="input-mail"
-                    />
+                    <input type="text" className="input-mail" />
 
                     <p>Contraseña</p>
-                    <input
-                        type="password"
-                        onChange={({ target }) => {
-                            setUser({
-                                ...user,
-                                password: target.value,
-                            })
-                        }}
-                        className="input-password"
-                    />
+                    <input type="password" className="input-password" />
 
-                    <p className="Login-footer">
+                    <p className="LoginMusician-footer">
                         ¿No tiene contraseña? Crear cuenta
                     </p>
-                    <button onClick={handleUser}>Entrar</button>
+                    <button>Entrar</button>
                 </form>
             </div>
         </div>
