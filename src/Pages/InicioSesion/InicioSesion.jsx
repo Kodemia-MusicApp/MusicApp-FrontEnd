@@ -14,7 +14,7 @@ export const InicioSesion = () => {
                 <p className="NombreApp">tu musico ahora</p>
                 <div className="BotonesInicio">
                     <Link to="/login/client">
-                        <button className="BotonInicio">BUSCO MUSICO</button>
+                        <button className="BotonInicio">SOY CLIENTE</button>
                     </Link>
                     <button className="BotonInicio">SOY MUSICO</button>
                 </div>
