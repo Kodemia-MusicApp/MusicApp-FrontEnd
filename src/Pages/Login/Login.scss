@@ -1,0 +1,47 @@
+.Login {
+  //background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+.Login-Container {
+  //background-color: white;
+  width: 360px;
+  height: 812px;
+  margin-top: 50px;
+}
+
+.Login-Content {
+  //background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.Login-Title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.input-mail {
+  width: 314px;
+  height: 46px;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.input-password {
+  width: 314px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.Login-Form {
+  margin-top: 50px;
+  margin-left: 18px;
+}
+.Login-footer {
+  margin-top: 70px;
+  text-align: center;
+}
