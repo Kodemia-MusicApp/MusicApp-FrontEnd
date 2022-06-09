@@ -6,6 +6,7 @@ import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { CreateAccount } from './Pages/CreateAccount/CreateAccount'
 import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
 import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
+import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     return (
@@ -23,6 +24,10 @@ function App() {
                     element={<CreateAccount />}
                 />
                 <Route path="/login" element={<InicioSesion />} />
+                <Route
+                    path="/crearcuenta/payment/execute-payment"
+                    element={<Payment />}
+                />
             </Routes>
         </div>
     )
