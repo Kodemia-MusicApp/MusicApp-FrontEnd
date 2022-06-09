@@ -9,7 +9,9 @@ export const InicioSesion = () => {
                 <p className="Bienvenida">Bienvenido a</p>
                 <p className="NombreApp">tu musico ahora</p>
                 <div className="BotonesInicio">
-                    <button className="BotonInicio">BUSCO MUSICO</button>
+                    <Link to="/login/client">
+                        <button className="BotonInicio">BUSCO MUSICO</button>
+                    </Link>
                     <button className="BotonInicio">SOY MUSICO</button>
                 </div>
             </div>
