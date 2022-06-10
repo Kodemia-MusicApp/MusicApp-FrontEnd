@@ -32,7 +32,11 @@ export const CreateAccount = () => {
                                 Registrate en "tu musico ahora" como artista
                                 musico y encuentra tu evento
                             </p>
-                            <button className="registrate">REGISTRATE</button>
+                            <Link to="/crearcuenta/musican">
+                                <button className="registrate">
+                                    REGISTRATE
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
