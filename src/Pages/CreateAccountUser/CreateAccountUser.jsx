@@ -23,12 +23,24 @@ export const CreateAccountUser = () => {
 
                             <label>Apellido materno</label>
                             <input type="text" className="user" />
+
+                            <label>Nombre artistico</label>
+                            <input type="text" className="user" />
+
                             <label>Escribe tu e-mail</label>
                             <input type="text" className="user" />
 
                             <label>Escribe una contraseña</label>
                             <input type="password" className="user" />
 
+                            <label>Escribe una contraseña</label>
+                            <input type="password" className="user" />
+
+                            <label>Tipo de artista</label>
+                            <select className="Tipoartista" id="Tipoartista">
+                                <option value="Cantante">Cantante</option>
+                                <option value="">Instrumentista</option>
+                            </select>
                             <button className="BotonGeneral">
                                 CREAR CUENTA
                             </button>
