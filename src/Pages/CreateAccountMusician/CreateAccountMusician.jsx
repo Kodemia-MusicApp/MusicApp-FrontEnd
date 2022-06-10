@@ -9,7 +9,7 @@ export const CreateAccountMusician = () => {
             <Navbar />
             <div className="CreateAccountMusician">
                 <div className="CreateAccountMusician-Container">
-                    <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
+                    <p className="Login-Title">CREAR CUENTA COMO MÚSICO</p>
 
                     <p className="Bienvenida1">Bienvenido a</p>
                     <p className="Bienvenida2">tu músico ahora</p>
@@ -23,12 +23,21 @@ export const CreateAccountMusician = () => {
 
                             <label>Apellido materno</label>
                             <input type="text" className="createMusician" />
+
+                            <label>Nombre artistico</label>
+                            <input type="text" className="createMusician" />
+
                             <label>Escribe tu e-mail</label>
                             <input type="text" className="createMusician" />
 
                             <label>Escribe una contraseña</label>
                             <input type="password" className="createMusician" />
 
+                            <label>Escribe una contraseña</label>
+                            <select className="Tipoartista" id="Tipoartista">
+                                <option value="Cantante">Cantante</option>
+                                <option value="">Instrumentista</option>
+                            </select>
                             <button className="BotonGeneral">
                                 CREAR CUENTA
                             </button>
