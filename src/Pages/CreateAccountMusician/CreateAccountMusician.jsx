@@ -10,7 +10,8 @@ export const CreateAccountMusician = () => {
             <div className="CreateAccountMusician">
                 <div className="CreateAccountMusician-Container">
                     <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
-                    <p className="Bienvenida">Bienvenido a</p>
+
+                    <p className="Bienvenida1">Bienvenido a</p>
                     <p className="Bienvenida2">tu músico ahora</p>
                     <div className="CreateAccountMusicianFormulario">
                         <form className="CreateAccountMusicianForm">
