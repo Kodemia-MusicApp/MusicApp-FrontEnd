@@ -28,7 +28,7 @@ export const CreateAccountUser = () => {
                             <input type="text" className="createUser" />
 
                             <label>Escribe una contraseña</label>
-                            <input type="password" className="user" />
+                            <input type="password" className="createUser" />
 
                       
                             <button className="BotonGeneral">
