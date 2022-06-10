@@ -24,7 +24,7 @@ export const CreateAccountMusician = () => {
                         <label>Escribe tu e-mail</label>
                         <input type="text" className="user" />
 
-                        <p>Escribe una contraseña</p>
+                        <label>Escribe una contraseña</label>
                         <input type="password" className="user" />
                     </form>
                 </div>
