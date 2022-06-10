@@ -12,8 +12,8 @@ export const CreateAccountMusician = () => {
                     <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
                     <p className="Bienvenida">Bienvenido a</p>
                     <p className="Bienvenida2">tu músico ahora</p>
-                    <div className="formulario">
-                        <form className="Login-Form">
+                    <div className="CreateAccountMusicianFormulario">
+                        <form className="CreateAccountMusicianForm">
                             <label>Nombre</label>
                             <input type="text" className="user" />
 
