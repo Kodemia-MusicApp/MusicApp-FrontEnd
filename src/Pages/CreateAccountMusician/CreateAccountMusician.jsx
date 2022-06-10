@@ -13,9 +13,17 @@ export const CreateAccountMusician = () => {
 
                     <form className="Login-Form">
                         <label>Nombre</label>
+                        <input type="text" className="userName" />
+
+                        <label>Apellido paterno</label>
                         <input type="text" className="input-mail" />
 
-                        <p>Contraseña</p>
+                        <label>Apellido materno</label>
+                        <input type="text" className="input-mail" />
+                        <label>Escribe tu e-mail</label>
+                        <input type="text" className="input-mail" />
+
+                        <p>Escribe una contraseña</p>
                         <input type="password" className="input-password" />
                     </form>
                 </div>
@@ -23,3 +31,4 @@ export const CreateAccountMusician = () => {
         </section>
     )
 }
+
