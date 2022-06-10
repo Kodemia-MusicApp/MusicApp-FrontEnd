@@ -12,23 +12,27 @@ export const CreateAccountMusician = () => {
                     <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
                     <p className="Bienvenida">Bienvenido a</p>
                     <p className="Bienvenida2">tu músico ahora</p>
-                    <form className="Login-Form">
-                        <label>Nombre</label>
-                        <input type="text" className="user" />
+                    <div className="formulario">
+                        <form className="Login-Form">
+                            <label>Nombre</label>
+                            <input type="text" className="user" />
 
-                        <label>Apellido paterno</label>
-                        <input type="text" className="user" />
+                            <label>Apellido paterno</label>
+                            <input type="text" className="user" />
 
-                        <label>Apellido materno</label>
-                        <input type="text" className="user" />
-                        <label>Escribe tu e-mail</label>
-                        <input type="text" className="user" />
+                            <label>Apellido materno</label>
+                            <input type="text" className="user" />
+                            <label>Escribe tu e-mail</label>
+                            <input type="text" className="user" />
 
-                        <label>Escribe una contraseña</label>
-                        <input type="password" className="user" />
+                            <label>Escribe una contraseña</label>
+                            <input type="password" className="user" />
 
-                        <button className="BotonGeneral">CREAR CUENTA</button>
-                    </form>
+                            <button className="BotonGeneral">
+                                CREAR CUENTA
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
