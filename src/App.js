@@ -9,7 +9,7 @@ import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
-
+import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 function App() {
     return (
         <div>
@@ -23,7 +23,7 @@ function App() {
                 />
                 <Route
                     path="/crearcuenta/musican"
-                    element={<CreateAccount />}
+                    element={<CreateAccountMusician />}
                 />
                 <Route path="/login" element={<InicioSesion />} />
                 <Route
