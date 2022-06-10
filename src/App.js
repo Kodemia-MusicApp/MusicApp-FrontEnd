@@ -21,7 +21,7 @@ function App() {
                 <Route path="/login/musican" element={<LoginMusician />} />
                 <Route
                     path="/crearcuenta/cliente"
-                    element={<CreateAccount />}
+                    element={<CreateAccountUser />}
                 />
                 <Route
                     path="/crearcuenta/musican"
