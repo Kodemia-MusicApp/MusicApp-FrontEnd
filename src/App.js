@@ -36,6 +36,7 @@ function App() {
                     path="/musician/description"
                     element={<MusicianDescription />}
                 />
+                <Route path="/crearcuenta" element={<CreateAccount />} />
             </Routes>
         </div>
     )
