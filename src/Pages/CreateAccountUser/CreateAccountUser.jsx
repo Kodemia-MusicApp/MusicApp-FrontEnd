@@ -1,9 +1,9 @@
 import React from 'react'
-import './CreateAccountMusician.scss'
+import './CreateAccountUser.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 
-export const CreateAccountMusician = () => {
+export const CreateAccountUser = () => {
     return (
         <section>
             <Navbar />
