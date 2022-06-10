@@ -25,7 +25,7 @@ export const CreateAccountMusician = () => {
                         <input type="text" className="user" />
 
                         <p>Escribe una contraseña</p>
-                        <input type="password" className="input-password" />
+                        <input type="password" className="user" />
                     </form>
                 </div>
             </div>
