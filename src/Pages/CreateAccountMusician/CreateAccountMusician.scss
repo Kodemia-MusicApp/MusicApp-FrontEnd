@@ -1,7 +1,7 @@
 //CONTAINERS
 
 //INPUTS///
-.createMusician{
+.createMusician {
     width: 314px;
     height: 46px;
     border-radius: 10px;
@@ -22,11 +22,15 @@
     margin: 0;
 }
 
+.tipoArtista {
+    display: block;
+}
 //BOTON//
 .BotonGeneral {
     width: 314px;
     height: 46px;
     border-radius: 20px;
+    margin-top: 20px;
 }
 
 .CreateAccountMusicianFormulario {

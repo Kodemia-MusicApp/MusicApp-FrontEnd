@@ -33,7 +33,7 @@ export const CreateAccountMusician = () => {
                             <label>Escribe una contraseña</label>
                             <input type="password" className="createMusician" />
 
-                            <label>Escribe una contraseña</label>
+                            <label className="tipoArtista">Tipo de artista</label>
                             <select className="Tipoartista" id="Tipoartista">
                                 <option value="Cantante">Cantante</option>
                                 <option value="">Instrumentista</option>
