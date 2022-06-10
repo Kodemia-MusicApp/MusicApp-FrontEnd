@@ -1,0 +1,57 @@
+//////****CSSS
+////CONTAINERS
+.CreateAccount-Container {
+    width: 360px;
+    height: 100vh;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SoyCliente {
+    margin-top: 84px;
+    width: 307px;
+    height: 180px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #83d0e0;
+}
+
+.SoyMusico {
+    margin-top: 84px;
+    width: 307px;
+    height: 180px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: line;
+    background-color: #83d0e0;
+}
+
+.usuarios {
+}
+///TEXTOS///
+.CreateAccount-Title {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+.TitleSoyCliente {
+    text-align: center;
+}
+
+.TitleSoyMusico {
+    text-align: center;
+}
+
+//BUTTON///
+.registrate {
+    width: 261px;
+    height: 38px;
+    margin-left: 17px;
+
+    border-radius: 20px;
+}
