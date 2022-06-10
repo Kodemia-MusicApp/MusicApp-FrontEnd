@@ -8,6 +8,8 @@ import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
 import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
+
 function App() {
     return (
         <div>
@@ -27,6 +29,10 @@ function App() {
                 <Route
                     path="/crearcuenta/payment/execute-payment"
                     element={<Payment />}
+                />
+                <Route
+                    path="/musician/description"
+                    element={<MusicianDescription />}
                 />
             </Routes>
         </div>

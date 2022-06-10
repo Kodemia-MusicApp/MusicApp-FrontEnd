@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
     const context = React.useContext(AppContext)
-    console.log(context)
     return (
         <div className="Navbar-Container">
             <img src="" alt="" />
