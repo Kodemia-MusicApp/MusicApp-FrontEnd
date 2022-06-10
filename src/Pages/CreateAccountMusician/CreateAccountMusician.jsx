@@ -16,18 +16,18 @@ export const CreateAccountMusician = () => {
                     <div className="CreateAccountMusicianFormulario">
                         <form className="CreateAccountMusicianForm">
                             <label>Nombre</label>
-                            <input type="text" className="user" />
+                            <input type="text" className="createMusician" />
 
                             <label>Apellido paterno</label>
-                            <input type="text" className="user" />
+                            <input type="text" className="createMusician" />
 
                             <label>Apellido materno</label>
-                            <input type="text" className="user" />
+                            <input type="text" className="createMusician" />
                             <label>Escribe tu e-mail</label>
-                            <input type="text" className="user" />
+                            <input type="text" className="createMusician" />
 
                             <label>Escribe una contraseña</label>
-                            <input type="password" className="user" />
+                            <input type="password" className="createMusician" />
 
                             <button className="BotonGeneral">
                                 CREAR CUENTA
