@@ -14,15 +14,15 @@ export const CreateAccountMusician = () => {
                     <p className="Bienvenida">tu musico ahora</p>
                     <form className="Login-Form">
                         <label>Nombre</label>
-                        <input type="text" className="userName" />
+                        <input type="text" className="user" />
 
                         <label>Apellido paterno</label>
-                        <input type="text" className="userLastname" />
+                        <input type="text" className="user" />
 
                         <label>Apellido materno</label>
-                        <input type="text" className="input-mail" />
+                        <input type="text" className="user" />
                         <label>Escribe tu e-mail</label>
-                        <input type="text" className="input-mail" />
+                        <input type="text" className="user" />
 
                         <p>Escribe una contraseña</p>
                         <input type="password" className="input-password" />
