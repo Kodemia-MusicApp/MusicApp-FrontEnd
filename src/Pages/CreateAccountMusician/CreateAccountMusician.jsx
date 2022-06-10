@@ -7,8 +7,8 @@ export const CreateAccountMusician = () => {
     return (
         <section>
             <Navbar />
-            <div className="Login">
-                <div className="Login-Container">
+            <div className="CreateAccountMusician">
+                <div className="CreateAccountMusician-Container">
                     <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
                     <p className="Bienvenida">Bienvenido a</p>
                     <p className="Bienvenida">tu músico ahora</p>
