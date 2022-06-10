@@ -17,7 +17,7 @@ export const CreateAccountMusician = () => {
                         <input type="text" className="userName" />
 
                         <label>Apellido paterno</label>
-                        <input type="text" className="input-mail" />
+                        <input type="text" className="userLastname" />
 
                         <label>Apellido materno</label>
                         <input type="text" className="input-mail" />
