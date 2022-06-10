@@ -10,6 +10,8 @@ import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
+import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
+
 function App() {
     return (
         <div>
