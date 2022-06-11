@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const ButtonCreateAccount = () => {
     return (
-        <Link to="/crearcuenta/cliente">
+        <Link to="/crearcuenta">
             <button>Crear cuenta</button>
         </Link>
     )

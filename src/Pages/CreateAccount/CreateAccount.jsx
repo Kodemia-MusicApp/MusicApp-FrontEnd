@@ -23,7 +23,11 @@ export const CreateAccount = () => {
                                 "tu musico ahora" te ayuda a encontrar a tu
                                 músico en todo momento y cerca de ti.{' '}
                             </p>
-                            <button className="registrate">REGISTRATE</button>
+                            <Link to="/crearcuenta/cliente">
+                                <button className="registrate">
+                                    REGISTRATE
+                                </button>
+                            </Link>
                         </div>
                         <div className="SoyMusico">
                             <p className="TitleSoyMusico">SOY MÚSICO</p>
@@ -32,7 +36,11 @@ export const CreateAccount = () => {
                                 Registrate en "tu musico ahora" como artista
                                 musico y encuentra tu evento
                             </p>
-                            <button className="registrate">REGISTRATE</button>
+                            <Link to="/crearcuenta/musican">
+                                <button className="registrate">
+                                    REGISTRATE
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

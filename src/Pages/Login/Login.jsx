@@ -1,4 +1,4 @@
-import React, { useContext, useEffects } from 'react'
+import React, { useContext } from 'react'
 import './Login.scss'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
@@ -21,13 +21,13 @@ export const Login = () => {
                 password: user.password,
             })
             .then((response) => {
-                if (response.data.success == true) {
+                if (response.data.success === true) {
                     localStorage.setItem(
-                        response.data.payload[1].id,
+                        'musicAppToken',
                         response.data.payload[0].token
                     )
                     navigate('/')
-                    Context.setUserId(response.data.payload[1].id)
+                    Context.setUserId(response.data.payload[0])
                 }
             })
             .catch((error) => {
