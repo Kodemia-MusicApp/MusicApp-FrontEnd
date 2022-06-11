@@ -2,7 +2,7 @@ import React from 'react'
 import './UserProfile.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
-import {ReservationCard} from '../../ReservationCard/ReservationCard'
+import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
 import '../../Icons/pen.svg'
 export const UserProfile = () => {
     return (
@@ -47,9 +47,10 @@ export const UserProfile = () => {
                                 MIS RESERVACIONES
                             </p>
                             <div className="reservationcards">
-                                <div className="reservationcard"></div>
-                                <div className="reservationcard"></div>
-                                <ReservationCard/>
+                                <ReservationCard />
+                                <ReservationCard />
+                                <ReservationCard />
+                                <ReservationCard />
                             </div>
                         </div>
                     </div>
