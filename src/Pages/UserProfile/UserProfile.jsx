@@ -19,7 +19,11 @@ export const UserProfile = () => {
                             </div>
                             <div>EDITAR PERFIL</div>
                         </div>
-                        <div>MIS RESERVACIONES</div>
+                        <div><p>MIS RESERVACIONES</p>
+                        <div className="reservationcards">
+                            <div></div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
