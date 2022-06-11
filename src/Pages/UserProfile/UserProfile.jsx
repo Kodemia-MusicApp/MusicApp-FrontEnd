@@ -11,6 +11,7 @@ export const UserProfile = () => {
                 <div className="UserProfile-Container">
                     <div className="UserProfile-Content">
                         <p className="Login-Title">MI PERFIL CLIENTE</p>
+                        <img src="pen.svg" alt="" />
                         <div className="datos">
                             <div className="MisDatos">
                                 <div>
@@ -19,7 +20,7 @@ export const UserProfile = () => {
                                     <p className="city">CIudad: CDMX</p>
                                 </div>
                                 <div className="textEditProfile">
-                                    <p>EDITAR PERFIL</p><img src="pen.svg" alt="">
+                                    <p>EDITAR PERFIL</p>
                                 </div>
                             </div>
                         </div>
