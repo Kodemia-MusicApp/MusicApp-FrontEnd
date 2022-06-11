@@ -2,7 +2,7 @@ import React from 'react'
 import './UserProfile.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
-import '../../Icons/icons.svg'
+import '../../Icons/pen.svg'
 export const UserProfile = () => {
     return (
         <section>
@@ -18,6 +18,7 @@ export const UserProfile = () => {
                                     <p>MIS DATOS</p>
                                     <p className="name">Nombre: Carlos Doe</p>
                                     <p className="city">CIudad: CDMX</p>
+                                    <img src="pen.svg" alt="" />
                                 </div>
                                 <div className="textEditProfile">
                                     <p>EDITAR PERFIL</p>
