@@ -1,6 +1,6 @@
 import React from 'react'
 import './ReservationCard.scss'
-
+import '../../Images/grupocumbia.jpg'
 export const ReservationCard = () => {
     return (
         <div className="ReservationCard">
