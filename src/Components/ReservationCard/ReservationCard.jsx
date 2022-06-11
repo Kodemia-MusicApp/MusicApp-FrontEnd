@@ -9,7 +9,8 @@ export const ReservationCard = () => {
                     <div className="Reservacion">
                         <div className="profileImage">
                             <img
-                                src="https://josefacchin.com/wp-content/uploads/2020/02/como-quitar-el-fondo-de-una-imagen.png"
+                                src="
+                                https://img.freepik.com/vector-gratis/grupo-rock-o-banda-chicos-musica-pop-tres-musicos-tocando-guitarras-tambores-cantando-ilustracion-personajes-vectoriales-dibujos-animados-planos_125371-305.jpg?w=2000"
                                 alt=""
                             />
                         </div>
