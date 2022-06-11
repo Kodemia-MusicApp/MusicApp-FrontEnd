@@ -41,7 +41,7 @@ export const Navbar = () => {
                 <></>
             ) : (
                 <Link
-                    to="/crearcuenta/cliente"
+                    to="/crearcuenta"
                     className="text-decoration-none"
                 >
                     Crear cuenta
