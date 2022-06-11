@@ -9,7 +9,9 @@ export const UserProfile = () => {
             <Navbar />
             <div className="UserProfile">
                 <div className="UserProfile-Container">
-                    <p className="Login-Title">CREAR CUENTA COMO MÚSICO</p>
+                    <p className="Login-Title">
+                        MI PERFIL CLIENTE
+                    </p>
 
                     <div className="CreateAccountMusicianFormulario">
                         <form className="CreateAccountMusicianForm">
