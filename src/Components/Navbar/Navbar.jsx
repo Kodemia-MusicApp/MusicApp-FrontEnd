@@ -4,9 +4,12 @@ import { User } from '../User/User'
 import { AppContext } from '../../Context/AppContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { render } from 'react-dom'
 
 export const Navbar = () => {
     const Context = React.useContext(AppContext)
+    const navigate = useNavigate()
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
@@ -24,7 +27,7 @@ export const Navbar = () => {
                 Context.setUserId(res.data.payload[0])
             })
             .catch((error) => {
-                console.log(error)
+                // console.log(error)
             })
     }, [])
     return (
@@ -34,7 +37,7 @@ export const Navbar = () => {
             <Link to="/" className="text-decoration-none">
                 Inicio
             </Link>
-            {Context.user.userId !== '' ? (
+            {Context.user.name !== '' ? (
                 <></>
             ) : (
                 <Link
@@ -44,14 +47,27 @@ export const Navbar = () => {
                     Crear cuenta
                 </Link>
             )}
-            {Context.user.userId !== '' ? (
+            {Context.user.name !== '' ? (
                 <></>
             ) : (
                 <Link to="/login" className="text-decoration-none">
                     Iniciar sesión
                 </Link>
             )}
-            {Context.user.userId !== '' ? <p>Mi Perfil</p> : <></>}
+            {Context.user.name !== '' ? <p>Mi Perfil</p> : <></>}
+            {Context.user.name !== '' ? (
+                <button
+                    onClick={() => {
+                        console.log('entra lin60')
+                        localStorage.removeItem('musicAppToken')
+                        window.location.reload(false)
+                    }}
+                >
+                    Cerrar sesion
+                </button>
+            ) : (
+                <></>
+            )}
             <img src="" alt="" />
         </div>
     )
