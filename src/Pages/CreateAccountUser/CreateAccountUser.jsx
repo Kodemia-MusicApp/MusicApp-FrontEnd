@@ -15,22 +15,29 @@ export const CreateAccountUser = () => {
                     <p className="Bienvenida2">tu músico ahora</p>
                     <div className="CreateAccountUserFormulario">
                         <form className="CreateAccountUserForm">
-                            <label>Nombre</label>
+                            <label className="labelCreateUse">Nombre</label>
                             <input type="text" className="createUser" />
 
-                            <label>Apellido paterno</label>
+                            <label className="labelCreateUse">
+                                Apellido paterno
+                            </label>
                             <input type="text" className="createUser" />
 
-                            <label>Apellido materno</label>
+                            <label className="labelCreateUse">
+                                Apellido materno
+                            </label>
                             <input type="text" className="createUser" />
 
-                            <label>Escribe tu e-mail</label>
+                            <label className="labelCreateUse">
+                                Escribe tu e-mail
+                            </label>
                             <input type="text" className="createUser" />
 
-                            <label>Escribe una contraseña</label>
+                            <label className="labelCreateUse">
+                                Escribe una contraseña
+                            </label>
                             <input type="password" className="createUser" />
 
-                      
                             <button className="BotonGeneral">
                                 CREAR CUENTA
                             </button>

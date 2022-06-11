@@ -1,3 +1,19 @@
+//CONTAINERS
+.CreateAccountUserFormulario {
+    display: flex;
+    justify-content: center;
+}
+
+.CreateAccountUserForm {
+    margin-top: 35px;
+    width: 350px;
+}
+
+//BOTONES
+.BotonGeneral {
+    margin-left: 20px;
+}
+
 //INPUTS///
 .createUser {
     width: 314px;
@@ -6,15 +22,9 @@
     margin-left: 20px;
     margin-bottom: 30px;
 }
-//CONTAINERS
-.CreateAccountUserFormulario {
-    display: flex;
-    justify-content: center;
-    background-color: red;
-}
 
-.CreateAccountUserForm {
-    margin-top: 35px;
-    width: 350px;
-    background-color: blue;
+//TEXTOS
+
+.labelCreateUse {
+    margin-left: 20px;
 }
