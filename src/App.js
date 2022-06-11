@@ -9,13 +9,10 @@ import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
-<<<<<<< HEAD
 import { PaymentAccepted } from './Pages/PaymentAccepted/PaymentAccepted'
 import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
-=======
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
->>>>>>> origin/develop
 
 function App() {
     return (
@@ -41,12 +38,9 @@ function App() {
                     path="/musician/description"
                     element={<MusicianDescription />}
                 />
-<<<<<<< HEAD
                 <Route path="/payment/accepted" element={<PaymentAccepted />} />
                 <Route path="/payment/refused" element={<PaymentRefused />} />
-=======
                 <Route path="/crearcuenta" element={<CreateAccount />} />
->>>>>>> origin/develop
             </Routes>
         </div>
     )
