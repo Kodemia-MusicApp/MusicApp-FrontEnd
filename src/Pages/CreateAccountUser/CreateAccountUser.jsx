@@ -3,6 +3,8 @@ import './CreateAccountUser.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
+import '../../Icons/icons.svg'
+
 export const CreateAccountUser = () => {
     const navigate = useNavigate()
     return (
