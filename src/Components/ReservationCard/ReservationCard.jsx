@@ -1,6 +1,6 @@
 import React from 'react'
 import './ReservationCard.scss'
-
+import '../../Images/guitarN.png'
 export const ReservationCard = () => {
     return (
         <div className="ReservationCard">
@@ -8,10 +8,7 @@ export const ReservationCard = () => {
                 <div className="ReservationCard-content">
                     <div className="Reservacion">
                         <div className="profileImage">
-                            <img
-                                src={require('../../Images/grupocumbia.jpg')}
-                                alt=""
-                            />
+                          
                         </div>
                         <div className="reservationCardData">
                             <p>Grupo: Limite</p>
