@@ -17,16 +17,24 @@
     background-color: green;
 }
 .MisDatos {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: yellow;
 }
 //CARDS
 
 .reservationcard {
     width: 340px;
     height: 69px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
     background-color: aqua;
+}
+
+//TEXTS
+.textEditProfile {
+    background-color: blue;
 }

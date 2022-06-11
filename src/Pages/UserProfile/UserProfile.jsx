@@ -18,8 +18,10 @@ export const UserProfile = () => {
                                     <p>Nombre: Carlos Doe</p>
                                     <p>CIudad: CDMX</p>
                                 </div>
+                                <div className="textEditProfile">
+                                    <p>EDITAR PERFIL</p>
+                                </div>
                             </div>
-                            <div>EDITAR PERFIL</div>
                         </div>
                         <div>
                             <p>MIS RESERVACIONES</p>
