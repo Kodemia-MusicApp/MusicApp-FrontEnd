@@ -41,7 +41,12 @@ export const CreateAccountMusician = () => {
                                 <option value="Cantante">Cantante</option>
                                 <option value="">Instrumentista</option>
                             </select>
-                            <button className="BotonGeneral">
+                            <button
+                                className="BotonGeneral"
+                                onClick={() => {
+                                    navigate('/')
+                                }}
+                            >
                                 CREAR CUENTA
                             </button>
                         </form>
