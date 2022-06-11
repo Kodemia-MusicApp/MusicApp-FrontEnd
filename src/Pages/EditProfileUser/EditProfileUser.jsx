@@ -34,7 +34,7 @@ export const EditProfileUser = () => {
                                 <input type="password" className="editUser" />
 
                                 <button className="BotonGeneral">
-                                    CREAR CUENTA
+                                    GUARDAR CAMBIOS
                                 </button>
                             </form>
                         </div>

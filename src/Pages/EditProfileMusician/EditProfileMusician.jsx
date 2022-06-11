@@ -33,7 +33,7 @@ export const EditProfileMusician = () => {
                                 <input type="password" className="editUser" />
 
                                 <button className="BotonGeneral">
-                                    CREAR CUENTA
+                                    GUARDAR CAMBIOS
                                 </button>
                             </form>
                         </div>
