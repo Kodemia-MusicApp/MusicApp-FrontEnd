@@ -9,6 +9,8 @@ import { LoginMusician } from './Pages/LoginMusician/LoginMusician'
 import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
+import { PaymentAccepted } from './Pages/PaymentAccepted/PaymentAccepted'
+import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
 
 function App() {
     return (
@@ -34,6 +36,8 @@ function App() {
                     path="/musician/description"
                     element={<MusicianDescription />}
                 />
+                <Route path="/payment/accepted" element={<PaymentAccepted />} />
+                <Route path="/payment/refused" element={<PaymentRefused />} />
             </Routes>
         </div>
     )

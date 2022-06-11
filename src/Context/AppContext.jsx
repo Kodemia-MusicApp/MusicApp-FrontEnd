@@ -3,8 +3,11 @@ import React, { createContext, useState } from 'react'
 export const AppContext = createContext()
 
 const userID = {
-    userId: '',
+    name: '',
+    lastname: '',
     typeClient: '',
+    imagenusuario: '',
+    secondlastname: '',
 }
 
 const apiUrl = {
@@ -16,7 +19,11 @@ export const AppProvider = ({ children }) => {
     const [api, setApi] = useState(apiUrl)
     const setUserId = (user) => {
         setUser({
-            userId: user,
+            name: user.name,
+            lastname: user.lastname,
+            typeClient: user.type,
+            imagenusuario: user.imagenusuario,
+            secondlastname: user.secondlastname,
         })
     }
     return (
