@@ -9,14 +9,16 @@ const urlImg =
 export const CardLogo = () => {
     return (
         <div className="">
-            <section className=" d-flex">
-                <img src={urlImg} alt="sample" className="col-6" />
-                <div className="">
+            <section className=" d-flex justify-content-evenly my-5">
+                <img src={urlImg} alt="sample" className="w-25 rounded col-8" />
+                <div className="col-4">
                     <h2>
                         La conexion con el talento musical estes donde estes.
                     </h2>
-                    <ButtonCreateAccount />
-                    <ButtonLogin />
+                    <article>
+                        <ButtonCreateAccount />
+                        <ButtonLogin />
+                    </article>
                 </div>
             </section>
         </div>
