@@ -25,8 +25,8 @@ export const LandingPage = () => {
                 </article>
                 <section className="d-flex justify-content-center">
                     <article className="">
-                        {musico.map((musico) => {
-                            return <CardMusician musico={musico} />
+                        {musico.map((musico, key) => {
+                            return <CardMusician key={key} musico={musico} />
                         })}
                     </article>
                 </section>
