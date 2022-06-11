@@ -2,7 +2,9 @@
 .datos {
     display: flex;
 }
-
+.MisDatos-container{
+    background-color: antiquewhite;
+}
 .UserProfile {
     padding: 5px;
     display: flex;
@@ -48,4 +50,8 @@
 
 .name {
     margin: 0;
+}
+
+.reservationsTitle {
+    margin-left: 10px;
 }
