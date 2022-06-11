@@ -1,18 +1,16 @@
 import React from 'react'
-import './CreateAccountMusician.scss'
+import './UserProfile.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 
-export const CreateAccountMusician = () => {
+export const UserProfile = () => {
     return (
         <section>
             <Navbar />
-            <div className="CreateAccountMusician">
-                <div className="CreateAccountMusician-Container">
+            <div className="UserProfile">
+                <div className="UserProfile-Container">
                     <p className="Login-Title">CREAR CUENTA COMO MÚSICO</p>
 
-                    <p className="Bienvenida1">Bienvenido a</p>
-                    <p className="Bienvenida2">tu músico ahora</p>
                     <div className="CreateAccountMusicianFormulario">
                         <form className="CreateAccountMusicianForm">
                             <label>Nombre</label>
