@@ -2,8 +2,9 @@ import React from 'react'
 import './CreateAccountUser.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
-
+import { useNavigate } from 'react-router-dom'
 export const CreateAccountUser = () => {
+    const navigate = useNavigate()
     return (
         <section>
             <Navbar />
@@ -38,7 +39,12 @@ export const CreateAccountUser = () => {
                             </label>
                             <input type="password" className="createUser" />
 
-                            <button className="BotonGeneral">
+                            <button
+                                className="BotonGeneral"
+                                onClick={() => {
+                                    navigate('/')
+                                }}
+                            >
                                 CREAR CUENTA
                             </button>
                         </form>
