@@ -13,7 +13,7 @@ export const Navbar = () => {
             <Link to="/" className="text-decoration-none">
                 Inicio
             </Link>
-            <Link to="/crearcuenta/cliente" className="text-decoration-none">
+            <Link to="/crearcuenta" className="text-decoration-none">
                 Crear cuenta
             </Link>
             <Link to="/login" className="text-decoration-none">

@@ -1,7 +1,16 @@
 //CONTAINERS
+.CreateAccountMusicianFormulario {
+    display: flex;
+    justify-content: center;
+}
+
+.CreateAccountMusicianForm {
+    margin-top: 35px;
+    width: 350px;
+}
 
 //INPUTS///
-.user {
+.createMusician {
     width: 314px;
     height: 46px;
     border-radius: 10px;
@@ -22,19 +31,14 @@
     margin: 0;
 }
 
+.tipoArtista {
+    display: block;
+}
 //BOTON//
 .BotonGeneral {
     width: 314px;
     height: 46px;
     border-radius: 20px;
+    margin-top: 20px;
 }
 
-.CreateAccountMusicianFormulario {
-    display: flex;
-    justify-content: center;
-}
-
-.CreateAccountMusicianForm {
-    margin-top: 35px;
-    width: 350px;
-}

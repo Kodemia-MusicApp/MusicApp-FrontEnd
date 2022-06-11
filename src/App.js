@@ -10,6 +10,8 @@ import { Payment } from './Pages/Payment/Payment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MusicianDescription } from './Pages/MusicianDescription/MusicianDescription'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
+import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
+
 function App() {
     return (
         <div>
@@ -19,7 +21,7 @@ function App() {
                 <Route path="/login/musican" element={<LoginMusician />} />
                 <Route
                     path="/crearcuenta/cliente"
-                    element={<CreateAccount />}
+                    element={<CreateAccountUser />}
                 />
                 <Route
                     path="/crearcuenta/musican"
@@ -34,6 +36,7 @@ function App() {
                     path="/musician/description"
                     element={<MusicianDescription />}
                 />
+                <Route path="/crearcuenta" element={<CreateAccount />} />
             </Routes>
         </div>
     )
