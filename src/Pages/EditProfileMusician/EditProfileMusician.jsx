@@ -32,6 +32,18 @@ export const EditProfileMusician = () => {
                                 </label>
                                 <input type="password" className="editUser" />
 
+                                <div className="disponibilidad">
+                                    <label>De</label>
+                                    <select
+                                        className="Tipoartista"
+                                        id="Tipoartista"
+                                    >
+                                        <option value="Cantante">
+                                            Cantante
+                                        </option>
+                                        <option value="">Instrumentista</option>
+                                    </select>
+                                </div>
                                 <button className="BotonGeneral">
                                     GUARDAR CAMBIOS
                                 </button>
