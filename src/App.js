@@ -13,7 +13,7 @@ import { PaymentAccepted } from './Pages/PaymentAccepted/PaymentAccepted'
 import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
-
+import { EditProfileUser } from './EditProfileUser/EditProfileUser'
 function App() {
     return (
         <div>
@@ -41,6 +41,7 @@ function App() {
                 <Route path="/payment/accepted" element={<PaymentAccepted />} />
                 <Route path="/payment/refused" element={<PaymentRefused />} />
                 <Route path="/crearcuenta" element={<CreateAccount />} />
+                <Route path="/editprofileuser" element={<EditProfileUser />} />
             </Routes>
         </div>
     )
