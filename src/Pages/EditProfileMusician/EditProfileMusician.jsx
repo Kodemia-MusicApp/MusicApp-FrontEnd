@@ -33,15 +33,36 @@ export const EditProfileMusician = () => {
                                 <input type="password" className="editUser" />
 
                                 <div className="disponibilidad">
+                                    <p>Dias disponibles para servicio</p>
                                     <label>De</label>
                                     <select
                                         className="Tipoartista"
                                         id="Tipoartista"
                                     >
-                                        <option value="Cantante">
-                                            Cantante
+                                        <option value="Lunes">Lunes</option>
+                                        <option value="Martes">Martes</option>
+                                        <option value="Miércoles">
+                                            Miércoles
                                         </option>
-                                        <option value="">Instrumentista</option>
+                                        <option value="Jueves">Jueves</option>
+                                        <option value="Viernes">Viernes</option>
+                                        <option value="Sábado">Sábado</option>
+                                        <option value="Domingo">Domingo</option>
+                                    </select>
+                                    <label> a </label>
+                                    <select
+                                        className="Tipoartista"
+                                        id="Tipoartista"
+                                    >
+                                        <option value="Lunes">Lunes</option>
+                                        <option value="Martes">Martes</option>
+                                        <option value="Miércoles">
+                                            Miércoles
+                                        </option>
+                                        <option value="Jueves">Jueves</option>
+                                        <option value="Viernes">Viernes</option>
+                                        <option value="Sábado">Sábado</option>
+                                        <option value="Domingo">Domingo</option>
                                     </select>
                                 </div>
                                 <button className="BotonGeneral">
