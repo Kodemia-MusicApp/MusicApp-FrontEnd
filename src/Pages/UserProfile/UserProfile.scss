@@ -5,20 +5,27 @@
 
 .UserProfile {
     padding: 5px;
+    display: flex;
+    justify-content: center;
     background-color: blue;
 }
 .UserProfile-Container {
+    width: 360px;
     background-color: red;
 }
 .UserProfile-Content {
     background-color: green;
 }
-
+.MisDatos {
+    display: flex;
+    justify-content: space-between;
+}
 //CARDS
 
 .reservationcard {
-width: 340px;
-height: 69px;
-
-background-color: aqua;
+    width: 340px;
+    height: 69px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
 }

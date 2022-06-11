@@ -13,16 +13,19 @@ export const UserProfile = () => {
                         <p className="Login-Title">MI PERFIL CLIENTE</p>
                         <div className="datos">
                             <div className="MisDatos">
-                                MIS DATOS
-                                <p>Nombre: Carlos Doe</p>
-                                <p>CIudad: CDMX</p>
+                                <div>
+                                    MIS DATOS
+                                    <p>Nombre: Carlos Doe</p>
+                                    <p>CIudad: CDMX</p>
+                                </div>
                             </div>
                             <div>EDITAR PERFIL</div>
                         </div>
-                        <div><p>MIS RESERVACIONES</p>
-                        <div className="reservationcards">
-                            <div className="reservationcard"></div>
-                        </div>
+                        <div>
+                            <p>MIS RESERVACIONES</p>
+                            <div className="reservationcards">
+                                <div className="reservationcard"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
