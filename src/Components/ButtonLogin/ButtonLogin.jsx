@@ -4,7 +4,9 @@ import './ButtonLogin.scss'
 export const ButtonLogin = () => {
     return (
         <Link to="/login">
-            <button>Iniciar Sesion</button>
+            <button className="rounded-pill btn btn-outline-dark">
+                Iniciar Sesion
+            </button>
         </Link>
     )
 }
