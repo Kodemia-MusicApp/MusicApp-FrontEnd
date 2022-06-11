@@ -35,7 +35,7 @@ function App() {
                     element={<Payment />}
                 />
                 <Route
-                    path="/musician/description"
+                    path="/musician/description/:id"
                     element={<MusicianDescription />}
                 />
                 <Route path="/payment/accepted" element={<PaymentAccepted />} />
