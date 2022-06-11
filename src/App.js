@@ -14,6 +14,7 @@ import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
 import { UserProfile } from './Pages/UserProfile/UserProfile '
+import { EditProfileUser } from './Pages/EditProfileUser/EditProfileUser'
 
 function App() {
     return (
@@ -43,6 +44,8 @@ function App() {
                 <Route path="/payment/refused" element={<PaymentRefused />} />
                 <Route path="/crearcuenta" element={<CreateAccount />} />
                 <Route path="/userprofile" element={<UserProfile />} />
+                <Route path="/editprofileuser" element={<EditProfileUser />} />
+
             </Routes>
         </div>
     )
