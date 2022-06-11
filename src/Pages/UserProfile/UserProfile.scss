@@ -1,17 +1,23 @@
 ///CONTAINERS
 .datos {
     display: flex;
-    
 }
 
-.UserProfile{
-  padding: 5px;
-  background-color: blue;
+.UserProfile {
+    padding: 5px;
+    background-color: blue;
 }
-.UserProfile-Container{
-  
-  background-color: red;
+.UserProfile-Container {
+    background-color: red;
 }
-.UserProfile-Content{
-  background-color: green;
+.UserProfile-Content {
+    background-color: green;
+}
+
+//CARDS
+
+.reservationcard {
+width: 310px;
+height: 69px;
+background-color: aqua;
 }

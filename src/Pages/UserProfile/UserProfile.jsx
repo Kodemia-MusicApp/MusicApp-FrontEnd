@@ -21,7 +21,7 @@ export const UserProfile = () => {
                         </div>
                         <div><p>MIS RESERVACIONES</p>
                         <div className="reservationcards">
-                            <div></div>
+                            <div className="reservationcard"></div>
                         </div>
                         </div>
                     </div>
