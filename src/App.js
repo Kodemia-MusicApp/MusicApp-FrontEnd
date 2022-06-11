@@ -13,7 +13,7 @@ import { PaymentAccepted } from './Pages/PaymentAccepted/PaymentAccepted'
 import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
-import { EditProfileUser } from './EditProfileUser/EditProfileUser'
+import { EditProfileUser } from './Pages/EditProfileUser/EditProfileUser'
 function App() {
     return (
         <div>
