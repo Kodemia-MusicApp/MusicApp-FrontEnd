@@ -8,11 +8,11 @@ export const ReservationCard = () => {
                 <div className="ReservationCard-content">
                     <div className="Reservacion">
                         <div className="profileImage">
-                          <p>per</p>
+                            <img src="" alt="" />
                         </div>
                         <div className="reservationCardData">
-                          <p>Grupo: Limite</p>
-                          <p>Seprtiembre 12 de 2pm a 1 am</p>
+                            <p>Grupo: Limite</p>
+                            <p>Seprtiembre 12 de 2pm a 1 am</p>
                         </div>
                     </div>
                 </div>
