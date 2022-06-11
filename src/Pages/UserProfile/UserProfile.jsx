@@ -9,7 +9,17 @@ export const UserProfile = () => {
             <Navbar />
             <div className="UserProfile">
                 <div className="UserProfile-Container">
-                    <p className="Login-Title">MI PERFIL CLIENTE</p>
+                    <div className="UserProfile-Content">
+                        <p className="Login-Title">MI PERFIL CLIENTE</p>
+                        <div className="datos">
+                            <div className="MisDatos">
+                                Mis datos
+                                <p>Nombre: Carlos Doe</p>
+                                <p>CIudad: CDMX</p>
+                            </div>
+                            <div>Editar mi perfil</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
