@@ -14,18 +14,19 @@ export const UserProfile = () => {
                         <div className="datos">
                             <div className="MisDatos">
                                 <div>
-                                    MIS DATOS
-                                    <p>Nombre: Carlos Doe</p>
-                                    <p>CIudad: CDMX</p>
+                                    <p>MIS DATOS</p>
+                                    <p className="name">Nombre: Carlos Doe</p>
+                                    <p className="city">CIudad: CDMX</p>
                                 </div>
                                 <div className="textEditProfile">
                                     <p>EDITAR PERFIL</p>
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="Rerservations">
                             <p>MIS RESERVACIONES</p>
                             <div className="reservationcards">
+                                <div className="reservationcard"></div>
                                 <div className="reservationcard"></div>
                             </div>
                         </div>

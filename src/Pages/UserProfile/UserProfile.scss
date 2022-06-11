@@ -22,11 +22,18 @@
     justify-content: space-around;
     background-color: yellow;
 }
+
+.Rerservations {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: white;
+    border-radius: 10px;
+}
 //CARDS
 
 .reservationcard {
     width: 340px;
-    height: 69px;
+    height: 75px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -37,4 +44,8 @@
 //TEXTS
 .textEditProfile {
     background-color: blue;
+}
+
+.name {
+    margin: 0;
 }
