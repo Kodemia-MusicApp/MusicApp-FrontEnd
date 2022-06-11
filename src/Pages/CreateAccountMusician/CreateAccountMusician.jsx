@@ -2,8 +2,9 @@ import React from 'react'
 import './CreateAccountMusician.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
-
+import { useNavigate } from 'react-router-dom'
 export const CreateAccountMusician = () => {
+    const navigate = useNavigate()
     return (
         <section>
             <Navbar />
@@ -33,7 +34,9 @@ export const CreateAccountMusician = () => {
                             <label>Escribe una contraseña</label>
                             <input type="password" className="createMusician" />
 
-                            <label className="tipoArtista">Tipo de artista</label>
+                            <label className="tipoArtista">
+                                Tipo de artista
+                            </label>
                             <select className="Tipoartista" id="Tipoartista">
                                 <option value="Cantante">Cantante</option>
                                 <option value="">Instrumentista</option>
