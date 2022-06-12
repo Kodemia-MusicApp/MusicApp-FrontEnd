@@ -30,12 +30,12 @@ export const MusicianProfile = () => {
                             <p className="dataTitles">
                                 DIAS Y HORARIOS DE SERVICIO
                             </p>
-                            <p>Sabados de 1pm a 5am</p>
-                            <p>Domingos de 2pm a 3am</p>
+                            <p className="datatext">Sabados de 1pm a 5am</p>
+                            <p className="datatext">Domingos de 2pm a 3am</p>
                         </div>
                         <div className="musicianDescription">
                             <p className="dataTitles">DESCRIPCIÓN</p>
-                            <p>
+                            <p className="datatext">
                                 Somos un grupo de musica alternativa y cumbia
                                 con larga experiencia en conciertos de
                                 diferentes eventos como bodas, cumpleaños,
