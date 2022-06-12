@@ -2,9 +2,36 @@ import React from 'react'
 import './CreateAccountMusician.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
+import { AppContext } from '../../Context/AppContext'
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+
 export const CreateAccountMusician = () => {
+    const [user, setUser] = React.useState(null)
+    const context = React.useContext(AppContext)
     const navigate = useNavigate()
+    const handleAccount = (e) => {
+        e.preventDefault()
+        axios
+            .post(`${context.api.apiUrl}musician`, {
+                nombre: user.nombre,
+                apellidoPaterno: user.apellidoPaterno,
+                apellidoMaterno: user.apellidoMaterno,
+                correo: user.correo,
+                contrasenia: user.contrasenia,
+            })
+            .then((response) => {
+                if (response.data.success === true) {
+                    localStorage.setItem(
+                        'musicAppToken',
+                        response.data.payload[0].token
+                    )
+                    navigate('/')
+                    context.setUserId(response.data.payload[0])
+                }
+            })
+    }
+
     return (
         <section>
             <Navbar />
@@ -107,9 +134,7 @@ export const CreateAccountMusician = () => {
                             </select>
                             <button
                                 className="BotonGeneral"
-                                onClick={() => {
-                                    navigate('/')
-                                }}
+                                onClick={handleAccount}
                             >
                                 CREAR CUENTA
                             </button>
