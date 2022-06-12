@@ -51,7 +51,8 @@ export const Navbar = () => {
                     Iniciar sesión
                 </Link>
             )}
-            {Context.user.name !== '' ? <p>Mi Perfil</p> : <></>}
+            
+            {Context.user.name !== '' ? <Link to="/userprofile" > <p>Mi Perfil</p> </Link>: <></>}
             {Context.user.name !== '' ? (
                 <button
                     className="btn btn-outline-primary"

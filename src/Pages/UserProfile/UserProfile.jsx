@@ -22,7 +22,9 @@ export const UserProfile = () => {
                                     <img src="../../Icons/pen.svg" alt="" />
                                 </div>
                                 <div className="textEditProfile">
+                                    <Link to="/editprofileuser">
                                     <p>
+
                                         EDITAR PERFIL{' '}
                                         <svg
                                             width="18"
@@ -39,6 +41,7 @@ export const UserProfile = () => {
                                             />
                                         </svg>
                                     </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
