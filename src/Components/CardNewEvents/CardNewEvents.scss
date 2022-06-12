@@ -1,5 +1,9 @@
 ///CONTAINER
-.cardEventonuevo{}
+.cardEventonuevo{
+  width: 100%;
+  border-radius: 15px;
+  background-color: aquamarine;
+}
 
 
 
@@ -19,4 +23,9 @@
     margin-top: 30px;
     border-radius: 20px;
     background-color: red;
+  }
+
+  //TEXTOS
+  .newEventText{
+    margin: 0;
   }
