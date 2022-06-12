@@ -1,6 +1,5 @@
 import React from 'react'
 import './CardLogo.scss'
-import img1 from './Images/ImgCantante.jpg'
 import { ButtonCreateAccount } from '../../Components/ButtonCreateAccount/ButtonCreateAccount'
 import { ButtonLogin } from '../ButtonLogin/ButtonLogin'
 const urlImg =

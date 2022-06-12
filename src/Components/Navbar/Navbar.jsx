@@ -31,7 +31,7 @@ export const Navbar = () => {
             })
     }, [])
     return (
-        <div className="Navbar-Container">
+        <div className="d-flex justify-content-between py-3 bg-navbar text-white">
             <img src="" alt="" />
             <p>Tu Musico Ahora</p>
             <Link to="/" className="text-decoration-none">
@@ -40,10 +40,7 @@ export const Navbar = () => {
             {Context.user.name !== '' ? (
                 <></>
             ) : (
-                <Link
-                    to="/crearcuenta"
-                    className="text-decoration-none"
-                >
+                <Link to="/crearcuenta" className="text-decoration-none">
                     Crear cuenta
                 </Link>
             )}
@@ -57,6 +54,7 @@ export const Navbar = () => {
             {Context.user.name !== '' ? <p>Mi Perfil</p> : <></>}
             {Context.user.name !== '' ? (
                 <button
+                    className="btn btn-outline-primary"
                     onClick={() => {
                         console.log('entra lin60')
                         localStorage.removeItem('musicAppToken')

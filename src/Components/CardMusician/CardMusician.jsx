@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom'
 
 export const CardMusician = ({ musico }) => {
     const navigate = useNavigate()
-
     return (
         <div>
             <section className="d-flex my-5">
                 <article className="col-8 d-flex justify-content-center">
                     <img
                         className="w-75 rounded"
-                        src="https://concepto.de/wp-content/uploads/2015/03/grupo-1-e1550235718694.jpg"
+                        src={musico.imagenMusico}
                         alt=""
                         onClick={() => {
                             navigate(`/musician/description/${musico.id}`)

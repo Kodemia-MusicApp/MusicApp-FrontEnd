@@ -1,8 +1,10 @@
 import React from 'react'
 import './MusicianProfile.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
+
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents '
 import { CardScheduledEvents } from '../../Components/CardScheduledEvents/CardScheduledEvents'
+
 export const MusicianProfile = () => {
     return (
         <div>
