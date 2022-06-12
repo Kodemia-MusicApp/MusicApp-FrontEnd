@@ -3,11 +3,11 @@ import './Navbar.scss'
 import { AppContext } from '../../Context/AppContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
     const Context = React.useContext(AppContext)
-    //  const navigate = useNavigate()
+    const navigate = useNavigate()
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
@@ -49,15 +49,23 @@ export const Navbar = () => {
                     Iniciar sesión
                 </Link>
             )}
-            
-            {Context.user.name !== '' ? <Link to="/userprofile" > <p>Mi Perfil</p> </Link>: <></>}
+
+            {Context.user.name !== '' ? (
+                <Link to="/userprofile">
+                    {' '}
+                    <p>Mi Perfil</p>{' '}
+                </Link>
+            ) : (
+                <></>
+            )}
             {Context.user.name !== '' ? (
                 <button
                     className="btn btn-outline-primary"
                     onClick={() => {
-                        console.log('entra lin60')
+                        window.location.reload(true)
+                        navigate('/')
                         localStorage.removeItem('musicAppToken')
-                        window.location.reload(false)
+                        //
                     }}
                 >
                     Cerrar sesion
