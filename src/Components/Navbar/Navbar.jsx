@@ -14,7 +14,7 @@ export const Navbar = () => {
         const token = localStorage.getItem('musicAppToken')
         axios
             .post(
-                `http://localhost:8080/auth/login/verify`,
+                `${Context.api.apiUrl}auth/login/verify`,
                 {},
                 {
                     // ${Context.api.apiUrl}
