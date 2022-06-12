@@ -17,7 +17,7 @@ import { UserProfile } from './Pages/UserProfile/UserProfile '
 import { EditProfileUser } from './Pages/EditProfileUser/EditProfileUser'
 import { EditProfileMusician } from './Pages/EditProfileMusician/EditProfileMusician'
 import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
-import{Reservation} from ''
+import { Reservation } from './Pages/Reservation/Reservation'
 function App() {
     return (
         <div>
