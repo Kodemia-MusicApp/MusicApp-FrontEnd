@@ -56,4 +56,4 @@ export const MusicianProfile = () => {
             </div>
         </div>
     )
-}s
+}
