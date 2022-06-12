@@ -26,8 +26,8 @@ export const Login = () => {
                         'musicAppToken',
                         response.data.payload[0].token
                     )
-                    navigate('/')
                     Context.setUserId(response.data.payload[0])
+                    navigate('/')
                 }
             })
             .catch((error) => {
