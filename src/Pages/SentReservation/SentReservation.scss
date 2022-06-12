@@ -1,0 +1,34 @@
+///CONTAINERS
+.SentReservation {
+    display: flex;
+    justify-content: center;
+}
+.SentReservation-container {
+    width: 355px;
+}
+.SentReservationBox1 {
+    width: 350px;
+    height: 164px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: turquoise;
+}
+
+.SentReservationBox2 {
+    width: 100%;
+    height: 164px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: turquoise;
+}
