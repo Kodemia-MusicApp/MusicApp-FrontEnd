@@ -26,14 +26,24 @@ export const MusicianProfile = () => {
                         <p>Zona de covertura: CDMX</p>
                     </div>
                     <div className="serviceDays">
-                        <p>Dias y horarios de servicio</p>
+                        <p>DIAS Y HORARIOS DE SERVICIO</p>
                         <p>Sabados de 1pm a 5am</p>
                         <p>Domingos de 2pm a 3am</p>
-                        
                     </div>
-                    <div className="musicianDescription"></div>
-                    <div className="newShows"></div>
-                    <div className="fuertherShows"></div>
+                    <div className="musicianDescription">
+                      <p>DESCRIPCIÓN</p>
+                        <p>
+                            Somos un grupo de musica alternativa y cumbia con
+                            larga experiencia en conciertos de diferentes
+                            eventos como bodas, cumpleaños, fiestas de oficina.{' '}
+                        </p>
+                    </div>
+                    <div className="newShows">
+                      <p>EVENTOS EN ESPERA DE ACEPTACIÓN</p>
+                    </div>
+                    <div className="furtherShows">
+                      
+                    </div>
                 </div>
             </div>
         </div>
