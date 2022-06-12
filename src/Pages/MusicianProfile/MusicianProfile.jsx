@@ -9,7 +9,7 @@ export const MusicianProfile = () => {
             <div className="MusicianProfile">
                 <div className="MusicianProfile-container">
                     <div className="MusicianProfile-content"></div>
-                    <p>MI PERFIL MúSICO</p>
+                    <p>MI PERFIL MÚSICO</p>
                     <div>
                         {' '}
                         <img
@@ -18,11 +18,22 @@ export const MusicianProfile = () => {
                         />
                     </div>
 
-                    <div className="musicianData"></div>
-                    <div className="serviceDays"></div>
+                    <div className="musicianData">
+                        <p>DATOS GRUPO</p>
+                        <p>Nombre: Fusión</p>
+                        <p>Género: Cumbia</p>
+                        <p>Representante: Jhon Doe</p>
+                        <p>Zona de covertura: CDMX</p>
+                    </div>
+                    <div className="serviceDays">
+                        <p>Dias y horarios de servicio</p>
+                        <p>Sabados de 1pm a 5am</p>
+                        <p>Domingos de 2pm a 3am</p>
+                        
+                    </div>
                     <div className="musicianDescription"></div>
                     <div className="newShows"></div>
-                    <div className ="fuertherShows"></div>
+                    <div className="fuertherShows"></div>
                 </div>
             </div>
         </div>
