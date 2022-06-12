@@ -10,37 +10,98 @@ export const Reservation = () => {
                     <p className="Login-Title">EDITAR MI PERFIL</p>
                     <div className="Reservation-Content">
                         <div className="reservationData">
-                            <p>DATOS GRUPO/ARTISTA</p>
-                            <p>Grupo: Unido</p>
-                            <p>Area de covertura: CDMX</p>
-                            <p>Género: Música alternativa</p>
+                            <p className="dataTitles">DATOS GRUPO/ARTISTA</p>
+                            <p className="datatext">Grupo: Unido</p>
+                            <p className="datatext">Area de covertura: CDMX</p>
+                            <p className="datatext">
+                                Género: Música alternativa
+                            </p>
                         </div>
                         <form>
-                            <p>DIRECCIÓN DEL EVENTO</p>
-                           
+                            <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
 
                             <label>Colonia</label>
-                            <input type="text"/>
+                            <input type="text" className="inputReservation" />
 
                             <label>Calle</label>
-                            <input type="text"/>
+                            <input type="text" className="inputReservation" />
 
                             <label>Número</label>
-                            <input type="text"/>
+                            <input type="text" className="inputReservation" />
 
                             <label>Día del evento</label>
-                            <input type="text"/>
-
-
+                            <input type="text" className="inputReservation" />
 
                             <label>Número</label>
-                            <input type="text"/>
+                            <input type="text" className="inputReservation" />
 
-                            <label>Tipo de evento</label>
-                            <input type="text"/>
+                            <p className="dataTitles">Hora del evento</p>
+                            <label>De &nbsp;</label>
+                            <select
+                                className="ReservationHour"
+                                id="ReservationHour"
+                            >
+                                <option value="0">0</option>
+                                <option value="1am">1am</option>
+                                <option value="2am">2am</option>
+                                <option value="3am">3am</option>
+                                <option value="4am">4am</option>
+                                <option value="5am">5am</option>
+                                <option value="6am">6am</option>
+                                <option value="7am">7am</option>
+                                <option value="8am">9am</option>
+                                <option value="10am">10am</option>
+                                <option value="11am">11am</option>
+                                <option value="12am">12am</option>
+                                <option value="1pm">1pm</option>
+                                <option value="2pm">1pm</option>
+                                <option value="3pm">3pm</option>
+                                <option value="4pm">4pm</option>
+                                <option value="5pm">5pm</option>
+                                <option value="6pm">6pm</option>
+                                <option value="7pm">7pm</option>
+                                <option value="8pm">8pm</option>
+                                <option value="9pm">9pm</option>
+                                <option value="10pm">10pm</option>
+                                <option value="11pm">11pm</option>
+                                <option value="12pm">12pm</option>
+                            </select>
+                            <label>&nbsp; a &nbsp; </label>
+                            <select
+                                className="ReservationHour"
+                                id="ReservationHour"
+                            >
+                                <option value="0">0</option>
+                                <option value="1am">1am</option>
+                                <option value="2am">2am</option>
+                                <option value="3am">3am</option>
+                                <option value="4am">4am</option>
+                                <option value="5am">5am</option>
+                                <option value="6am">6am</option>
+                                <option value="7am">7am</option>
+                                <option value="8am">9am</option>
+                                <option value="10am">10am</option>
+                                <option value="11am">11am</option>
+                                <option value="12am">12am</option>
+                                <option value="1pm">1pm</option>
+                                <option value="2pm">1pm</option>
+                                <option value="3pm">3pm</option>
+                                <option value="4pm">4pm</option>
+                                <option value="5pm">5pm</option>
+                                <option value="6pm">6pm</option>
+                                <option value="7pm">7pm</option>
+                                <option value="8pm">8pm</option>
+                                <option value="9pm">9pm</option>
+                                <option value="10pm">10pm</option>
+                                <option value="11pm">11pm</option>
+                                <option value="12pm">12pm</option>
+                            </select>
+                            <p className="dataTitles2">Tipo de evento</p>
+                            <input type="text" />
 
-                            
-                            
+                            <button className="BotonGeneral">
+                                RESERVAR EVENTO
+                            </button>
                         </form>
                     </div>
                 </div>
