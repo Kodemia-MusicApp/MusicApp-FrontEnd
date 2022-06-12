@@ -8,7 +8,7 @@ export const CardScheduledEvents = () => {
                 <div className="CardScheduledEvents-Content">
                     <div className="cardEventoReservado">
                         <p>Tipo de evento: Boda</p>
-                        <p>Julio 5pm a 1am</p>
+                        <p>Julio de 5pm a 1am</p>
                     </div>
                 </div>
             </div>
