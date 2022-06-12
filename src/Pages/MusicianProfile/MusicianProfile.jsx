@@ -53,6 +53,7 @@ export const MusicianProfile = () => {
                         <div className="furtherShows">
                             <p className="dataTitles1">MIS EVENTOS AGENDADOS</p>
                             <CardScheduledEvents />
+                            <CardScheduledEvents />
                         </div>
                     </div>
                 </div>
