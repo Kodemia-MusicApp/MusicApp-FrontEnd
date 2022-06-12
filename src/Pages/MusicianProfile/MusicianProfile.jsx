@@ -9,7 +9,7 @@ export const MusicianProfile = () => {
             <div className="MusicianProfile">
                 <div className="MusicianProfile-container">
                     <div className="MusicianProfile-content"></div>
-                    <p >MI PERFIL MÚSICO</p>
+                    <p className="Login-Title">MI PERFIL MÚSICO</p>
                     <div>
                         {' '}
                         <img
@@ -31,7 +31,7 @@ export const MusicianProfile = () => {
                                 DIAS Y HORARIOS DE SERVICIO
                             </p>
                             <p className="datatext">Sabados de 1pm a 5am</p>
-                            <p className="datatext">Domingos de 2pm a 3am</p>
+                            <p className="datatext">Domingos de 2pm a 3am </p>
                         </div>
                         <div className="musicianDescription">
                             <p className="dataTitles">DESCRIPCIÓN</p>
