@@ -18,31 +18,38 @@ export const MusicianProfile = () => {
                         />
                     </div>
 
-                    <div className="musicianData">
-                        <p>DATOS GRUPO</p>
-                        <p>Nombre: Fusión</p>
-                        <p>Género: Cumbia</p>
-                        <p>Representante: Jhon Doe</p>
-                        <p>Zona de covertura: CDMX</p>
-                    </div>
-                    <div className="serviceDays">
-                        <p>DIAS Y HORARIOS DE SERVICIO</p>
-                        <p>Sabados de 1pm a 5am</p>
-                        <p>Domingos de 2pm a 3am</p>
-                    </div>
-                    <div className="musicianDescription">
-                      <p>DESCRIPCIÓN</p>
-                        <p>
-                            Somos un grupo de musica alternativa y cumbia con
-                            larga experiencia en conciertos de diferentes
-                            eventos como bodas, cumpleaños, fiestas de oficina.{' '}
-                        </p>
-                    </div>
-                    <div className="newShows">
-                      <p>EVENTOS EN ESPERA DE ACEPTACIÓN</p>
-                    </div>
-                    <div className="furtherShows">
-                      
+                    <div className="camposMusico">
+                        <div className="musicianData">
+                            <p className="dataTitles">DATOS GRUPO</p>
+                            <p className="datatext">Nombre: Fusión</p>
+                            <p className="datatext">Género: Cumbia</p>
+                            <p className="datatext">Representante: Jhon Doe</p>
+                            <p className="datatext">Zona de covertura: CDMX</p>
+                        </div>
+                        <div className="serviceDays">
+                            <p className="dataTitles">
+                                DIAS Y HORARIOS DE SERVICIO
+                            </p>
+                            <p>Sabados de 1pm a 5am</p>
+                            <p>Domingos de 2pm a 3am</p>
+                        </div>
+                        <div className="musicianDescription">
+                            <p className="dataTitles">DESCRIPCIÓN</p>
+                            <p>
+                                Somos un grupo de musica alternativa y cumbia
+                                con larga experiencia en conciertos de
+                                diferentes eventos como bodas, cumpleaños,
+                                fiestas de oficina.{' '}
+                            </p>
+                        </div>
+                        <div className="newShows">
+                            <p className="dataTitles">
+                                EVENTOS EN ESPERA DE ACEPTACIÓN
+                            </p>
+                        </div>
+                        <div className="furtherShows">
+                            <p className="dataTitles">MIS EVENTOS AGENDADOS</p>
+                        </div>
                     </div>
                 </div>
             </div>
