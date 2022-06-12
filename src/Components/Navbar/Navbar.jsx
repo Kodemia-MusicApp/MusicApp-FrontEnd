@@ -15,7 +15,6 @@ export const Navbar = () => {
                 `${Context.api.apiUrl}auth/login/verify`,
                 {},
                 {
-                    // ${Context.api.apiUrl}
                     headers: {
                         token: token,
                     },
@@ -24,9 +23,7 @@ export const Navbar = () => {
             .then((res) => {
                 Context.setUserId(res.data.payload[0])
             })
-            .catch((error) => {
-                // console.log(error)
-            })
+            .catch((error) => {})
     }, [])
     return (
         <div className="d-flex justify-content-between py-3 bg-navbar text-white">
@@ -62,8 +59,8 @@ export const Navbar = () => {
                 <button
                     className="btn btn-outline-primary"
                     onClick={() => {
-                        window.location.reload(true)
                         navigate('/')
+                        window.location.reload(true)
                         localStorage.removeItem('musicAppToken')
                         //
                     }}
