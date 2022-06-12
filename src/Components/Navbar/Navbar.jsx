@@ -4,14 +4,17 @@ import { User } from '../User/User'
 import { AppContext } from '../../Context/AppContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { render } from 'react-dom'
 
 export const Navbar = () => {
     const Context = React.useContext(AppContext)
+    const navigate = useNavigate()
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
             .post(
-                `http://localhost:8080/auth/login/verify`,
+                `${Context.api.apiUrl}auth/login/verify`,
                 {},
                 {
                     // ${Context.api.apiUrl}
@@ -24,34 +27,45 @@ export const Navbar = () => {
                 Context.setUserId(res.data.payload[0])
             })
             .catch((error) => {
-                console.log(error)
+                // console.log(error)
             })
     }, [])
     return (
-        <div className="Navbar-Container">
+        <div className="d-flex justify-content-between py-3 bg-navbar text-white">
             <img src="" alt="" />
             <p>Tu Musico Ahora</p>
             <Link to="/" className="text-decoration-none">
                 Inicio
             </Link>
-            {Context.user.userId !== '' ? (
+            {Context.user.name !== '' ? (
                 <></>
             ) : (
-                <Link
-                    to="/crearcuenta/cliente"
-                    className="text-decoration-none"
-                >
+                <Link to="/crearcuenta" className="text-decoration-none">
                     Crear cuenta
                 </Link>
             )}
-            {Context.user.userId !== '' ? (
+            {Context.user.name !== '' ? (
                 <></>
             ) : (
                 <Link to="/login" className="text-decoration-none">
                     Iniciar sesión
                 </Link>
             )}
-            {Context.user.userId !== '' ? <p>Mi Perfil</p> : <></>}
+            {Context.user.name !== '' ? <p>Mi Perfil</p> : <></>}
+            {Context.user.name !== '' ? (
+                <button
+                    className="btn btn-outline-primary"
+                    onClick={() => {
+                        console.log('entra lin60')
+                        localStorage.removeItem('musicAppToken')
+                        window.location.reload(false)
+                    }}
+                >
+                    Cerrar sesion
+                </button>
+            ) : (
+                <></>
+            )}
             <img src="" alt="" />
         </div>
     )

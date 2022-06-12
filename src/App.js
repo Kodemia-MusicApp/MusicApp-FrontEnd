@@ -13,7 +13,11 @@ import { PaymentAccepted } from './Pages/PaymentAccepted/PaymentAccepted'
 import { PaymentRefused } from './Pages/PaymentRefused/PaymentRefused'
 import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccountMusician'
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
-
+import { UserProfile } from './Pages/UserProfile/UserProfile'
+import { EditProfileUser } from './Pages/EditProfileUser/EditProfileUser'
+import { EditProfileMusician } from './Pages/EditProfileMusician/EditProfileMusician'
+import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
+import { Reservation } from './Pages/Reservation/Reservation'
 function App() {
     return (
         <div>
@@ -35,12 +39,20 @@ function App() {
                     element={<Payment />}
                 />
                 <Route
-                    path="/musician/description"
+                    path="/musician/description/:id"
                     element={<MusicianDescription />}
                 />
                 <Route path="/payment/accepted" element={<PaymentAccepted />} />
                 <Route path="/payment/refused" element={<PaymentRefused />} />
                 <Route path="/crearcuenta" element={<CreateAccount />} />
+                <Route path="/userprofile" element={<UserProfile />} />
+                <Route path="/editprofileuser" element={<EditProfileUser />} />
+                <Route
+                    path="/editprofilemusician"
+                    element={<EditProfileMusician />}
+                />
+                <Route path="/profilemusician" element={<MusicianProfile />} />
+                <Route path="/reservation" element={<Reservation />} />
             </Routes>
         </div>
     )

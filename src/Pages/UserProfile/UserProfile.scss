@@ -1,0 +1,57 @@
+///CONTAINERS
+.datos {
+    display: flex;
+}
+.MisDatos-container{
+    background-color: antiquewhite;
+}
+.UserProfile {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.UserProfile-Container {
+    width: 360px;
+    background-color: red;
+}
+.UserProfile-Content {
+    background-color: green;
+}
+.MisDatos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+}
+
+.Rerservations {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: turquoise;
+    border-radius: 10px;
+}
+//CARDS
+
+.reservationcard {
+    width: 340px;
+    height: 75px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+//TEXTS
+.textEditProfile {
+    background-color: blue;
+}
+
+.name {
+    margin: 0;
+}
+
+.reservationsTitle {
+    margin-left: 10px;
+}
