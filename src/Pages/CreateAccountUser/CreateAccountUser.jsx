@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
 
-
 export const CreateAccountUser = () => {
     const navigate = useNavigate()
     return (
@@ -19,27 +18,60 @@ export const CreateAccountUser = () => {
                     <div className="CreateAccountUserFormulario">
                         <form className="CreateAccountUserForm">
                             <label className="labelCreateUse">Nombre</label>
-                            <input type="text" className="createUser" />
+                            <input
+                                type="text"
+                                className="createUser"
+                                onChange={({ target }) => {
+                                    setUser({ ...user, name: target.value })
+                                }}
+                            />
 
                             <label className="labelCreateUse">
                                 Apellido paterno
                             </label>
-                            <input type="text" className="createUser" />
+                            <input
+                                type="text"
+                                className="createUser"
+                                onChange={({ target }) => {
+                                    setUser({ ...user, lastname: target.value })
+                                }}
+                            />
 
                             <label className="labelCreateUse">
                                 Apellido materno
                             </label>
-                            <input type="text" className="createUser" />
+                            <input
+                                type="text"
+                                className="createUser"
+                                onChange={({ target }) => {
+                                    setUser({
+                                        ...user,
+                                        secondlastname: target.value,
+                                    })
+                                }}
+                            />
 
                             <label className="labelCreateUse">
                                 Escribe tu e-mail
                             </label>
-                            <input type="text" className="createUser" />
+                            <input
+                                type="text"
+                                className="createUser"
+                                onChange={({ target }) => {
+                                    setUser({ ...user, email: target.value })
+                                }}
+                            />
 
                             <label className="labelCreateUse">
                                 Escribe una contraseña
                             </label>
-                            <input type="password" className="createUser" />
+                            <input
+                                type="password"
+                                className="createUser"
+                                onChange={({ target }) => {
+                                    setUser({ ...user, password: target.value })
+                                }}
+                            />
 
                             <button
                                 className="BotonGeneral"

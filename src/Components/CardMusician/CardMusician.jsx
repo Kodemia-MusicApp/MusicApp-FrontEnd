@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 export const CardMusician = ({ musico }) => {
     const navigate = useNavigate()
-    console.log(musico)
     return (
         <div>
             <section className="d-flex my-5">

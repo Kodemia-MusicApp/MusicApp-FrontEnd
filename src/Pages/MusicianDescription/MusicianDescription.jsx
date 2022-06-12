@@ -17,7 +17,7 @@ export const MusicianDescription = () => {
             setLoading(false)
         })
     }, [])
-    console.log('19', musico)
+
     return (
         <section>
             <Navbar />
