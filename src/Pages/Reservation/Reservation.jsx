@@ -1,6 +1,7 @@
 import React from 'react'
 import './Reservation.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
+import { Link } from 'react-router-dom'
 export const Reservation = () => {
     return (
         <div>
@@ -98,10 +99,11 @@ export const Reservation = () => {
                             </select>
                             <p className="dataTitles2">Tipo de evento</p>
                             <input type="text" />
-
-                            <button className="BotonGeneral">
-                                RESERVAR EVENTO
-                            </button>
+                            <Link to="/sentreservation">
+                                <button className="BotonGeneral">
+                                    RESERVAR EVENTO
+                                </button>
+                            </Link>
                         </form>
                     </div>
                 </div>
