@@ -1,7 +1,10 @@
 import React from 'react'
 import './MusicianProfile.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
-import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
+
+import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents '
+import { CardScheduledEvents } from '../../Components/CardScheduledEvents/CardScheduledEvents'
+
 export const MusicianProfile = () => {
     return (
         <div>
@@ -10,11 +13,11 @@ export const MusicianProfile = () => {
                 <div className="MusicianProfile-container">
                     <div className="MusicianProfile-content"></div>
                     <p className="Login-Title">MI PERFIL MÚSICO</p>
-                    <div>
-                        {' '}
+                    <div className="imageMusician">
                         <img
                             src="https://cdn0.bodas.com.mx/vendor/2013/3_2/960/jpg/fusion2_5_122013.jpeg"
                             alt=""
+                            className="imagenMusico"
                         />
                     </div>
 
@@ -43,13 +46,16 @@ export const MusicianProfile = () => {
                             </p>
                         </div>
                         <div className="newShows">
-                            <p className="dataTitles">
+                            <p className="dataTitles1">
                                 EVENTOS EN ESPERA DE ACEPTACIÓN
                             </p>
                             <CardNewEvents />
+                            <CardNewEvents />
                         </div>
                         <div className="furtherShows">
-                            <p className="dataTitles">MIS EVENTOS AGENDADOS</p>
+                            <p className="dataTitles1">MIS EVENTOS AGENDADOS</p>
+                            <CardScheduledEvents />
+                            <CardScheduledEvents />
                         </div>
                     </div>
                 </div>
