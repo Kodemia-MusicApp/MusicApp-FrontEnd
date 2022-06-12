@@ -14,9 +14,12 @@ export const SentReservation = () => {
                         <div className=" SentReservationBox2">
                             <p>
                                 Te mandaremos una notificación una vez que el
-                                musico acepte el servicio.{' '}
+                                músico acepte el servicio.{' '}
                             </p>
                         </div>
+                        <button className="BotonGeneral">
+                            IR A PÁGINA PRINCIPAL
+                        </button>
                     </div>
                 </div>
             </div>
