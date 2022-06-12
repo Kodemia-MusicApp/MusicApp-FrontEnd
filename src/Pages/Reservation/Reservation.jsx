@@ -7,7 +7,7 @@ export const Reservation = () => {
             <Navbar />
             <div className="Reservation">
                 <div className="Reservation-Container">
-                    <p className="Login-Title">EDITAR MI PERFIL</p>
+                    <p className="Login-Title">RESERVACIÓN</p>
                     <div className="Reservation-Content">
                         <div className="reservationData">
                             <p className="dataTitles">DATOS GRUPO/ARTISTA</p>
