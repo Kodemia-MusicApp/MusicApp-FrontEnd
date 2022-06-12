@@ -9,7 +9,7 @@ export const MusicianProfile = () => {
             <div className="MusicianProfile">
                 <div className="MusicianProfile-container">
                     <div className="MusicianProfile-content"></div>
-                    <p>MI PERFIL MÚSICO</p>
+                    <p >MI PERFIL MÚSICO</p>
                     <div>
                         {' '}
                         <img
