@@ -1,0 +1,46 @@
+.InicioSesion {
+    display: flex;
+    justify-content: center;
+}
+
+.InicioSesion-Container {
+    width: 360px;
+    height: 100vh;
+    margin-top: 50px;
+}
+
+.InicioSesion-Content {
+    display: flex;
+    justify-content: center;
+}
+
+.InicioSesion-Title {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+///BOTONES////
+.BotonInicio {
+    margin-top: 61px;
+    display: block;
+    width: 307px;
+    height: 164px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+///////TEXTOS////
+.Bienvenida {
+    font-size: 2.3rem;
+    font-style: normal;
+    margin-top: 35px;
+    text-align: center;
+    margin:0;
+}
+
+.NombreApp {
+    font-size: 2.3rem;
+    font-style: normal;
+    text-align: center;
+}
