@@ -17,6 +17,30 @@ export const Reservation = () => {
                         </div>
                         <form>
                             <p>DIRECCIÓN DEL EVENTO</p>
+                           
+
+                            <label>Colonia</label>
+                            <input type="text"/>
+
+                            <label>Calle</label>
+                            <input type="text"/>
+
+                            <label>Número</label>
+                            <input type="text"/>
+
+                            <label>Día del evento</label>
+                            <input type="text"/>
+
+
+
+                            <label>Número</label>
+                            <input type="text"/>
+
+                            <label>Tipo de evento</label>
+                            <input type="text"/>
+
+                            
+                            
                         </form>
                     </div>
                 </div>
