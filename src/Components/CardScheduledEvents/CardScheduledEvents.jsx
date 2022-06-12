@@ -5,7 +5,9 @@ export const CardScheduledEvents = () => {
     return (
         <div className="CardScheduledEvents">
             <div className="CardScheduledEvents-Container">
-                <div className="CardScheduledEvents-Content"></div>
+                <div className="CardScheduledEvents-Content">
+                    <div className="cardEventoReservado"></div>
+                </div>
             </div>
         </div>
     )
