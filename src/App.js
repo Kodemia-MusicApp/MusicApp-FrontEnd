@@ -15,7 +15,8 @@ import { CreateAccountMusician } from './Pages/CreateAccountMusician/CreateAccou
 import { CreateAccountUser } from './Pages/CreateAccountUser/CreateAccountUser'
 import { UserProfile } from './Pages/UserProfile/UserProfile '
 import { EditProfileUser } from './Pages/EditProfileUser/EditProfileUser'
-
+import { EditProfileMusician } from './Pages/EditProfileMusician/EditProfileMusician'
+import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
 function App() {
     return (
         <div>
@@ -45,7 +46,11 @@ function App() {
                 <Route path="/crearcuenta" element={<CreateAccount />} />
                 <Route path="/userprofile" element={<UserProfile />} />
                 <Route path="/editprofileuser" element={<EditProfileUser />} />
-
+                <Route
+                    path="/editprofilemusician"
+                    element={<EditProfileMusician />}
+                />
+                <Route path="/profilemusician" element={<MusicianProfile />} />
             </Routes>
         </div>
     )
