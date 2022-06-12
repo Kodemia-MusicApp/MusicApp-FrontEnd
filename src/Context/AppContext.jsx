@@ -9,9 +9,10 @@ const userID = {
     imagenusuario: '',
     secondlastname: '',
 }
-//  https://tumusicoahora.herokuapp.com/
+//
 const apiUrl = {
-    apiUrl: 'http://localhost:8080/',
+    apiUrl: 'https://tumusicoahora.herokuapp.com/',
+    apiLocal: 'http://localhost:8080/',
 }
 
 export const AppProvider = ({ children }) => {
