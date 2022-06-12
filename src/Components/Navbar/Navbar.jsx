@@ -1,15 +1,13 @@
 import React from 'react'
 import './Navbar.scss'
-import { User } from '../User/User'
 import { AppContext } from '../../Context/AppContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { render } from 'react-dom'
+//import { useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
     const Context = React.useContext(AppContext)
-    const navigate = useNavigate()
+    //  const navigate = useNavigate()
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
