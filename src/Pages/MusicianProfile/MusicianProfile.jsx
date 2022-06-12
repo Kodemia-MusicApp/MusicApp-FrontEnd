@@ -1,7 +1,7 @@
 import React from 'react'
 import './MusicianProfile.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
-
+import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents '
 export const MusicianProfile = () => {
     return (
         <div>
@@ -46,6 +46,7 @@ export const MusicianProfile = () => {
                             <p className="dataTitles">
                                 EVENTOS EN ESPERA DE ACEPTACIÓN
                             </p>
+                            <CardNewEvents />
                         </div>
                         <div className="furtherShows">
                             <p className="dataTitles">MIS EVENTOS AGENDADOS</p>
@@ -55,4 +56,4 @@ export const MusicianProfile = () => {
             </div>
         </div>
     )
-}
+}s
