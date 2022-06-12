@@ -1,8 +1,8 @@
 import React from 'react'
 import './CardScheduledEvents.scss'
 
-export CardScheduledEvents =()=>{
-  return(
-    
-  )
+export const CardScheduledEvents = () => {
+    return <div>
+      
+    </div>
 }
