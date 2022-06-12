@@ -1,8 +1,8 @@
 import React from 'react'
-import './SenReservation.scss'
+import './SentReservation.scss'
 
 export const SentReservation = () => {
   return(
-    
+    d
   )
 }
