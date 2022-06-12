@@ -19,6 +19,7 @@ import { EditProfileMusician } from './Pages/EditProfileMusician/EditProfileMusi
 import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
 import { Reservation } from './Pages/Reservation/Reservation'
 import { SentReservation } from './Pages/SentReservation/SentReservation'
+import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
 function App() {
     return (
         <div>
@@ -55,6 +56,10 @@ function App() {
                 <Route path="/profilemusician" element={<MusicianProfile />} />
                 <Route path="/reservation" element={<Reservation />} />
                 <Route path="/sentreservation" element={<SentReservation />} />
+                <Route
+                    path="/reservationaccepted"
+                    element={<ReservationAccepted />}
+                />
             </Routes>
         </div>
     )
