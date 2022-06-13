@@ -1,4 +1,3 @@
-/////CONTAINERS
 .ReservationAccepted {
     display: flex;
     justify-content: center;
@@ -11,5 +10,13 @@
 .acceptationmessage {
     width: 100%;
     height: 189px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
     background-color: turquoise;
 }
