@@ -20,7 +20,7 @@ import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
 import { Reservation } from './Pages/Reservation/Reservation'
 import { SentReservation } from './Pages/SentReservation/SentReservation'
 import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
-import { congrats } from './Pages/congrats//congrats'
+import { Congrats } from './Pages/Congrats/Congrats'
 function App() {
     return (
         <div>
