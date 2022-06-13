@@ -1,10 +1,14 @@
 ///CONTAINERS
 .Payment-container {
-  width: 360px;
-  height: 10vh;
+    width: 360px;
+    height: 10vh;
 }
 
-.Payment{
-  display: flex;
-  justify-content: center;
+.Payment {
+    display: flex;
+    justify-content: center;
+}
+
+.directions {
+    margin-bottom: 50px;
 }

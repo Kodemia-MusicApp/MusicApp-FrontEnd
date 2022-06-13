@@ -18,7 +18,7 @@ export const Payment = () => {
                             <p className="datatext">Hora: De 1pm a 2am</p>
                             <p className="datatext">Costo Total: 6000$MXN</p>
                         </div>
-                        <div>
+                        <div className="directions">
                             <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
                             <p className="datatext">Calle: Petunias</p>
                             <p className="datatext">Colonia: Regenración</p>
@@ -26,7 +26,7 @@ export const Payment = () => {
                             <p className="datatext">Municipio: Iztapalapa</p>
                             <p className="datatext">Ciudad: CDMX</p>
                         </div>
-                        <button className="BotonGeneral">Payp</button>
+                        <button className="BotonGeneral">Paypal</button>
                     </div>
                 </div>
             </div>
