@@ -11,7 +11,7 @@ export const Payment = () => {
                     <div className="Payment-content">
                         <p className="Login-Title">PAGO DE RESERVACIÓN</p>
                         <div className="artistReservedData">
-                            <p>DATOS ARTISTA</p>
+                            <p className="dataTitles"> DATOS ARTISTA</p>
                             <p className="datatext">Grupo reservado: Fusión</p>
                             <p className="datatext">Area de covertura: CDMX</p>
                             <p className="datatext">Dia: 24 de Febrero </p>
@@ -20,13 +20,14 @@ export const Payment = () => {
                         </div>
 
                         <div>
-                            <p>DIRECCIÓN DEL EVENTO</p>
+                            <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
                             <p className="datatext">Calle: Petunias</p>
                             <p className="datatext">Colonia: Regenración</p>
                             <p className="datatext">Numero: 23</p>
                             <p className="datatext">Municipio: Iztapalapa</p>
                             <p className="datatext">Ciudad: CDMX</p>
                         </div>
+                        <button className="BotonGeneral"></button>
                     </div>
                 </div>
             </div>
