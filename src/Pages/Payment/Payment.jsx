@@ -12,20 +12,20 @@ export const Payment = () => {
                         <p className="Login-Title">PAGO DE RESERVACIÓN</p>
                         <div className="artistReservedData">
                             <p>DATOS ARTISTA</p>
-                            <p>Grupo reservado: Fusión</p>
-                            <p>Area de covertura: CDMX</p>
-                            <p>Dia: 24 de Febrero </p>
-                            <p>Hora: De 1pm a 2am</p>
-                            <p>Costo Total: 6000$MXN</p>
+                            <p className="datatext">Grupo reservado: Fusión</p>
+                            <p className="datatext">Area de covertura: CDMX</p>
+                            <p className="datatext">Dia: 24 de Febrero </p>
+                            <p className="datatext">Hora: De 1pm a 2am</p>
+                            <p className="datatext">Costo Total: 6000$MXN</p>
                         </div>
 
                         <div>
-                            <p>DIRECCIN DEL EVENTO</p>
-                            <p>Calle: Petunias</p>
-                            <p>Colonia: Regenración</p>
-                            <p>Numero: 23</p>
-                            <p>Municipio: Iztapalapa</p>
-                            <p>Ciudad: CDMX</p>
+                            <p>DIRECCIÓN DEL EVENTO</p>
+                            <p className="datatext">Calle: Petunias</p>
+                            <p className="datatext">Colonia: Regenración</p>
+                            <p className="datatext">Numero: 23</p>
+                            <p className="datatext">Municipio: Iztapalapa</p>
+                            <p className="datatext">Ciudad: CDMX</p>
                         </div>
                     </div>
                 </div>
