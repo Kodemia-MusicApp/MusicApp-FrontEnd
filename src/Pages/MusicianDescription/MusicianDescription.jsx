@@ -38,7 +38,7 @@ export const MusicianDescription = () => {
                             <div className="info-group-container">
                                 <span>{musico[0].nombreArtistico}</span>
                                 <span>{musico[0].genero}</span>
-                                <ReserveButton />
+                                <ReserveButton id={musico[0].id} />
                             </div>
                         </div>
                         <div className="price-city-container">

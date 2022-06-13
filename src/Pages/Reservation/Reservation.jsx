@@ -1,8 +1,11 @@
 import React from 'react'
 import './Reservation.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
 export const Reservation = () => {
+    const { id } = useParams()
+    console.log(id)
     return (
         <div>
             <Navbar />
