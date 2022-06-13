@@ -54,7 +54,7 @@ function App() {
                     element={<EditProfileMusician />}
                 />
                 <Route path="/profilemusician" element={<MusicianProfile />} />
-                <Route path="/reservation" element={<Reservation />} />
+                <Route path="/reservation/:id" element={<Reservation />} />
                 <Route path="/sentreservation" element={<SentReservation />} />
                 <Route
                     path="/reservationaccepted"
