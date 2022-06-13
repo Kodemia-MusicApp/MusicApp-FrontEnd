@@ -20,6 +20,7 @@ import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
 import { Reservation } from './Pages/Reservation/Reservation'
 import { SentReservation } from './Pages/SentReservation/SentReservation'
 import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
+import { congrats } from './Pages/congrats//congrats'
 function App() {
     return (
         <div>
@@ -60,6 +61,7 @@ function App() {
                     path="/reservationaccepted"
                     element={<ReservationAccepted />}
                 />
+                <Route path="/congrats" element={<Congrats />} />
             </Routes>
         </div>
     )
