@@ -10,27 +10,28 @@ export const Congrats = () => {
             <div className="Congrats">
                 <div className="Congrats-container">
                     <div className="Congrats-content">
-                        <div>
+                        <div className="CongratsTitles">
                             <p className="Contrats-Title0">GRACIAS </p>
                             <p className="Contrats-Title">POR CONTRATAR</p>
                             <p className="Contrats-Title">CON</p>
-                            <p className="Contrats-Title2"> tu músico ahora </p>
+                            <p className="Contrats-Title2">tu músico ahora</p>
                         </div>
                     </div>
                     <div>
                         <p className="datatext">Grupo reservado: Fusión</p>
                         <p>24 de Junio de 1pm a 3 am</p>
                     </div>
-                    <div className="">
+                    <div className="congratsMessage">
                         {' '}
                         Puedes ver los detalles de tus grupos reservados en tu
                         perfil
                     </div>
                     <button className="BotonGeneral">IR A MI PERFIL</button>
-                <button className="BotonGeneral"> IR A MI PERFIL</button>
-                
+                    <button className="BotonGeneral">
+                        {' '}
+                        IR A LA PAGINA PRINCIPAL
+                    </button>
                 </div>
-             
             </div>
         </div>
     )
