@@ -2,6 +2,7 @@ import React from 'react'
 import './Payment.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import { Link } from 'react-router-dom'
+import '../../Icons/paylpal.svg'
 
 export const Payment = () => {
     return (
@@ -28,6 +29,7 @@ export const Payment = () => {
                             <p className="datatext">Ciudad: CDMX</p>
                         </div>
                         <button className="BotonGeneral"></button>
+                        <img src="paylpal.svg" alt="insertar SVG con la etiqueta image"/>
                     </div>
                 </div>
             </div>
