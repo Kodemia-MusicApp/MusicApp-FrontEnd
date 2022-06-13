@@ -28,8 +28,16 @@ export const Payment = () => {
                             <p className="datatext">Municipio: Iztapalapa</p>
                             <p className="datatext">Ciudad: CDMX</p>
                         </div>
-                        <button className="BotonGeneral"></button>
-                        <img src="paylpal.svg" alt="insertar SVG con la etiqueta image"/>
+                        <button className="BotonGeneral">
+                      
+                        </button>
+                        
+
+
+        /////////*************** */
+
+
+////////////////************** */
                     </div>
                 </div>
             </div>
