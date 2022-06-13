@@ -10,13 +10,13 @@ export const Congrats = () => {
             <div className="Congrats">
                 <div className="Congrats-container">
                     <div className="Congrats-content">
-                        <p className="Login-Title">GRACIAS </p>
-                        <p className="Login-Title">POR CONTRATAR</p>
-                        <p className="Login-Title">CON</p>
-                        <p className="Login-Title"> tu músico ahora </p>
+                        <p className="Contrats-Title0">GRACIAS </p>
+                        <p className="Contrats-Title">POR CONTRATAR</p>
+                        <p className="Contrats-Title">CON</p>
+                        <p className="Contrats-Title2"> tu músico ahora </p>
                     </div>
                     <div>
-                        <p>Grupo reservado: Fusión</p>
+                        <p className="datatext">Grupo reservado: Fusión</p>
                         <p>24 de Junio de 1pm a 3 am</p>
                     </div>
                     <div>
@@ -26,8 +26,8 @@ export const Congrats = () => {
                     </div>
                 </div>
                 <div>
-                    <button>IR A MI PERFIL</button>
-                    <button>IR A MI PERFIL</button>
+                    <button className="BotonGeneral">IR A MI PERFIL</button>
+                    <button className="BotonGeneral"> IR A MI PERFIL</button>
                 </div>
             </div>
         </div>
