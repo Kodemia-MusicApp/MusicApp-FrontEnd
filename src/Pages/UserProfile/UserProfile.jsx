@@ -5,8 +5,24 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
 import { AppContext } from '../../Context/AppContext'
 import '../../Icons/pen.svg'
+import axios from 'axios'
+
 export const UserProfile = () => {
     const Context = React.useContext(AppContext)
+    const [events, setEvents] = React.useState([])
+
+    React.useEffect(() => {
+        const token = localStorage.getItem('musicAppToken')
+        axios
+            .get(`${Context.api.apiLocal}event/client`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                setEvents(res.data.payload)
+            })
+    }, [])
     return (
         <section>
             <Navbar />
@@ -53,10 +69,9 @@ export const UserProfile = () => {
                                 MIS RESERVACIONES
                             </p>
                             <div className="reservationcards">
-                                <ReservationCard />
-                                <ReservationCard />
-                                <ReservationCard />
-                                <ReservationCard />
+                                {events.map((event) => {
+                                    return <ReservationCard event={event} />
+                                })}
                             </div>
                         </div>
                     </div>
