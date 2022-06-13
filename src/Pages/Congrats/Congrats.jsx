@@ -26,11 +26,15 @@ export const Congrats = () => {
                         Puedes ver los detalles de tus grupos reservados en tu
                         perfil
                     </div>
-                    <button className="BotonGeneral">IR A MI PERFIL</button>
-                    <button className="BotonGeneral">
-                        {' '}
-                        IR A LA PAGINA PRINCIPAL
-                    </button>
+                    <Link to="/userprofile">
+                        <button className="BotonGeneral">IR A MI PERFIL</button>
+                    </Link>
+                    <Link to="/">
+                        <button className="BotonGeneral">
+                            {' '}
+                            IR A LA PAGINA PRINCIPAL
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
