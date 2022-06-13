@@ -20,6 +20,7 @@ import { MusicianProfile } from './Pages/MusicianProfile/MusicianProfile'
 import { Reservation } from './Pages/Reservation/Reservation'
 import { SentReservation } from './Pages/SentReservation/SentReservation'
 import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
+import { Congrats } from './Pages/Congrats/Congrats'
 function App() {
     return (
         <div>
@@ -54,12 +55,13 @@ function App() {
                     element={<EditProfileMusician />}
                 />
                 <Route path="/profilemusician" element={<MusicianProfile />} />
-                <Route path="/reservation" element={<Reservation />} />
+                <Route path="/reservation/:id" element={<Reservation />} />
                 <Route path="/sentreservation" element={<SentReservation />} />
                 <Route
                     path="/reservationaccepted"
                     element={<ReservationAccepted />}
                 />
+                <Route path="/congrats" element={<Congrats />} />
             </Routes>
         </div>
     )

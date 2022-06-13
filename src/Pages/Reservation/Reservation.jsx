@@ -1,8 +1,84 @@
 import React from 'react'
 import './Reservation.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import Stack from '@mui/material/Stack'
+import TextField from '@mui/material/TextField'
+import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import axios from 'axios'
+import { AppContext } from '../../Context/AppContext'
+import { useNavigate } from 'react-router-dom'
+
 export const Reservation = () => {
+    const Context = React.useContext(AppContext)
+    const token = localStorage.getItem('musicAppToken')
+    const navigate = useNavigate()
+    const { id } = useParams()
+    const [loading, setLoading] = React.useState(true)
+    const [event, setEvent] = React.useState(null)
+    const [dayOne, setdayOne] = React.useState(new Date())
+    const [dayTwo, setdayTwo] = React.useState(new Date())
+
+    const handleChangeDayOne = (newdayOne) => {
+        setdayOne(newdayOne)
+    }
+
+    const handleChangeDayTwo = (newdayTwo) => {
+        console.log('lin25', newdayTwo)
+        setdayTwo(newdayTwo)
+    }
+
+    const createEvent = (e) => {
+        e.preventDefault()
+        console.log('Lin28', Context.api.apiUrl)
+        const dateOne = new Date(dayOne)
+        const dateTwo = new Date(dayTwo)
+        const hourOne = `${dateOne.getHours()}:${dateOne.getMinutes()}`
+        const hourTwo = `${dateTwo.getHours()}:${dateTwo.getMinutes()}`
+        const parseDayOne = Date.parse(dayOne)
+        const parseDayTwo = Date.parse(dayTwo)
+        console.log(parseDayOne)
+        console.log(parseDayTwo)
+        if (parseDayOne == parseDayTwo || parseDayOne > parseDayTwo) {
+            alert('Horas incorrectas')
+        } else {
+            axios
+                .post(
+                    `${Context.api.apiUrl}event`,
+                    {
+                        descripcion: event.descripcion,
+                        fechaInicio: Date.parse(dayOne),
+                        horaInicio: hourOne,
+                        fechaFinalizacion: Date.parse(dayTwo),
+                        horaFinalizacion: hourTwo,
+                        musicoId: id,
+                        colonia: event.colonia,
+                        calle: event.calle,
+                        numero: event.calle,
+                        ciudad: event.ciudad,
+                    },
+                    {
+                        headers: {
+                            token: token,
+                        },
+                    }
+                )
+                .then((res) => {
+                    if (res.data.success === true) {
+                        alert('Evento creado')
+                        navigate('/')
+                    } else {
+                        alert('Error')
+                        navigate('/userprofile')
+                    }
+                })
+        }
+        /*
+         */
+    }
     return (
         <div>
             <Navbar />
@@ -22,88 +98,111 @@ export const Reservation = () => {
                             <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
 
                             <label>Colonia</label>
-                            <input type="text" className="inputReservation" />
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        colonia: target.value,
+                                    })
+                                }}
+                            />
 
                             <label>Calle</label>
-                            <input type="text" className="inputReservation" />
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        calle: target.value,
+                                    })
+                                }}
+                            />
 
                             <label>Número</label>
-                            <input type="text" className="inputReservation" />
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        numero: target.value,
+                                    })
+                                }}
+                            />
 
-                            <label>Día del evento</label>
-                            <input type="text" className="inputReservation" />
-
-                            <label>Número</label>
-                            <input type="text" className="inputReservation" />
-
-                            <p className="dataTitles">Hora del evento</p>
-                            <label>De &nbsp;</label>
-                            <select
-                                className="ReservationHour"
-                                id="ReservationHour"
+                            <label>Ciudad y/o Municipio</label>
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        ciudad: target.value,
+                                    })
+                                }}
+                            />
+                            <p className="dataTitles2">
+                                Descripcion del evento
+                            </p>
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        descripcion: target.value,
+                                    })
+                                }}
+                            />
+                            <section>
+                                <p className="dataTitles2">
+                                    Dia y hora de inicio
+                                </p>
+                                <div className="my-3">
+                                    <LocalizationProvider
+                                        dateAdapter={AdapterDateFns}
+                                    >
+                                        <Stack spacing={3}>
+                                            <DateTimePicker
+                                                label="Date&Time picker"
+                                                value={dayOne}
+                                                onChange={handleChangeDayOne}
+                                                renderInput={(params) => (
+                                                    <TextField {...params} />
+                                                )}
+                                            />
+                                        </Stack>
+                                    </LocalizationProvider>
+                                </div>
+                                <p className="dataTitles2">
+                                    Dia y hora de finalizacion
+                                </p>
+                                <div className="my-3">
+                                    <LocalizationProvider
+                                        dateAdapter={AdapterDateFns}
+                                    >
+                                        <Stack spacing={3}>
+                                            <DateTimePicker
+                                                label="Date&Time picker"
+                                                value={dayTwo}
+                                                onChange={handleChangeDayTwo}
+                                                renderInput={(params) => (
+                                                    <TextField {...params} />
+                                                )}
+                                            />
+                                        </Stack>
+                                    </LocalizationProvider>
+                                </div>
+                            </section>
+                            <button
+                                className="BotonGeneral"
+                                onClick={createEvent}
                             >
-                                <option value="0">0</option>
-                                <option value="1am">1am</option>
-                                <option value="2am">2am</option>
-                                <option value="3am">3am</option>
-                                <option value="4am">4am</option>
-                                <option value="5am">5am</option>
-                                <option value="6am">6am</option>
-                                <option value="7am">7am</option>
-                                <option value="8am">9am</option>
-                                <option value="10am">10am</option>
-                                <option value="11am">11am</option>
-                                <option value="12am">12am</option>
-                                <option value="1pm">1pm</option>
-                                <option value="2pm">1pm</option>
-                                <option value="3pm">3pm</option>
-                                <option value="4pm">4pm</option>
-                                <option value="5pm">5pm</option>
-                                <option value="6pm">6pm</option>
-                                <option value="7pm">7pm</option>
-                                <option value="8pm">8pm</option>
-                                <option value="9pm">9pm</option>
-                                <option value="10pm">10pm</option>
-                                <option value="11pm">11pm</option>
-                                <option value="12pm">12pm</option>
-                            </select>
-                            <label>&nbsp; a &nbsp; </label>
-                            <select
-                                className="ReservationHour"
-                                id="ReservationHour"
-                            >
-                                <option value="0">0</option>
-                                <option value="1am">1am</option>
-                                <option value="2am">2am</option>
-                                <option value="3am">3am</option>
-                                <option value="4am">4am</option>
-                                <option value="5am">5am</option>
-                                <option value="6am">6am</option>
-                                <option value="7am">7am</option>
-                                <option value="8am">9am</option>
-                                <option value="10am">10am</option>
-                                <option value="11am">11am</option>
-                                <option value="12am">12am</option>
-                                <option value="1pm">1pm</option>
-                                <option value="2pm">1pm</option>
-                                <option value="3pm">3pm</option>
-                                <option value="4pm">4pm</option>
-                                <option value="5pm">5pm</option>
-                                <option value="6pm">6pm</option>
-                                <option value="7pm">7pm</option>
-                                <option value="8pm">8pm</option>
-                                <option value="9pm">9pm</option>
-                                <option value="10pm">10pm</option>
-                                <option value="11pm">11pm</option>
-                                <option value="12pm">12pm</option>
-                            </select>
-                            <p className="dataTitles2">Tipo de evento</p>
-                            <input type="text" />
-                            <Link to="/sentreservation">
-                                <button className="BotonGeneral">
-                                    RESERVAR EVENTO
-                                </button>
-                            </Link>
+                                RESERVAR EVENTO
+                            </button>
                         </form>
                     </div>
                 </div>

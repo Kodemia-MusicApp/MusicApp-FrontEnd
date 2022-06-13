@@ -1,7 +1,7 @@
 import React from 'react'
 import './ReservationAccepted.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
-
+import { Link } from 'react-router-dom'
 export const ReservationAccepted = () => {
     return (
         <div>
@@ -17,7 +17,11 @@ export const ReservationAccepted = () => {
                                 El músico a aceptado el servicio de contratación
                             </p>
                         </div>
-                        <button className="BotonGeneral">REALIZAR PAGO DEL SERVICIO</button>
+                        <Link to="/crearcuenta/payment/execute-payment">
+                            <button className="BotonGeneral">
+                                REALIZAR PAGO DEL SERVICIO
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
