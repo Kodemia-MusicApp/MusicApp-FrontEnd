@@ -1,14 +1,15 @@
 /////CONTAINERS
-.ReservationAccepted{
-  display: flex;
-  justify-content: center;
-  
+.ReservationAccepted {
+    display: flex;
+    justify-content: center;
 }
 .ReservationAccepted-container {
-  width: 360px;
-  height: 100vh;
+    width: 360px;
+    height: 100vh;
 }
 
-.acceptationmessage{
-  width: 100%;
+.acceptationmessage {
+    width: 100%;
+    height: 189px;
+    background-color: turquoise;
 }
