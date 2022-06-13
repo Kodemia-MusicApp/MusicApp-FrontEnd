@@ -26,7 +26,7 @@ export const Payment = () => {
                             <p className="datatext">Municipio: Iztapalapa</p>
                             <p className="datatext">Ciudad: CDMX</p>
                         </div>
-                        <button className="BotonGeneral"></button>
+                        <button className="BotonGeneral">Payp</button>
                     </div>
                 </div>
             </div>
