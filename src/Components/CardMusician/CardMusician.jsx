@@ -5,8 +5,8 @@ export const CardMusician = ({ musico }) => {
     const navigate = useNavigate()
     return (
         <div>
-            <section className="d-flex my-5">
-                <article className="col-8 d-flex justify-content-center">
+            <section className="d-flex my-5 d-flex justify-content-center">
+                <article className=" col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-3 ">
                     <img
                         className="w-75 rounded"
                         src={musico.imagenMusico}
