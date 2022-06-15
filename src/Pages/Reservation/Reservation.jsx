@@ -59,6 +59,7 @@ export const Reservation = () => {
                         calle: event.calle,
                         numero: event.calle,
                         ciudad: event.ciudad,
+                        titulo: event.titulo,
                     },
                     {
                         headers: {
@@ -68,8 +69,9 @@ export const Reservation = () => {
                 )
                 .then((res) => {
                     if (res.data.success === true) {
-                        alert('Evento creado')
-                        navigate('/')
+                        console.log(res.data)
+                        //alert('Evento creado')
+                        //navigate('/')
                     } else {
                         alert('Error')
                         navigate('/userprofile')
@@ -95,8 +97,31 @@ export const Reservation = () => {
                             </p>
                         </div>
                         <form>
+                            <p className="dataTitles2">Titulo del evento</p>
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        titulo: target.value,
+                                    })
+                                }}
+                            />
+                            <p className="dataTitles2">
+                                Descripcion del evento
+                            </p>
+                            <input
+                                type="text"
+                                className="inputReservation"
+                                onChange={({ target }) => {
+                                    setEvent({
+                                        ...event,
+                                        descripcion: target.value,
+                                    })
+                                }}
+                            />
                             <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
-
                             <label>Colonia</label>
                             <input
                                 type="text"
@@ -141,19 +166,6 @@ export const Reservation = () => {
                                     setEvent({
                                         ...event,
                                         ciudad: target.value,
-                                    })
-                                }}
-                            />
-                            <p className="dataTitles2">
-                                Descripcion del evento
-                            </p>
-                            <input
-                                type="text"
-                                className="inputReservation"
-                                onChange={({ target }) => {
-                                    setEvent({
-                                        ...event,
-                                        descripcion: target.value,
                                     })
                                 }}
                             />
