@@ -39,6 +39,7 @@ export const Navbar = () => {
                     Crear cuenta
                 </Link>
             )}
+
             {Context.user.name !== '' ? (
                 <></>
             ) : (
@@ -59,6 +60,13 @@ export const Navbar = () => {
                         <p>Mi Perfil</p>{' '}
                     </Link>
                 )
+            ) : (
+                <></>
+            )}
+            {Context.user.name !== '' ? (
+                <Link to="/reservationaccepted">
+                    <p>Mis Eventos</p>{' '}
+                </Link>
             ) : (
                 <></>
             )}
