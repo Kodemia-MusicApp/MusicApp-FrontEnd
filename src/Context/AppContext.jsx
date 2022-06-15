@@ -21,10 +21,10 @@ export const AppProvider = ({ children }) => {
     const setUserId = (user) => {
         setUser({
             name: user.name,
-            lastname: user.lastname,
+            // lastname: user.lastname,
             typeClient: user.type,
             imagenusuario: user.imagenusuario,
-            secondlastname: user.secondlastname,
+            //  secondlastname: user.secondlastname,
         })
     }
     return (
