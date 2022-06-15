@@ -38,7 +38,7 @@ function App() {
                 />
                 <Route path="/login" element={<InicioSesion />} />
                 <Route
-                    path="/crearcuenta/payment/execute-payment"
+                    path="/crearcuenta/payment/execute-payment/:id"
                     element={<Payment />}
                 />
                 <Route

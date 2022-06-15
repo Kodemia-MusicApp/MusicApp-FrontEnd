@@ -48,10 +48,17 @@ export const Navbar = () => {
             )}
 
             {Context.user.name !== '' ? (
-                <Link to="/userprofile">
-                    {' '}
-                    <p>Mi Perfil</p>{' '}
-                </Link>
+                Context.user.typeClient == 'Musico' ? (
+                    <Link to="/profilemusician">
+                        {' '}
+                        <p>Mi Perfil</p>{' '}
+                    </Link>
+                ) : (
+                    <Link to="/userprofile">
+                        {' '}
+                        <p>Mi Perfil</p>{' '}
+                    </Link>
+                )
             ) : (
                 <></>
             )}
