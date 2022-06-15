@@ -1,3 +1,5 @@
-.landingContainer {
-    background-color: #0b6bbf;
+@import '../../scss/variables.scss';
+
+.landingContainer{
+    background-color: $grey-color;
 }
