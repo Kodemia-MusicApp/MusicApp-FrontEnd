@@ -9,19 +9,19 @@ import { ReservationCard } from '../../Components/ReservationCard/ReservationCar
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
 
 export const ReservationAccepted = () => {
-    const [events, setEvents] = React.useState([])
+    const [eventsAccepted, setEvents] = React.useState([])
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
-        console.log('lin7')
         axios
-            .get(`${Context.api.apiUrl}event/accepted`, {
+            .get(`${Context.api.apiUrl}event/client`, {
                 headers: {
                     token: token,
                 },
             })
             .then((res) => {
+                console.log(res.data.payload)
                 setEvents(res.data.payload)
             })
     }, [])
@@ -40,17 +40,38 @@ export const ReservationAccepted = () => {
                                 El músico a aceptado el servicio de contratación
                             </p>
                         </div>
-                        {events.map((event, key) => (
+                        {eventsAccepted.map((event, key) => (
                             <main>
-                                {event.pagoAceptado === true ? (
-                                    <></>
+                                {event.pagoAceptado === true &&
+                                event.aceptado === true &&
+                                event.eventoTerminado === false ? (
+                                    <section className="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                {event.nombreArtistico}
+                                            </h5>
+                                            <p class="card-text">
+                                                {event.descripcion}
+                                            </p>
+                                            <div>{event.ciudad}</div>
+                                            <a href="#" class="btn btn-primary">
+                                                Evento cumplido
+                                            </a>
+                                        </div>
+
+                                        <div></div>
+                                    </section>
                                 ) : (
                                     <section>
-                                        <article className="bg-dark text-white">
-                                            {console.log(event)}
+                                        <article className="card">
+                                            <h5 className='card-title"'>
+                                                {event.descripcion}
+                                            </h5>
+                                            <div className="card-text">
+                                                {event.ciudad}
+                                            </div>
                                             <div>{event.descripcion}</div>
-                                            <div>{event.ciudad}</div>
-                                            <div>{event.descripcion}</div>
+                                            <div>{event.nombreArtistico}</div>
                                         </article>
 
                                         <button
