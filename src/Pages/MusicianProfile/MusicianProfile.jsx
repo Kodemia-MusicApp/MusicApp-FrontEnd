@@ -3,62 +3,109 @@ import './MusicianProfile.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
 import { CardScheduledEvents } from '../../Components/CardScheduledEvents/CardScheduledEvents'
+import { AppContext } from '../../Context/AppContext'
+import axios from 'axios'
 
 export const MusicianProfile = () => {
+    const Context = React.useContext(AppContext)
+    const [musician, setMusician] = React.useState([])
+    const [events, setEvents] = React.useState([])
+    const [Loading, setLoading] = React.useState(true)
+
+    React.useEffect(() => {
+        const token = localStorage.getItem('musicAppToken')
+        axios
+            .get(`${Context.api.apiUrl}musician`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                setMusician(res.data.payload[0])
+                //setLoading(false)
+            })
+
+        axios
+            .get(`${Context.api.apiUrl}event/musician`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                setEvents(res.data.payload)
+                setLoading(false)
+            })
+    }, [])
     return (
         <div>
             <Navbar />
-            <div className="MusicianProfile">
-                <div className="MusicianProfile-container">
-                    <div className="MusicianProfile-content"></div>
-                    <p className="Login-Title">MI PERFIL MÚSICO</p>
-                    <div className="imageMusician">
-                        <img
-                            src="https://cdn0.bodas.com.mx/vendor/2013/3_2/960/jpg/fusion2_5_122013.jpeg"
-                            alt=""
-                            className="imagenMusico"
-                        />
-                    </div>
+            {Loading ? (
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            ) : (
+                <div className="MusicianProfile text-white">
+                    <div className="MusicianProfile-container">
+                        <div className="MusicianProfile-content"></div>
+                        <p className="Login-Title">MI PERFIL MÚSICO</p>
+                        <div className="imageMusician">
+                            <img
+                                src="https://cdn0.bodas.com.mx/vendor/2013/3_2/960/jpg/fusion2_5_122013.jpeg"
+                                alt=""
+                                className="imagenMusico"
+                            />
+                        </div>
 
-                    <div className="camposMusico">
-                        <div className="musicianData">
-                            <p className="dataTitles">DATOS GRUPO</p>
-                            <p className="datatext">Nombre: Fusión</p>
-                            <p className="datatext">Género: Cumbia</p>
-                            <p className="datatext">Representante: Jhon Doe</p>
-                            <p className="datatext">Zona de covertura: CDMX</p>
-                        </div>
-                        <div className="serviceDays">
-                            <p className="dataTitles">
-                                DIAS Y HORARIOS DE SERVICIO
-                            </p>
-                            <p className="datatext">Sabados de 1pm a 5am</p>
-                            <p className="datatext">Domingos de 2pm a 3am </p>
-                        </div>
-                        <div className="musicianDescription">
-                            <p className="dataTitles">DESCRIPCIÓN</p>
-                            <p className="datatext">
-                                Somos un grupo de musica alternativa y cumbia
-                                con larga experiencia en conciertos de
-                                diferentes eventos como bodas, cumpleaños,
-                                fiestas de oficina.{' '}
-                            </p>
-                        </div>
-                        <div className="newShows">
-                            <p className="dataTitles1">
-                                EVENTOS EN ESPERA DE ACEPTACIÓN
-                            </p>
-                            <CardNewEvents />
-                            <CardNewEvents />
-                        </div>
-                        <div className="furtherShows">
-                            <p className="dataTitles1">MIS EVENTOS AGENDADOS</p>
-                            <CardScheduledEvents />
-                            <CardScheduledEvents />
+                        <div className="camposMusico">
+                            <div className="musicianData">
+                                <p className="dataTitles">DATOS GRUPO</p>
+                                <p className="datatext">
+                                    Nombre: {musician.nombreArtistico}
+                                </p>
+                                <p className="datatext">
+                                    Género: {musician.genero}
+                                </p>
+                                <p className="datatext">
+                                    Zona de covertura: {musician.state}
+                                </p>
+                            </div>
+                            <div className="serviceDays">
+                                <p className="dataTitles">
+                                    DIAS Y HORARIOS DE SERVICIO
+                                </p>
+                                <p className="datatext">
+                                    {musician.horarioDiaUno} de{' '}
+                                    {musician.horarioDiaDos}
+                                </p>
+                                <p className="datatext">
+                                    {`${musician.horarioInicio} hrs a ${musician.horarioFin} hrs`}
+                                </p>
+                            </div>
+                            <div className="musicianDescription">
+                                <p className="dataTitles">DESCRIPCIÓN</p>
+                                <p className="datatext">
+                                    {musician.descripcion}
+                                </p>
+                            </div>
+                            <div className="newShows">
+                                <p className="dataTitles1">
+                                    EVENTOS EN ESPERA DE ACEPTACIÓN
+                                </p>
+                                {events.map((event, key) => (
+                                    <CardNewEvents key={key} event={event} />
+                                ))}
+                            </div>
+                            <div className="furtherShows">
+                                <p className="dataTitles1">
+                                    MIS EVENTOS AGENDADOS
+                                </p>
+                                <CardScheduledEvents />
+                                <CardScheduledEvents />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }
