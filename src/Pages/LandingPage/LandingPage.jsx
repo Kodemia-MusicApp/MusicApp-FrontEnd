@@ -25,11 +25,11 @@ export const LandingPage = () => {
                 },
             })
             .then((res) => {
-                console.log(res.data.payload)
+                /* console.log(res.data.payload)
                 if (res.data.payload) {
                     alert('Tu Evento Fue aceptado')
                     navigate('reservationaccepted')
-                }
+                }*/
             })
     }, [])
 

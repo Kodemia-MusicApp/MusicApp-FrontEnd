@@ -50,12 +50,13 @@ export const ReservationAccepted = () => {
                                             {console.log(event)}
                                             <div>{event.descripcion}</div>
                                             <div>{event.ciudad}</div>
+                                            <div>{event.descripcion}</div>
                                         </article>
 
                                         <button
                                             className="BotonGeneral"
                                             onClick={() => {
-                                                console.log(event)
+                                                //   console.log(event)
                                                 axios
                                                     .post(
                                                         `${Context.api.apiUrl}payment/create-payments`,
