@@ -11,6 +11,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
+import Alert from 'react-bootstrap/Alert'
 
 export const Reservation = () => {
     const Context = React.useContext(AppContext)
@@ -21,27 +22,26 @@ export const Reservation = () => {
     const [event, setEvent] = React.useState(null)
     const [dayOne, setdayOne] = React.useState(new Date())
     const [dayTwo, setdayTwo] = React.useState(new Date())
+    const [show, setShow] = React.useState(false)
 
     const handleChangeDayOne = (newdayOne) => {
         setdayOne(newdayOne)
     }
 
     const handleChangeDayTwo = (newdayTwo) => {
-        console.log('lin25', newdayTwo)
         setdayTwo(newdayTwo)
     }
 
     const createEvent = (e) => {
         e.preventDefault()
-        console.log('Lin28', Context.api.apiUrl)
+
         const dateOne = new Date(dayOne)
         const dateTwo = new Date(dayTwo)
         const hourOne = `${dateOne.getHours()}:${dateOne.getMinutes()}`
         const hourTwo = `${dateTwo.getHours()}:${dateTwo.getMinutes()}`
         const parseDayOne = Date.parse(dayOne)
         const parseDayTwo = Date.parse(dayTwo)
-        console.log(parseDayOne)
-        console.log(parseDayTwo)
+
         if (parseDayOne == parseDayTwo || parseDayOne > parseDayTwo) {
             alert('Horas incorrectas')
         } else {
@@ -69,9 +69,10 @@ export const Reservation = () => {
                 )
                 .then((res) => {
                     if (res.data.success === true) {
-                        console.log(res.data)
-                        //alert('Evento creado')
-                        //navigate('/')
+                        setShow(true)
+                        setTimeout(() => {
+                            navigate('/reservationaccepted')
+                        }, 1500)
                     } else {
                         alert('Error')
                         navigate('/userprofile')
@@ -84,6 +85,16 @@ export const Reservation = () => {
     return (
         <div>
             <Navbar />
+            <section>
+                <Alert show={show} variant="success">
+                    <Alert.Heading className="d-flex justify-content-center">
+                        Evento creado
+                    </Alert.Heading>
+                    <div className="d-flex justify-content-center">
+                        <p>El evento fue creado y enviado al musico</p>
+                    </div>
+                </Alert>
+            </section>
             <div className="Reservation">
                 <div className="Reservation-Container">
                     <p className="Login-Title">RESERVACIÓN</p>

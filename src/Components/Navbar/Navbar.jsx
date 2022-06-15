@@ -63,10 +63,18 @@ export const Navbar = () => {
             ) : (
                 <></>
             )}
+
             {Context.user.name !== '' ? (
-                <Link to="/reservationaccepted">
-                    <p>Mis Eventos</p>{' '}
-                </Link>
+                Context.user.typeClient == 'Musico' ? (
+                    <Link to="/musician/events">
+                        {' '}
+                        <p>Mis Eventos</p>{' '}
+                    </Link>
+                ) : (
+                    <Link to="/reservationaccepted">
+                        <p>Mis Eventos</p>{' '}
+                    </Link>
+                )
             ) : (
                 <></>
             )}
