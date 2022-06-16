@@ -12,13 +12,18 @@
 .CreateAccountUserForm {
     margin-top: 35px;
     width: 350px;
-    background-color: red;
+    border-radius: 30px;
+    background-color: $cards-color;
 }
 
 //BOTONES
 .BotonGeneral {
     margin-left: 20px;
     margin-bottom: 20px;
+    background-color: $generalbutton-color;
+    font-weight: 600;
+    color:black;
+    font-family: Oswald, sans-serif;
 }
 
 //INPUTS///
@@ -34,4 +39,10 @@
 
 .labelCreateUse {
     margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+}
+.Login-Title{
+    color:white
 }

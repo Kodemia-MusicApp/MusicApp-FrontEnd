@@ -4,6 +4,7 @@ import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
+import {MusicianPaidEvents} from  '../../Components/MusicianPaidEvents/MusicianPaidEvents'
 export const MusicianEvents = () => {
     const Context = React.useContext(AppContext)
     const [events, setEvents] = React.useState([])
@@ -169,7 +170,12 @@ export const MusicianEvents = () => {
                         </div>
                     ))}
                 </div>
-                <h2>OTros eventos</h2>
+                <div>
+                <h2>Otros eventos</h2>
+                <MusicianPaidEvents/>
+                <MusicianPaidEvents/>
+                </div>
+
             </section>
         </>
     )

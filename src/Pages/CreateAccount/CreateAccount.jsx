@@ -13,7 +13,7 @@ export const CreateAccount = () => {
                 <div className="CreateAccount-Container">
                     <p className="CreateAccount-Title">CREAR CUENTA</p>
                     <p className="Bienvenida">Bienvenido a</p>
-                    <p className="NombreApp">Tu musAh</p>
+                    <p className="NombreApp1">TumusAh</p>
 
                     <div className="usuarios">
                         <div className="SoyCliente">

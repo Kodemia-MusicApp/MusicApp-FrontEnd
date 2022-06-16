@@ -37,13 +37,14 @@ export const CreateAccountMusician = () => {
             <Navbar />
             <div className="CreateAccountMusician">
                 <div className="CreateAccountMusician-Container">
-                    <p className="Login-Title">CREAR CUENTA COMO MÚSICO</p>
-
-                    <p className="Bienvenida1">Bienvenido a</p>
-                    <p className="Bienvenida2">tu músico ahora</p>
+                  
                     <div className="CreateAccountMusicianFormulario">
+                    
                         <form className="CreateAccountMusicianForm">
-                            <label>Nombre</label>
+                        <p className="Login-Title">CREAR CUENTA COMO MÚSICO</p>
+                        <p className="Bienvenida">Bienvenido a</p>
+                        <p className="NombreApp1">TumusAh</p>
+                            <label className='labelCreateMusician'>Nombre</label>
                             <input
                                 type="text"
                                 className="createMusician"
@@ -55,7 +56,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label>Apellido paterno</label>
+                            <label className='labelCreateMusician'>Apellido paterno</label>
                             <input
                                 type="text"
                                 className="createMusician"
@@ -67,7 +68,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label>Apellido materno</label>
+                            <label className='labelCreateMusician'>Apellido materno</label>
                             <input
                                 type="text"
                                 className="createMusician"
@@ -79,7 +80,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label>Nombre artistico</label>
+                            <label className='labelCreateMusician'>Nombre artistico</label>
                             <input
                                 type="text"
                                 className="createMusician"
@@ -91,7 +92,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label>Escribe tu e-mail</label>
+                            <label className='labelCreateMusician'>Escribe tu e-mail</label>
                             <input
                                 type="text"
                                 className="createMusician"
@@ -103,7 +104,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label>Escribe una contraseña</label>
+                            <label className='labelCreateMusician'>Escribe una contraseña</label>
                             <input
                                 type="password"
                                 className="createMusician"

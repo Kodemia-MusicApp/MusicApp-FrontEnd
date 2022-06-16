@@ -28,7 +28,7 @@ export const Navbar = () => {
     return (
         <div className="d-flex justify-content-between py-1 align-items-center bg-navbar">
             <img src="" alt="" />
-            <p className="NombreApp">Tu musAh</p>
+            <p className="NombreApp">TumusAh</p>
             <Link to="/" className="text-decoration-none text-light">
                 Inicio
             </Link>
