@@ -21,7 +21,7 @@ export const ReservationAccepted = () => {
                 },
             })
             .then((res) => {
-                console.log(res.data.payload)
+                //console.log(res.data.payload)
                 setEvents(res.data.payload)
             })
     }, [])
@@ -61,7 +61,7 @@ export const ReservationAccepted = () => {
 
                                         <div></div>
                                     </section>
-                                ) : (
+                                ) : event.aceptado === true ? (
                                     <section>
                                         <article className="card">
                                             <h5 className='card-title"'>
@@ -100,6 +100,8 @@ export const ReservationAccepted = () => {
                                             REALIZAR PAGO DEL SERVICIO
                                         </button>
                                     </section>
+                                ) : (
+                                    <></>
                                 )}
                             </main>
                         ))}
