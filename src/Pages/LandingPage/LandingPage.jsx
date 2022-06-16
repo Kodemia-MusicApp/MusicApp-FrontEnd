@@ -14,6 +14,7 @@ export const LandingPage = () => {
     const navigate = useNavigate()
     const [showClient, setShowClient] = React.useState(false)
     const [showMusician, setShowMusician] = React.useState(false)
+    console.log(process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE)
 
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')

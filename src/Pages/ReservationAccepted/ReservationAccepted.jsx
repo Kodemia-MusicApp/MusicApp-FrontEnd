@@ -21,7 +21,7 @@ export const ReservationAccepted = () => {
                 },
             })
             .then((res) => {
-                //console.log(res.data.payload)
+                console.log(res.data.payload)
                 setEvents(res.data.payload)
             })
     }, [])
