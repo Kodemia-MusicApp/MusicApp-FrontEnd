@@ -50,7 +50,7 @@ export const LandingPage = () => {
     }, [])
 
     return (
-        <div className="landingContainer">
+        <div className="landingContainer text-white">
             <Navbar />
             <Alert show={showClient} variant="success">
                 <Alert.Heading>Evento aceptado!</Alert.Heading>
