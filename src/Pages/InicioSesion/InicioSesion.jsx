@@ -9,9 +9,9 @@ export const InicioSesion = () => {
             <Navbar />
             <div className="InicioSesion">
                 <div className="InicioSesion-Container">
-                    <p className="InicioSesion-Title">INICIAR SESIÓN</p>
+                    <p className="CreateAccount-Title">INICIAR SESIÓN</p>
                     <p className="Bienvenida">Bienvenido a</p>
-                    <p className="NombreApp">tu musico ahora</p>
+                    <p className="NombreApp1">TumusAh</p>
                     <div className="BotonesInicio">
                         <Link to="/login/client">
                             <button className="BotonInicio">SOY CLIENTE</button>
@@ -25,3 +25,4 @@ export const InicioSesion = () => {
         </div>
     )
 }
+

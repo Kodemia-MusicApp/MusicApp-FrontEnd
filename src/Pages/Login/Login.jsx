@@ -4,7 +4,7 @@ import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 export const Login = () => {
     const [user, setUser] = React.useState({
         email: '',
@@ -39,10 +39,12 @@ export const Login = () => {
             <Navbar />
             <div className="Login">
                 <div className="Login-Container">
-                    <p className="Login-Title">INICIAR SESIÓN COMO CLIENTE</p>
+                    
 
                     <form className="Login-Form">
-                        <label>Correo electronico</label>
+                    
+                    <p className="NombreApp1">TumusAh</p>
+                        <label className='labelloginmail'>Correo electronico</label>
                         <input
                             type="text"
                             onChange={({ target }) => {
@@ -54,7 +56,7 @@ export const Login = () => {
                             className="input-mail"
                         />
 
-                        <p>Contraseña</p>
+                        <label  className='labelloginmail'>Contraseña</label>
                         <input
                             type="password"
                             onChange={({ target }) => {
@@ -67,9 +69,11 @@ export const Login = () => {
                         />
 
                         <p className="Login-footer">
-                            ¿No tiene contraseña? Crear cuenta
+                            ¿No tiene contraseña?  &nbsp; 
+                            
+                            <Link to ="/crearcuenta" className='linktocreateaccount'> Crear cuenta</Link>
                         </p>
-                        <button onClick={handleUser}>Entrar</button>
+                        <button onClick={handleUser} className="BotonGeneral">ENTRAR</button>
                     </form>
                 </div>
             </div>
