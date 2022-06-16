@@ -26,16 +26,16 @@ export const Navbar = () => {
             .catch((error) => {})
     }, [])
     return (
-        <div className="d-flex justify-content-between py-3 bg-navbar text-white">
+        <div className="d-flex justify-content-between py-3 bg-navbar text-light">
             <img src="" alt="" />
-            <p>Tu Musico Ahora</p>
-            <Link to="/" className="text-decoration-none">
+            <p className="NombreApp">Tu musAh</p>
+            <Link to="/" className="text-decoration-none text-light" >
                 Inicio
             </Link>
             {Context.user.name !== '' ? (
                 <></>
             ) : (
-                <Link to="/crearcuenta" className="text-decoration-none">
+                <Link to="/crearcuenta" className="text-decoration-none text-light" >
                     Crear cuenta
                 </Link>
             )}
@@ -43,7 +43,7 @@ export const Navbar = () => {
             {Context.user.name !== '' ? (
                 <></>
             ) : (
-                <Link to="/login" className="text-decoration-none">
+                <Link to="/login" className="text-decoration-none text-light">
                     Iniciar sesión
                 </Link>
             )}
