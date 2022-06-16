@@ -21,6 +21,8 @@ import { Reservation } from './Pages/Reservation/Reservation'
 import { SentReservation } from './Pages/SentReservation/SentReservation'
 import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
 import { Congrats } from './Pages/Congrats/Congrats'
+import { MusicianEvents } from './Pages/MusicianEvents/MusicianEvents'
+
 function App() {
     return (
         <div>
@@ -62,6 +64,7 @@ function App() {
                     element={<ReservationAccepted />}
                 />
                 <Route path="/congrats" element={<Congrats />} />
+                <Route path="musician/events" element={<MusicianEvents />} />
             </Routes>
         </div>
     )

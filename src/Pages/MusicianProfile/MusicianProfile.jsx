@@ -22,17 +22,6 @@ export const MusicianProfile = () => {
             })
             .then((res) => {
                 setMusician(res.data.payload[0])
-                //setLoading(false)
-            })
-
-        axios
-            .get(`${Context.api.apiUrl}event/musician`, {
-                headers: {
-                    token: token,
-                },
-            })
-            .then((res) => {
-                setEvents(res.data.payload)
                 setLoading(false)
             })
     }, [])
@@ -91,9 +80,6 @@ export const MusicianProfile = () => {
                                 <p className="dataTitles1">
                                     EVENTOS EN ESPERA DE ACEPTACIÓN
                                 </p>
-                                {events.map((event, key) => (
-                                    <CardNewEvents key={key} event={event} />
-                                ))}
                             </div>
                             <div className="furtherShows">
                                 <p className="dataTitles1">
