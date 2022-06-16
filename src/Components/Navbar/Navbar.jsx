@@ -53,15 +53,9 @@ export const Navbar = () => {
 
             {Context.user.name !== '' ? (
                 Context.user.typeClient == 'Musico' ? (
-                    <Link to="/profilemusician">
-                        {' '}
-                        <p>Mi Perfil</p>{' '}
-                    </Link>
+                    <Link to="/profilemusician">Mi Perfil</Link>
                 ) : (
-                    <Link to="/userprofile">
-                        {' '}
-                        <p>Mi Perfil</p>{' '}
-                    </Link>
+                    <Link to="/userprofile">Mi Perfil</Link>
                 )
             ) : (
                 <></>
@@ -69,14 +63,9 @@ export const Navbar = () => {
 
             {Context.user.name !== '' ? (
                 Context.user.typeClient == 'Musico' ? (
-                    <Link to="/musician/events">
-                        {' '}
-                        <p>Mis Eventos</p>{' '}
-                    </Link>
+                    <Link to="/musician/events">Mis Eventos</Link>
                 ) : (
-                    <Link to="/reservationaccepted">
-                        <p>Mis Eventos</p>{' '}
-                    </Link>
+                    <Link to="/reservationaccepted">Mis Eventos</Link>
                 )
             ) : (
                 <></>
