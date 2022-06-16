@@ -20,7 +20,7 @@ export const CreateAccount = () => {
                             <p className="TitleSoyCliente">SOY CLIENTE</p>
                             <hr className='hr'></hr>
                             <p className='general-text'>
-                                "Tu musAh" te ayuda a encontrar a tu
+                                "TumusAh" te ayuda a encontrar a tu
                                 músico en todo momento y cerca de ti.{' '}
                             </p>
                             <Link to="/crearcuenta/cliente">
@@ -33,7 +33,7 @@ export const CreateAccount = () => {
                             <p className="TitleSoyMusico">SOY MÚSICO</p>
                             <hr className='hr'></hr>
                             <p className="general-text">
-                                Registrate en "Tu musAh" como artista
+                                Registrate en "TumusAh" como artista
                                 musico y encuentra tu evento
                             </p>
                             <Link to="/crearcuenta/musican">

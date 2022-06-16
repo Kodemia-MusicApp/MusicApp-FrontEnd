@@ -1,12 +1,18 @@
+/////SASS
+@import '../../scss/variables.scss';
+
 //CONTAINERS
+
 .CreateAccountUserFormulario {
     display: flex;
     justify-content: center;
+    background-color: $happy-color;
 }
 
 .CreateAccountUserForm {
     margin-top: 35px;
     width: 350px;
+    background-color: red;
 }
 
 //BOTONES
