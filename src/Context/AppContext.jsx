@@ -11,8 +11,8 @@ const userID = {
 }
 //
 const apiUrl = {
-    apiUrl: 'http://localhost:8080/',
-    apiLocal: 'https://tumusicoahora.herokuapp.com/ ',
+    apiUrl: 'https://tumusicoahora.herokuapp.com/',
+    apiLocal: 'http://localhost:8080/',
 }
 
 export const AppProvider = ({ children }) => {
