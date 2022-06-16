@@ -1,3 +1,7 @@
+
+//////****CSSS
+@import '../../scss/variables.scss';
+
 .Login {
   //background-color: blue;
   display: flex;
@@ -5,14 +9,17 @@
 }
 
 .Login-Container {
-  //background-color: white;
+  background-color: blue;
   width: 360px;
   height: 812px;
   margin-top: 50px;
+border-radius: 30px;
+display: flex;
+justify-content: center;
 }
 
 .Login-Content {
-  //background-color: red;
+
   display: flex;
   justify-content: center;
 }
@@ -29,19 +36,43 @@
   border-radius: 10px;
   align-items: center;
   margin-bottom: 100px;
+  margin-left: 20px;
 }
 
 .input-password {
   width: 314px;
   height: 46px;
   border-radius: 10px;
+  margin-left: 20px;
 }
 
 .Login-Form {
-  margin-top: 50px;
-  margin-left: 18px;
+  border-radius: 30px;
+  background-color: $cards-color;
 }
 .Login-footer {
   margin-top: 70px;
   text-align: center;
+}
+///////TEXTS
+/// 
+.labelloginmail{
+  margin-left: 20px;
+  font-weight: 500;
+  color:white;
+  font-family: Oswald, sans-serif;
+margin-top: 30px;
+}
+
+.Login-footer{
+  
+  font-weight: 500;
+  color:white;
+  font-family: Oswald, sans-serif;
+margin-top: 10px;
+margin-bottom: 80px;
+}
+
+.linktocreateaccount{
+  color: aqua;
 }
