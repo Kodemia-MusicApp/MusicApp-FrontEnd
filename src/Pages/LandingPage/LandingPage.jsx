@@ -42,6 +42,7 @@ export const LandingPage = () => {
                 })
                 .then((res) => {
                     if (res.data.payload) {
+                        console.log(res.data)
                         setShowMusician(true)
                     }
                 })
@@ -57,7 +58,6 @@ export const LandingPage = () => {
                     El musico acepto tu evento puedes ir a pagar al siguiente
                     boton
                 </p>
-                <hr />
                 <div className="d-flex justify-content-end">
                     <button
                         className="btn btn-outline-primary"
@@ -74,7 +74,6 @@ export const LandingPage = () => {
                     Tienes nuevos eventos puedes aceptarlos dando click en el
                     siguiente boton.
                 </p>
-                <hr />
                 <div className="d-flex justify-content-end">
                     <button
                         className="btn btn-outline-primary"
