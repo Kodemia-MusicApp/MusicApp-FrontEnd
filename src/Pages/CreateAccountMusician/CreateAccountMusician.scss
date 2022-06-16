@@ -1,12 +1,22 @@
+/////SASS
+@import '../../scss/variables.scss';
+
+
 //CONTAINERS
+
+
 .CreateAccountMusicianFormulario {
     display: flex;
     justify-content: center;
+   
 }
 
 .CreateAccountMusicianForm {
     margin-top: 35px;
     width: 350px;
+    background-color: $cards-color;
+    border-radius: 30px;
+
 }
 
 //INPUTS///
@@ -16,6 +26,11 @@
     border-radius: 10px;
     align-items: center;
     margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.Tipoartista{
+    margin-left: 20px;
 }
 //TEXTOS
 .Bienvenida2 {
@@ -24,15 +39,20 @@
     text-align: center;
     margin: 0;
 }
-.Bienvenida1 {
-    font-size: 2.3rem;
-    font-style: normal;
-    text-align: center;
-    margin: 0;
+.labelCreateMusician {
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
 }
 
 .tipoArtista {
     display: block;
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+
 }
 //BOTON//
 .BotonGeneral {

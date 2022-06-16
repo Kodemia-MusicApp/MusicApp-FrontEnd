@@ -36,16 +36,18 @@ export const CreateAccountUser = () => {
     }
     //console.log(user)
     return (
-        <section>
+        <section  className="bodyCreateAccountUser">
             <Navbar />
             <div className="CreateAccountUser">
                 <div className="CreateAccountUser-Container">
-                    <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
-
-                    <p className="Bienvenida1">Bienvenido a</p>
-                    <p className="Bienvenida2">tu músico ahora</p>
+                    
+                    
                     <div className="CreateAccountUserFormulario">
+                  
                         <form className="CreateAccountUserForm">
+                        <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
+                        <p className="Bienvenida">Bienvenido a</p>
+                         <p className="NombreApp1">TumusAh</p>
                             <label className="labelCreateUse">Nombre</label>
                             <input
                                 type="text"
