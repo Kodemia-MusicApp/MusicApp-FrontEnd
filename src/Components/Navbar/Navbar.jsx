@@ -12,7 +12,7 @@ export const Navbar = () => {
         const token = localStorage.getItem('musicAppToken')
         axios
             .post(
-                `${Context.api.apiUrl}auth/login/verify`,
+                `${Context.api.apiUrl}/auth/login/verify`,
                 {},
                 {
                     headers: {

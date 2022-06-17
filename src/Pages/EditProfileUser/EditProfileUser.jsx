@@ -4,6 +4,7 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const EditProfileUser = () => {
     const Context = React.useContext(AppContext)
@@ -17,7 +18,7 @@ export const EditProfileUser = () => {
 
         axios
             .put(
-                `${Context.api.apiUrl}clients`,
+                `${Context.api.apiUrl}/clients`,
                 {
                     name: user.name,
                     secondlastname: user.lastname,
@@ -47,7 +48,7 @@ export const EditProfileUser = () => {
     }
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             <div className="EditProfileUser">
                 <div className="EditProfileUser-container">
                     <p className="Login-Title">EDITAR MI PERFIL</p>

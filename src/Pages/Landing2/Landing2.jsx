@@ -1,21 +1,21 @@
 import React from 'react'
-import './LandingPage.scss'
-import { Navbar } from '../../Components/Navbar/Navbar'
-import { CardLogo } from '../../Components/CardLogo/CardLogo'
-import { CardMusician } from '../../Components/CardMusician/CardMusician'
+import './Landing2.scss'
+import { CarouselComp } from '../../Components/Carousel/CarouselComp'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+import { MusicianCardXL } from '../../Components/MusicianCardXL/MusicianCardXL'
+import { FamousPhrase } from '../../Components/FamousPhrase/FamousPhrase'
+import { FooterPage } from '../../Components/FooterPage/FooterPage'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
-import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
-export const LandingPage = () => {
+export const Landing2 = () => {
     const Context = React.useContext(AppContext)
     const [musico, setMusico] = React.useState([])
     const navigate = useNavigate()
     const [showClient, setShowClient] = React.useState(false)
     const [showMusician, setShowMusician] = React.useState(false)
-    console.log(process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE)
 
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
@@ -44,16 +44,15 @@ export const LandingPage = () => {
                 })
                 .then((res) => {
                     if (res.data.payload) {
-                        console.log(res.data)
                         setShowMusician(true)
                     }
                 })
         }
     }, [])
-
     return (
-        <div className="text-white">
+        <div style={{ backgroundColor: '#01172f' }}>
             <NavbarOp2 />
+            <CarouselComp />
             <Alert show={showClient} variant="success">
                 <Alert.Heading>Evento aceptado!</Alert.Heading>
                 <p>
@@ -86,19 +85,22 @@ export const LandingPage = () => {
                     </button>
                 </div>
             </Alert>
-            <CardLogo />
-            <section className="d-flex flex-column align-items-center">
-                <article className="my-3">
-                    <h2>Musicos y cantantes</h2>
-                </article>
-                <section className="d-flex justify-content-center">
-                    <article className="">
-                        {musico.map((musico, key) => {
-                            return <CardMusician key={key} musico={musico} />
-                        })}
-                    </article>
-                </section>
-            </section>
+            <div className="FamousPhrase-Container">
+                <FamousPhrase />
+            </div>
+            <div className="MusicianCards-Container">
+                {musico.map((musico, key) => {
+                    return (
+                        <MusicianCardXL
+                            src={musico.imagenMusico}
+                            title={musico.nombreArtistico}
+                            text={musico.descripcion}
+                            id={musico.id}
+                        />
+                    )
+                })}
+            </div>
+            <FooterPage />
         </div>
     )
 }

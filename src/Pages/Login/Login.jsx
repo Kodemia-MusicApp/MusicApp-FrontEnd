@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+
 export const Login = () => {
     const [user, setUser] = React.useState({
         email: '',
@@ -16,7 +18,7 @@ export const Login = () => {
     const handleUser = (e) => {
         e.preventDefault()
         axios
-            .post(`${Context.api.apiUrl}auth/login/clients`, {
+            .post(`${Context.api.apiUrl}/auth/login/clients`, {
                 correo: user.email,
                 password: user.password,
             })
@@ -36,15 +38,14 @@ export const Login = () => {
     }
     return (
         <section>
-            <Navbar />
+            <NavbarOp2 />
             <div className="Login">
                 <div className="Login-Container">
-                    
-
                     <form className="Login-Form">
-                    
-                    <p className="NombreApp1">TumusAh</p>
-                        <label className='labelloginmail'>Correo electronico</label>
+                        <p className="NombreApp1">TumusAh</p>
+                        <label className="labelloginmail">
+                            Correo electronico
+                        </label>
                         <input
                             type="text"
                             onChange={({ target }) => {
@@ -56,7 +57,7 @@ export const Login = () => {
                             className="input-mail"
                         />
 
-                        <label  className='labelloginmail'>Contraseña</label>
+                        <label className="labelloginmail">Contraseña</label>
                         <input
                             type="password"
                             onChange={({ target }) => {
@@ -69,11 +70,18 @@ export const Login = () => {
                         />
 
                         <p className="Login-footer">
-                            ¿No tiene contraseña?  &nbsp; 
-                            
-                            <Link to ="/crearcuenta" className='linktocreateaccount'> Crear cuenta</Link>
+                            ¿No tiene contraseña? &nbsp;
+                            <Link
+                                to="/crearcuenta"
+                                className="linktocreateaccount"
+                            >
+                                {' '}
+                                Crear cuenta
+                            </Link>
                         </p>
-                        <button onClick={handleUser} className="BotonGeneral">ENTRAR</button>
+                        <button onClick={handleUser} className="BotonGeneral">
+                            ENTRAR
+                        </button>
                     </form>
                 </div>
             </div>
