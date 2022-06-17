@@ -82,7 +82,18 @@ export const ReservationAccepted = () => {
                                                 {event.ciudad}
                                             </div>
                                             <div>{event.descripcion}</div>
-                                            <div>{event.nombreArtistico}</div>
+                                            <div>
+                                                {
+                                                    event.musicoId[0]
+                                                        .nombreArtistico
+                                                }
+                                            </div>
+                                            <img
+                                                src={
+                                                    event.musicoId[0]
+                                                        .imagenMusico
+                                                }
+                                            />
                                         </article>
 
                                         <button
