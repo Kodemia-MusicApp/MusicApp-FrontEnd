@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReserveButton } from '../../Components/ReserveButton/ReserveButton';
+import { ButtonRose } from '../../Components/ButtonRose/ButtonRose';
 import './MusicianDescription.scss';
 
 export const MusicianDescription = () => {
@@ -12,7 +12,7 @@ export const MusicianDescription = () => {
                     <div className='info-group-container'>
                         <span>Musico: Snoop Dogg</span>
                         <span>Hip-Hop</span>
-                        <ReserveButton />
+                        <ButtonRose />
                     </div>
                 </div>
                 <div className='price-city-container'>

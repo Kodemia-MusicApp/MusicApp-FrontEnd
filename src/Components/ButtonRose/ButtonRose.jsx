@@ -1,7 +1,7 @@
 import React from 'react';
-import './ReserveButton.scss';
+import './ButtonRose.scss';
 
-export const ReserveButton = () => {
+export const ButtonRose = () => {
     return (
         <>
             <button className='btn-reserve'>RESERVAR</button>
