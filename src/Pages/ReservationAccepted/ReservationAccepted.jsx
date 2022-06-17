@@ -32,7 +32,6 @@ export const ReservationAccepted = () => {
                 },
             })
             .then((res) => {
-                console.log('lin35', res.data.payload)
                 setEventsProgress(res.data.payload)
             })
     }, [])
@@ -52,10 +51,50 @@ export const ReservationAccepted = () => {
                             </p>
                         </div>
                         {eventsAccepted.map((event, key) => (
-                            <main>
-                                {event.pagoAceptado === true &&
-                                event.aceptado === true &&
-                                event.eventoTerminado === false ? (
+                            <section>
+                                <article className="card">
+                                    <h5 className='card-title"'>
+                                        {event.descripcion}
+                                    </h5>
+                                    <div className="card-text">
+                                        {event.ciudad}
+                                    </div>
+                                    <div>{event.descripcion}</div>
+                                    <div>
+                                        {event.musicoId[0].nombreArtistico}
+                                    </div>
+                                    <img src={event.musicoId[0].imagenMusico} />
+                                </article>
+
+                                <button
+                                    className="BotonGeneral"
+                                    onClick={() => {
+                                        //   console.log(event)
+                                        axios
+                                            .post(
+                                                `${Context.api.apiUrl}payment/create-payments`,
+                                                {
+                                                    price: 500,
+                                                    custom_id: `${event._id}`,
+                                                }
+                                            )
+                                            .then((res) => {
+                                                console.log(
+                                                    res.data.data.links[1].href
+                                                )
+                                                //window.open(res.data.data.links[1].href )
+                                                window.location.href =
+                                                    res.data.data.links[1].href
+                                            })
+                                    }}
+                                >
+                                    REALIZAR PAGO DEL SERVICIO
+                                </button>
+                            </section>
+                        ))}
+                        <div>
+                            {eventsProgress.map((event) => {
+                                return (
                                     <section className="card">
                                         <div class="card-body">
                                             <h5 class="card-title">
@@ -72,61 +111,9 @@ export const ReservationAccepted = () => {
 
                                         <div></div>
                                     </section>
-                                ) : event.aceptado === true ? (
-                                    <section>
-                                        <article className="card">
-                                            <h5 className='card-title"'>
-                                                {event.descripcion}
-                                            </h5>
-                                            <div className="card-text">
-                                                {event.ciudad}
-                                            </div>
-                                            <div>{event.descripcion}</div>
-                                            <div>
-                                                {
-                                                    event.musicoId[0]
-                                                        .nombreArtistico
-                                                }
-                                            </div>
-                                            <img
-                                                src={
-                                                    event.musicoId[0]
-                                                        .imagenMusico
-                                                }
-                                            />
-                                        </article>
-
-                                        <button
-                                            className="BotonGeneral"
-                                            onClick={() => {
-                                                //   console.log(event)
-                                                axios
-                                                    .post(
-                                                        `${Context.api.apiUrl}payment/create-payments`,
-                                                        {
-                                                            price: 500,
-                                                            custom_id: `${event._id}`,
-                                                        }
-                                                    )
-                                                    .then((res) => {
-                                                        console.log(
-                                                            res.data.data
-                                                                .links[1].href
-                                                        )
-                                                        //window.open(res.data.data.links[1].href )
-                                                        window.location.href =
-                                                            res.data.data.links[1].href
-                                                    })
-                                            }}
-                                        >
-                                            REALIZAR PAGO DEL SERVICIO
-                                        </button>
-                                    </section>
-                                ) : (
-                                    <></>
-                                )}
-                            </main>
-                        ))}
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
