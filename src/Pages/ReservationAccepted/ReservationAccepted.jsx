@@ -9,20 +9,31 @@ import { ReservationCard } from '../../Components/ReservationCard/ReservationCar
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
 
 export const ReservationAccepted = () => {
-    const [eventsAccepted, setEvents] = React.useState([])
+    const [eventsAccepted, setEventsAccepted] = React.useState([])
+    const [eventsProgress, setEventsProgress] = React.useState([])
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
+
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiUrl}event/client`, {
+            .get(`${Context.api.apiUrl}event/client/accepted`, {
                 headers: {
                     token: token,
                 },
             })
             .then((res) => {
-                //console.log(res.data.payload)
-                setEvents(res.data.payload)
+                setEventsAccepted(res.data.payload)
+            })
+        axios
+            .get(`${Context.api.apiUrl}event/client/progress`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                console.log('lin35', res.data.payload)
+                setEventsProgress(res.data.payload)
             })
     }, [])
 
@@ -71,7 +82,18 @@ export const ReservationAccepted = () => {
                                                 {event.ciudad}
                                             </div>
                                             <div>{event.descripcion}</div>
-                                            <div>{event.nombreArtistico}</div>
+                                            <div>
+                                                {
+                                                    event.musicoId[0]
+                                                        .nombreArtistico
+                                                }
+                                            </div>
+                                            <img
+                                                src={
+                                                    event.musicoId[0]
+                                                        .imagenMusico
+                                                }
+                                            />
                                         </article>
 
                                         <button

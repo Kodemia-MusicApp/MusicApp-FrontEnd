@@ -14,6 +14,7 @@ export const LandingPage = () => {
     const navigate = useNavigate()
     const [showClient, setShowClient] = React.useState(false)
     const [showMusician, setShowMusician] = React.useState(false)
+    console.log(process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE)
 
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
@@ -50,7 +51,7 @@ export const LandingPage = () => {
     }, [])
 
     return (
-        <div className="landingContainer text-white">
+        <div className="text-white">
             <Navbar />
             <Alert show={showClient} variant="success">
                 <Alert.Heading>Evento aceptado!</Alert.Heading>
