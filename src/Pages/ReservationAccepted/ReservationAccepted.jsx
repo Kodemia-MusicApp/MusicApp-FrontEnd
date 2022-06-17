@@ -94,16 +94,28 @@ export const ReservationAccepted = () => {
                         ))}
                         <div>
                             {eventsProgress.map((event) => {
+                                console.log('lin97', event)
                                 return (
                                     <section className="card">
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                {event.nombreArtistico}
+                                                {
+                                                    event.musicoId[0]
+                                                        .nombreArtistico
+                                                }
                                             </h5>
+                                            <img
+                                                src={
+                                                    event.musicoId[0]
+                                                        .imagenMusico
+                                                }
+                                                alt=""
+                                            />
                                             <p class="card-text">
                                                 {event.descripcion}
                                             </p>
                                             <div>{event.ciudad}</div>
+                                            <div></div>
                                             <a href="#" class="btn btn-primary">
                                                 Evento cumplido
                                             </a>
