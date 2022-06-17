@@ -12,6 +12,7 @@ import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const Reservation = () => {
     const Context = React.useContext(AppContext)
@@ -47,7 +48,7 @@ export const Reservation = () => {
         } else {
             axios
                 .post(
-                    `${Context.api.apiUrl}event`,
+                    `${Context.api.apiUrl}/event`,
                     {
                         descripcion: event.descripcion,
                         fechaInicio: Date.parse(dayOne),
@@ -84,7 +85,7 @@ export const Reservation = () => {
     }
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             <section>
                 <Alert show={show} variant="success">
                     <Alert.Heading className="d-flex justify-content-center">

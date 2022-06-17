@@ -5,6 +5,7 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const MusicianDescription = () => {
     const { id } = useParams()
@@ -12,7 +13,7 @@ export const MusicianDescription = () => {
     const [musico, setMusico] = React.useState([])
     const [Loading, setLoading] = React.useState(true)
     React.useEffect(() => {
-        axios.get(`${Context.api.apiUrl}musician/id/${id}`).then((res) => {
+        axios.get(`${Context.api.apiUrl}/musician/id/${id}`).then((res) => {
             setMusico(res.data.payload)
             setLoading(false)
         })
@@ -20,7 +21,7 @@ export const MusicianDescription = () => {
 
     return (
         <section>
-            <Navbar />
+            <NavbarOp2 />
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>

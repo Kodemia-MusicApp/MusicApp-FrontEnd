@@ -5,6 +5,7 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const CreateAccountUser = () => {
     const [user, setUser] = React.useState(null)
@@ -15,7 +16,7 @@ export const CreateAccountUser = () => {
         e.preventDefault()
         // console.log('lin25', user)
         axios
-            .post(`${context.api.apiUrl}clients`, {
+            .post(`${context.api.apiUrl}/clients`, {
                 name: user.name,
                 lastname: user.lastname,
                 secondlastname: user.secondlastname,
@@ -36,18 +37,17 @@ export const CreateAccountUser = () => {
     }
     //console.log(user)
     return (
-        <section  className="bodyCreateAccountUser">
-            <Navbar />
+        <section className="bodyCreateAccountUser">
+            <NavbarOp2 />
             <div className="CreateAccountUser">
                 <div className="CreateAccountUser-Container">
-                    
-                    
                     <div className="CreateAccountUserFormulario">
-                  
                         <form className="CreateAccountUserForm">
-                        <p className="Login-Title">CREAR CUENTA COMO CLIENTE</p>
-                        <p className="Bienvenida">Bienvenido a</p>
-                         <p className="NombreApp1">TumusAh</p>
+                            <p className="Login-Title">
+                                CREAR CUENTA COMO CLIENTE
+                            </p>
+                            <p className="Bienvenida">Bienvenido a</p>
+                            <p className="NombreApp1">TumusAh</p>
                             <label className="labelCreateUse">Nombre</label>
                             <input
                                 type="text"

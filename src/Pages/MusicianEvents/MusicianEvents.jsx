@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
 import { MusicianPaidEvents } from '../../Components/MusicianPaidEvents/MusicianPaidEvents'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+
 export const MusicianEvents = () => {
     const Context = React.useContext(AppContext)
     const [events, setEvents] = React.useState([])
@@ -18,7 +20,7 @@ export const MusicianEvents = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiUrl}event/musician`, {
+            .get(`${Context.api.apiUrl}/event/musician`, {
                 headers: {
                     token: token,
                 },
@@ -32,7 +34,7 @@ export const MusicianEvents = () => {
     console.log(events)
     return (
         <>
-            <Navbar />
+            <NavbarOp2 />
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>

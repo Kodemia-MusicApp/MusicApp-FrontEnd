@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const ReservationAccepted = () => {
     const [eventsAccepted, setEventsAccepted] = React.useState([])
@@ -17,7 +18,7 @@ export const ReservationAccepted = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiUrl}event/client/accepted`, {
+            .get(`${Context.api.apiUrl}/event/client/accepted`, {
                 headers: {
                     token: token,
                 },
@@ -26,7 +27,7 @@ export const ReservationAccepted = () => {
                 setEventsAccepted(res.data.payload)
             })
         axios
-            .get(`${Context.api.apiUrl}event/client/progress`, {
+            .get(`${Context.api.apiUrl}/event/client/progress`, {
                 headers: {
                     token: token,
                 },
@@ -38,7 +39,7 @@ export const ReservationAccepted = () => {
 
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             <div className="ReservationAccepted">
                 <div className="ReservationAccepted-container">
                     <div className="ReservationAccepted-content">
@@ -72,7 +73,7 @@ export const ReservationAccepted = () => {
                                         //   console.log(event)
                                         axios
                                             .post(
-                                                `${Context.api.apiUrl}payment/create-payments`,
+                                                `${Context.api.apiUrl}/payment/create-payments`,
                                                 {
                                                     price: 500,
                                                     custom_id: `${event._id}`,

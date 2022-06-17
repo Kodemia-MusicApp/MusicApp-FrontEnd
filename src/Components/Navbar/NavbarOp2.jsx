@@ -43,13 +43,13 @@ export const NavbarOp2 = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link
-                            href="Musicos"
+                            href="/"
                             style={{ color: '#FD4948', fontWeight: '600' }}
                         >
                             Musicos
                         </Nav.Link>
                         <Nav.Link
-                            href="Contrataciones"
+                            href="/"
                             style={{ color: '#FD4948', fontWeight: '600' }}
                         >
                             Contrataciones
@@ -69,7 +69,10 @@ export const NavbarOp2 = () => {
                                 />
                             )
                         ) : (
-                            <ButtonTranspOrg label="Inicia Sesion" />
+                            <ButtonTranspOrg
+                                href="/login"
+                                label="Inicia Sesion"
+                            />
                         )}
                         {Context.user.name !== '' ? (
                             Context.user.typeClient == 'Musico' ? (
@@ -100,7 +103,10 @@ export const NavbarOp2 = () => {
                                 Cerrar sesion
                             </button>
                         ) : (
-                            <ButtonOrange label="Registrate" />
+                            <ButtonOrange
+                                href="/crearcuenta"
+                                label="Registrate"
+                            />
                         )}
                     </Nav>
                 </Navbar.Collapse>

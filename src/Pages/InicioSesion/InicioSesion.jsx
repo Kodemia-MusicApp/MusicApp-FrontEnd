@@ -2,11 +2,12 @@ import React from 'react'
 import './InicioSesion.scss'
 import { Link } from 'react-router-dom'
 import { Navbar } from '../../Components/Navbar/Navbar'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const InicioSesion = () => {
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             <div className="InicioSesion">
                 <div className="InicioSesion-Container">
                     <p className="CreateAccount-Title">INICIAR SESIÓN</p>
@@ -25,4 +26,3 @@ export const InicioSesion = () => {
         </div>
     )
 }
-

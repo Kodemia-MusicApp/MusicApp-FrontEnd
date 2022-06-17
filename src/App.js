@@ -27,8 +27,8 @@ function App() {
     return (
         <div>
             <Routes>
-                <Route path="/landingDos" element={<Landing2 />} />
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<Landing2 />} />
+
                 <Route path="/login/client" element={<Login />} />
                 <Route path="/login/musican" element={<LoginMusician />} />
                 <Route
