@@ -95,7 +95,7 @@ export const Reservation = () => {
                     </div>
                 </Alert>
             </section>
-            <div className="Reservation">
+            <div className="Reservation text-white">
                 <div className="Reservation-Container">
                     <p className="Login-Title">RESERVACIÓN</p>
                     <div className="Reservation-Content">
@@ -184,7 +184,7 @@ export const Reservation = () => {
                                 <p className="dataTitles2">
                                     Dia y hora de inicio
                                 </p>
-                                <div className="my-3">
+                                <div className="my-3 text-white">
                                     <LocalizationProvider
                                         dateAdapter={AdapterDateFns}
                                     >
