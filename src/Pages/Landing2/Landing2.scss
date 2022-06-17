@@ -1,0 +1,13 @@
+.FamousPhrase-Container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.MusicianCards-Container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}

@@ -1,17 +1,18 @@
 import React from 'react'
 import './EditProfileMusician.scss'
 import { Navbar } from '../../Components/Navbar/Navbar'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 export const EditProfileMusician = () => {
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             <div className="EditProfileUser">
                 <div className="EditProfileUser-container">
                     <p className="Login-Title">EDITAR MI PERFIL MÚSICO</p>
                     <div className="EditProfileUser-content">
                         <div className="EditProfileUserFormulario">
                             <form className="EditProfileUserForm">
-                            <p className="NombreApp1">TumusAh</p>
+                                <p className="NombreApp1">TumusAh</p>
                                 <label className="labelCreateUse">Nombre</label>
                                 <input type="text" className="editUser" />
 
@@ -35,8 +36,10 @@ export const EditProfileMusician = () => {
 
                                 <div className="disponibilidad">
                                     <div className="diasdisponibles">
-                                        <p className="labelhours">Dias disponibles para servicio</p>
-                                        <label className='labelDates'>De</label>
+                                        <p className="labelhours">
+                                            Dias disponibles para servicio
+                                        </p>
+                                        <label className="labelDates">De</label>
                                         <select
                                             className="Tipoartista"
                                             id="Tipoartista"
@@ -61,7 +64,10 @@ export const EditProfileMusician = () => {
                                                 Domingo
                                             </option>
                                         </select>
-                                        <label className='labelDates'> a </label>
+                                        <label className="labelDates">
+                                            {' '}
+                                            a{' '}
+                                        </label>
                                         <select
                                             className="Tipoartista"
                                             id="Tipoartista"
@@ -89,8 +95,10 @@ export const EditProfileMusician = () => {
                                     </div>
 
                                     <div className="diasdisponibles">
-                                        <p className="labelhours">Horas disponibles para servicio</p>
-                                        <label className='labelDates'>De</label>
+                                        <p className="labelhours">
+                                            Horas disponibles para servicio
+                                        </p>
+                                        <label className="labelDates">De</label>
                                         <select
                                             className="Tipoartista"
                                             id="Tipoartista"
@@ -120,7 +128,10 @@ export const EditProfileMusician = () => {
                                             <option value="11pm">11pm</option>
                                             <option value="12pm">12pm</option>
                                         </select>
-                                        <label className='labelDates'> a </label>
+                                        <label className="labelDates">
+                                            {' '}
+                                            a{' '}
+                                        </label>
                                         <select
                                             className="Tipoartista"
                                             id="Tipoartista"

@@ -6,6 +6,8 @@ import { CardScheduledEvents } from '../../Components/CardScheduledEvents/CardSc
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+
 export const MusicianProfile = () => {
     const Context = React.useContext(AppContext)
     const [musician, setMusician] = React.useState([])
@@ -15,7 +17,7 @@ export const MusicianProfile = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiUrl}musician`, {
+            .get(`${Context.api.apiUrl}/musician`, {
                 headers: {
                     token: token,
                 },
@@ -27,7 +29,7 @@ export const MusicianProfile = () => {
     }, [])
     return (
         <div>
-            <Navbar />
+            <NavbarOp2 />
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -48,20 +50,23 @@ export const MusicianProfile = () => {
                         <div className="camposMusico">
                             <div className="musicianData">
                                 <div>
-                                <p className="dataTitles">DATOS GRUPO</p>
-                                <p className="datatext">
-                                    Nombre: {musician.nombreArtistico}
-                                </p>
-                                <p className="datatext">
-                                    Género: {musician.genero}
-                                </p>
-                                <p className="datatext">
-                                    Zona de covertura: {musician.state}
-                                </p>
+                                    <p className="dataTitles">DATOS GRUPO</p>
+                                    <p className="datatext">
+                                        Nombre: {musician.nombreArtistico}
+                                    </p>
+                                    <p className="datatext">
+                                        Género: {musician.genero}
+                                    </p>
+                                    <p className="datatext">
+                                        Zona de covertura: {musician.state}
+                                    </p>
                                 </div>
-                                <div className='linkeditprofile'>
-                                    <Link to="/editprofilemusician" className='linktoeditmusician'>
-                                <p>
+                                <div className="linkeditprofile">
+                                    <Link
+                                        to="/editprofilemusician"
+                                        className="linktoeditmusician"
+                                    >
+                                        <p>
                                             EDITAR PERFIL{' '}
                                             <svg
                                                 width="18"
@@ -77,7 +82,8 @@ export const MusicianProfile = () => {
                                                     fill="black"
                                                 />
                                             </svg>
-                                        </p></Link>
+                                        </p>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="serviceDays">

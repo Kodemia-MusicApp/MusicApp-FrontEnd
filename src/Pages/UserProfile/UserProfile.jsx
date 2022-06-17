@@ -6,7 +6,7 @@ import { ReservationCard } from '../../Components/ReservationCard/ReservationCar
 import { AppContext } from '../../Context/AppContext'
 import '../../Icons/pen.svg'
 import axios from 'axios'
-
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 export const UserProfile = () => {
     const Context = React.useContext(AppContext)
     const [events, setEvents] = React.useState([])
@@ -14,7 +14,7 @@ export const UserProfile = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiLocal}event/client`, {
+            .get(`${Context.api.apiLocal}/event/client`, {
                 headers: {
                     token: token,
                 },
@@ -25,7 +25,7 @@ export const UserProfile = () => {
     }, [])
     return (
         <section>
-            <Navbar />
+            <NavbarOp2 />
             <div className="UserProfile">
                 <div className="UserProfile-Container">
                     <div className="UserProfile-Content">
