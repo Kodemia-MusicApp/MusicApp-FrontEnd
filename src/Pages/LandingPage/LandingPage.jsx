@@ -7,6 +7,7 @@ import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const LandingPage = () => {
     const Context = React.useContext(AppContext)
@@ -18,12 +19,12 @@ export const LandingPage = () => {
 
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
-        axios.get(`${Context.api.apiUrl}musician/all`).then((res) => {
+        axios.get(`${Context.api.apiUrl}/musician/all`).then((res) => {
             setMusico(res.data.payload)
         })
         if (Context.user.typeClient == 'Client') {
             axios
-                .get(`${Context.api.apiUrl}event/client/eventAccept`, {
+                .get(`${Context.api.apiUrl}/event/client/eventAccept`, {
                     headers: {
                         token: token,
                     },
@@ -36,7 +37,7 @@ export const LandingPage = () => {
         }
         if (Context.user.typeClient == 'Musico') {
             axios
-                .get(`${Context.api.apiUrl}event/musician/newEvent`, {
+                .get(`${Context.api.apiUrl}/event/musician/newEvent`, {
                     headers: {
                         token: token,
                     },
@@ -52,7 +53,7 @@ export const LandingPage = () => {
 
     return (
         <div className="text-white">
-            <Navbar />
+            <NavbarOp2 />
             <Alert show={showClient} variant="success">
                 <Alert.Heading>Evento aceptado!</Alert.Heading>
                 <p>
