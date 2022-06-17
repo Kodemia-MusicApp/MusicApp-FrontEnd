@@ -24,20 +24,12 @@ export const MusicianEvents = () => {
                 },
             })
             .then((res) => {
-                res.data.payload.map((event) => {
-                    if (event.status == 'Create') {
-                        seteventsAccepted((eventsAccepted) => [
-                            ...eventsAccepted,
-                            event,
-                        ])
-                    } else {
-                        setEvents([...events, event])
-                    }
-                })
+                setEvents(res.data.payload)
             })
+
         setLoading(false)
     }, [])
-
+    console.log(events)
     return (
         <>
             <Navbar />
@@ -55,10 +47,10 @@ export const MusicianEvents = () => {
                     </Alert>
                     <section className="text-white">
                         <div className="d-flex flex-wrap">
-                            {eventsAccepted.map((event) => (
+                            {events.map((event) => (
                                 <div class="col-4">
                                     <h2>{event.titulo}</h2>
-                                    <h4>{event.nameClient}</h4>
+                                    <h4>{event.clienteId[0].name}</h4>
                                     <p>{event.descripcion}</p>
 
                                     <section>
