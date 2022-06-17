@@ -16,8 +16,8 @@ export const CarouselComp = (props) => {
                 style={{ width: '100%', height: '500px' }}
                 />
                 <Carousel.Caption>
-                <h2>Slash The Best Guitarrist Ever</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis iure, repudiandae voluptatum amet eligendi perferendis?</p>
+                <h2 style={{color: '#FD4948'}}>Slash The Best Guitarrist Ever</h2>
+                <p  style={{color: '#FD4948'}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis iure, repudiandae voluptatum amet eligendi perferendis?</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -28,8 +28,8 @@ export const CarouselComp = (props) => {
                 style={{ width: '100%', height: '500px' }}
                 />
                 <Carousel.Caption>
-                <h2>SLIPKNOT THE MUSICIANS MONSTERS</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h2 style={{textShadow: '0 0 0.2em red'}}>SLIPKNOT THE MUSICIANS MONSTERS</h2>
+                <p style={{textShadow: '0 0 0.2em red'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

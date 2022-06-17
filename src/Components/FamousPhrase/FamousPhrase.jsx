@@ -1,10 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import './FamousPhrase.scss';
 
 export const FamousPhrase = () => {
     return (
-        <Card className='famous-phrase-card-container'>
+        <Card style={{backgroundColor: '#01172f', border: '3px double #FD4948'}}>
             <Card.Body>
                 <blockquote className="blockquote mb-0">
                     <p style={{color: '#FD4948', fontWeight: 'bold'}}>
