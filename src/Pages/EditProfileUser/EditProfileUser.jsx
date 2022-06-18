@@ -5,6 +5,7 @@ import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+import UploadImg from '../../Components/UploadImg/UploadImg'
 
 export const EditProfileUser = () => {
     const Context = React.useContext(AppContext)
@@ -12,7 +13,13 @@ export const EditProfileUser = () => {
     const token = localStorage.getItem('musicAppToken')
     const [user, setUser] = React.useState(null)
     const [Loading, setLoading] = React.useState(true)
-    console.log(process.env.REACT_APP_NEXT_PUBLIC_TRANSLOADIT_TEMPLATE_ID)
+    const [uppy, setUppy] = React.useState()
+
+    const onCompleteUploadFiles = (assembly) => {
+        // aqui pueden tomar la url de la imagen para ponerla en un estado y mandarla al API
+        const image = assembly.results?.compress_image[0].ssl_url
+        console.log(image)
+    }
 
     React.useEffect(() => {
         axios
@@ -65,8 +72,8 @@ export const EditProfileUser = () => {
         <div>
             <NavbarOp2 />
             {Loading ? (
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
                 <div className="EditProfileUser">
@@ -75,6 +82,7 @@ export const EditProfileUser = () => {
                         <div className="EditProfileUser-content">
                             <div className="EditProfileUserFormulario">
                                 <form className="EditProfileUserForm">
+                                    <UploadImg />
                                     <label className="labelCreateUse">
                                         Nombre
                                     </label>
