@@ -1,11 +1,15 @@
+
+//////****CSSS
+@import '../../scss/variables.scss';
+
 .btn-reserve {
-    background-color: #e8b5be;
+    background-color: #fd4948;
     border-radius: 18px;
     border: none;
-    width: 150px;
+    width: 10rem;
     height: 45px;
     :hover {
         font-weight: bold;
-        background-color: #e8b5b9;
+        background-color: white;
     }
 }
