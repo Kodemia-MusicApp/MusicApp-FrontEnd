@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
 import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+import { Divider } from '@mui/material'
 
 export const ReservationAccepted = () => {
     const [eventsAccepted, setEventsAccepted] = React.useState([])
@@ -44,26 +45,31 @@ export const ReservationAccepted = () => {
                 <div className="ReservationAccepted-container">
                     <div className="ReservationAccepted-content">
                         <p className="InicioSesion-Title">
-                            STATUS DE ACEPTACIÓN
+                            AGENDA DE EVENTOS
+                            <p className="NombreApp1">TumusAh</p>
                         </p>
-                        <div className="acceptationmessage">
-                            <p>
-                                El músico a aceptado el servicio de contratación
-                            </p>
-                        </div>
+                       
                         {eventsAccepted.map((event, key) => (
-                            <section>
+                            <section className='tarjeta'>
                                 <article className="card">
-                                    <h5 className='card-title"'>
-                                        {event.descripcion}
-                                    </h5>
+                                    <div >
+                                        <p className='textcard2'>GRUPO/ARTISTA: {event.musicoId[0].nombreArtistico}</p>
+                                    </div>
+                                    <div className='card-title"'>
+                                    <p className='textcard'><strong>DATOS EVENTO: </strong></p>   
+                                       <p className='textcard'> <strong>Tipo de evento:</strong>&nbsp; {event.descripcion}</p>    
+                                        
+                                    </div>
                                     <div className="card-text">
-                                        {event.ciudad}
+
+                                       <p className='textcard'><strong>Calle:</strong>&nbsp;&nbsp; {event.calle}</p>
+                                       <p className='textcard'><strong>Colonia:</strong>&nbsp; {event.colonia}</p>
+                                       <p className='textcard'><strong>Ciudad: </strong>&nbsp;{event.ciudad}</p>
+                                       <p className='textcard'><strong>Dia:</strong>&nbsp; {event.fechaInicio}</p>
+                                       <p className='textcard'><strong>Hora: </strong>&nbsp; De {event.horaInicio} a {event.horaFinalizacion}</p>
                                     </div>
-                                    <div>{event.descripcion}</div>
-                                    <div>
-                                        {event.musicoId[0].nombreArtistico}
-                                    </div>
+
+                                
                                     <img src={event.musicoId[0].imagenMusico} />
                                 </article>
 
@@ -97,14 +103,15 @@ export const ReservationAccepted = () => {
                             {eventsProgress.map((event) => {
                                 console.log('lin97', event)
                                 return (
+                                    <div className='tarjeta2'>
                                     <section className="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">
-                                                {
+                                            <div class="card-title">
+                                                <p className='textcard2'>{
                                                     event.musicoId[0]
                                                         .nombreArtistico
-                                                }
-                                            </h5>
+                                                }</p>
+                                            </div>
                                             <img
                                                 src={
                                                     event.musicoId[0]
@@ -112,11 +119,18 @@ export const ReservationAccepted = () => {
                                                 }
                                                 alt=""
                                             />
-                                            <p class="card-text">
-                                                {event.descripcion}
+                                            <p className='textcard'>
+                                              <strong> Tipo de evento:</strong>  {event.descripcion}
                                             </p>
-                                            <div>{event.ciudad}</div>
-                                            <div></div>
+                                            <div> <p className='textcard'> <strong>Ciudad: </strong>  {event.ciudad}</p>
+                                            <p className='textcard'><strong>Calle: </strong>&nbsp;&nbsp; {event.calle}</p>
+                                            <p className='textcard'><strong>Colonia:</strong>&nbsp; {event.colonia}</p>
+                                            <p className='textcard'><strong>Ciudad:</strong>&nbsp;{event.ciudad}</p>
+                                            <p className='textcard'><strong>Día: </strong>&nbsp; {event.fechaInicio}</p>
+                                            <p className='textcard'><strong>Hora: </strong>&nbsp; De {event.horaInicio} a {event.horaFinalizacion}</p>
+                                            
+                                            </div>
+                                            
                                             <a href="#" class="btn btn-primary">
                                                 Evento cumplido
                                             </a>
@@ -124,6 +138,7 @@ export const ReservationAccepted = () => {
 
                                         <div></div>
                                     </section>
+                                    </div>
                                 )
                             })}
                         </div>
