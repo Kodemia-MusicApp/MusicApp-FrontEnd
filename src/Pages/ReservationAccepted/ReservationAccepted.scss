@@ -1,3 +1,17 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+//CONTAINERS
+.card{
+    background-color: $cards-color;
+    border-radius: 15px;
+    padding: 5px;
+}
+.tarjeta{
+    margin-top: 10px;
+    background-color: $cards-color;
+    border-radius: 20px;
+}
 .ReservationAccepted {
     display: flex;
     justify-content: center;
@@ -6,7 +20,10 @@
     width: 360px;
     height: 100vh;
 }
+.ReservationAccepted-content{
+width: 360px;
 
+}
 .acceptationmessage {
     width: 100%;
     height: 189px;
@@ -18,5 +35,30 @@
     align-items: center;
     margin-top: 150px;
     margin-bottom: 150px;
-    background-color: turquoise;
+    background-color: blue;
+}
+.tarjeta2{
+    margin-top: 15px;
+}
+
+//////TEXTOS
+.textcard{
+    font-size: 17px;
+    font-weight: 400;
+    color:white;
+   font-family: Oswald, sans-serif;
+   margin: 0;
+}
+
+.textcard2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color:white;
+   font-family: Oswald, sans-serif;
+   margin: 0;
+}
+
+.InicioSesion-Title{
+    color:white;
 }
