@@ -20,7 +20,7 @@ export const Landing2 = () => {
             </div>
             <div className='MusicianCards-Container'>
                 <MusicianCardXL src={Eminem} title='Eminem' text='Contratame para tus XV años'/>
-                <MusicianCardXL src={Penta} title='Imagin Dragons' text='Disponibles todos los dias de 10 am a 11pm'/>
+                <MusicianCardXL src={Penta} title='Imagine Dragons' text='Disponibles todos los dias de 10 am a 11pm'/>
                 <MusicianCardXL src={Lindsey} title='Lindsey Stirling' text='Un poco de musica clasica combinada con el mejor Dubstep'/>
                 <MusicianCardXL src={TwoFeet} title='Two Feet' text='Musica alternativa para amenizar cualquier tipo de evento familiar o no'/>
             </div>
