@@ -11,10 +11,24 @@ export const EditProfileUser = () => {
     const navigate = useNavigate()
     const token = localStorage.getItem('musicAppToken')
     const [user, setUser] = React.useState(null)
+    const [Loading, setLoading] = React.useState(true)
+    console.log(process.env.REACT_APP_NEXT_PUBLIC_TRANSLOADIT_TEMPLATE_ID)
+
+    React.useEffect(() => {
+        axios
+            .get(`${Context.api.apiUrl}/clients`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                setUser(res.data.payload[0])
+                setLoading(false)
+            })
+    }, [])
+
     const handleSave = (e) => {
         e.preventDefault()
-
-        console.log('lin15', user)
 
         axios
             .put(
@@ -46,71 +60,101 @@ export const EditProfileUser = () => {
             name: e.value,
         })
     }
+
     return (
         <div>
             <NavbarOp2 />
-            <div className="EditProfileUser">
-                <div className="EditProfileUser-container">
-                    <p className="Login-Title">EDITAR MI PERFIL</p>
-                    <div className="EditProfileUser-content">
-                        <div className="EditProfileUserFormulario">
-                            <form className="EditProfileUserForm">
-                                <label className="labelCreateUse">Nombre</label>
-                                <input
-                                    type="text"
-                                    className="editUser"
-                                    onChange={({ target }) => {
-                                        setUser({ ...user, name: target.value })
-                                    }}
-                                />
+            {Loading ? (
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            ) : (
+                <div className="EditProfileUser">
+                    <div className="EditProfileUser-container">
+                        <p className="Login-Title">EDITAR MI PERFIL</p>
+                        <div className="EditProfileUser-content">
+                            <div className="EditProfileUserFormulario">
+                                <form className="EditProfileUserForm">
+                                    <label className="labelCreateUse">
+                                        Nombre
+                                    </label>
+                                    <input
+                                        value={user.name}
+                                        type="text"
+                                        className="editUser"
+                                        onChange={({ target }) => {
+                                            setUser({
+                                                ...user,
+                                                name: target.value,
+                                            })
+                                        }}
+                                    />
 
-                                <label className="labelCreateUse">
-                                    Apellido paterno
-                                </label>
-                                <input
-                                    type="text"
-                                    className="editUser"
-                                    onChange={({ target }) => {
-                                        setUser({
-                                            ...user,
-                                            lastname: target.value,
-                                        })
-                                    }}
-                                />
+                                    <label className="labelCreateUse">
+                                        Apellido paterno
+                                    </label>
+                                    <input
+                                        value={user.lastname}
+                                        type="text"
+                                        className="editUser"
+                                        onChange={({ target }) => {
+                                            setUser({
+                                                ...user,
+                                                lastname: target.value,
+                                            })
+                                        }}
+                                    />
 
-                                <label className="labelCreateUse">
-                                    Apellido materno
-                                </label>
-                                <input
-                                    type="text"
-                                    className="editUser"
-                                    onChange={({ target }) => {
-                                        setUser({
-                                            ...user,
-                                            secondlastname: target.value,
-                                        })
-                                    }}
-                                />
+                                    <label className="labelCreateUse">
+                                        Apellido materno
+                                    </label>
+                                    <input
+                                        value={user.secondlastname}
+                                        type="text"
+                                        className="editUser"
+                                        onChange={({ target }) => {
+                                            setUser({
+                                                ...user,
+                                                secondlastname: target.value,
+                                            })
+                                        }}
+                                    />
 
-                                <label className="labelCreateUse">Ciudad</label>
-                                <input type="text" className="editUser" />
+                                    <label className="labelCreateUse">
+                                        Ciudad
+                                    </label>
+                                    <input
+                                        value={user.state}
+                                        type="text"
+                                        className="editUser"
+                                        onChange={({ target }) => {
+                                            setUser({
+                                                ...user,
+                                                state: target.value,
+                                            })
+                                        }}
+                                    />
 
-                                <label className="labelCreateUse">
-                                    Escribe una contraseña
-                                </label>
-                                <input type="password" className="editUser" />
+                                    <label className="labelCreateUse">
+                                        Escribe una contraseña
+                                    </label>
+                                    <input
+                                        type="password"
+                                        className="editUser"
+                                    />
 
-                                <button
-                                    className="BotonGeneral"
-                                    onClick={handleSave}
-                                >
-                                    GUARDAR CAMBIOS
-                                </button>
-                            </form>
+                                    <button
+                                        className="BotonGeneral"
+                                        onClick={handleSave}
+                                    >
+                                        GUARDAR CAMBIOS
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }

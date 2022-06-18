@@ -1,10 +1,10 @@
 //CONTAINERS
-.EditProfileUserFormulario{
+.EditProfileUserFormulario {
     display: flex;
     justify-content: center;
 }
 
-.EditProfileUserForm{
+.EditProfileUserForm {
     margin-top: 35px;
     width: 350px;
 }
@@ -28,4 +28,10 @@
 
 .labelCreateUse {
     margin-left: 20px;
+}
+
+input {
+    &:focus-visible {
+        outline: none;
+    }
 }

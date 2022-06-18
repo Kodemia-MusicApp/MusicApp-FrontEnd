@@ -62,7 +62,7 @@ export const MusicianEvents = () => {
                                             onClick={() => {
                                                 axios
                                                     .patch(
-                                                        `${Context.api.apiLocal}event/update/${event._id}`,
+                                                        `${Context.api.apiLocal}/event/update/${event._id}`,
                                                         { status: 'rechazado' },
                                                         {
                                                             headers: {
@@ -97,7 +97,7 @@ export const MusicianEvents = () => {
                                             onClick={() => {
                                                 axios
                                                     .patch(
-                                                        `${Context.api.apiUrl}event/update/${event._id}`,
+                                                        `${Context.api.apiUrl}/event/update/${event._id}`,
                                                         { status: 'aceptado' },
                                                         {
                                                             headers: {
