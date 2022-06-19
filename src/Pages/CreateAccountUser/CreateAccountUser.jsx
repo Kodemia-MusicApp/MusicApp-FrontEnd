@@ -41,7 +41,17 @@ export const CreateAccountUser = () => {
             <NavbarOp2 />
             <div className="CreateAccountUser">
                 <div className="CreateAccountUser-Container">
-                    <div className="CreateAccountUserFormulario">
+                
+                <div className="CreateAccountUserFormulario">
+                    <div className='left-container'>
+                    
+                    <div className="shot1"> <img src={require("../../Images/cantante4.jpg")} className='foto1'/></div>
+                    
+                    
+                    <div className="shot1"> <img src={require("../../Images/cantante6.jpg")} className='foto1'/></div>
+                    <div className="shot1"> <img src={require("../../Images/cantante7.jpg")} className='foto1' /></div>
+
+                 </div>
                         <form className="CreateAccountUserForm">
                             <p className="Login-Title">
                                 CREAR CUENTA COMO CLIENTE
@@ -111,7 +121,16 @@ export const CreateAccountUser = () => {
                                 CREAR CUENTA
                             </button>
                         </form>
+
+
+                        <div className='left-container'>
+                    <div className='quote1'><p>Regala un momento música</p>
                     </div>
+                    <div className='quote1'> y  te recordaran para siempre</div>
+                    <div className='quote2'>Tumusah</div>
+                </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>

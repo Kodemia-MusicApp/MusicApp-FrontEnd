@@ -40,7 +40,17 @@ export const Login = () => {
         <section>
             <NavbarOp2 />
             <div className="Login">
+            <div className='left-container'>
+                    
+                    <div className="shot1"> <img src="https://images.pexels.com/photos/9202239/pexels-photo-9202239.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='foto1' alt="cantante"/></div>
+                    
+                    
+                    <div className="shot1"> <img src="https://images.squarespace-cdn.com/content/v1/5ea8c686e90f6a69b5967072/82f37eee-4bc6-4fad-a9ae-cc75d49d21c0/Gonzales%2C+Suemy.jpg" className='foto1'/></div>
+                    <div className="shot1"> <img src="https://static.wixstatic.com/media/35b780_585c5277d75c48059aaabaa946ff2d13~mv2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/35b780_585c5277d75c48059aaabaa946ff2d13~mv2.jpg" className='foto1' /></div>
+
+                </div>
                 <div className="Login-Container">
+             
                     <form className="Login-Form">
                         <p className="NombreApp1">TumusAh</p>
                         <label className="labelloginmail">
@@ -83,6 +93,12 @@ export const Login = () => {
                             ENTRAR
                         </button>
                     </form>
+                </div>
+                <div className='left-container'>
+                    <div className='quote1'><p>Cuando las palabras huyan</p>
+                    </div>
+                    <div className='quote1'>expresate con musica</div>
+                    <div className='quote2'>Tumusah</div>
                 </div>
             </div>
         </section>

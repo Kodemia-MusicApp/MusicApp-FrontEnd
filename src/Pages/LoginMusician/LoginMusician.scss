@@ -6,7 +6,8 @@
 .LoginMusician {
     
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 .LoginMusician-Container {
@@ -35,12 +36,15 @@
     border-radius: 10px;
     align-items: center;
     margin-bottom: 100px;
+    font-size: 20px;
+    
 }
 
 .input-password {
     width: 314px;
     height: 46px;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .LoginMusician-Form {
@@ -60,4 +64,5 @@
     color:white;
     font-family: Oswald, sans-serif;
   margin-top: 30px;
+  font-size: 20px;
   }

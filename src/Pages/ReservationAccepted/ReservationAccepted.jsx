@@ -54,6 +54,7 @@ export const ReservationAccepted = () => {
                                 <article className="card">
                                     <div >
                                         <p className='textcard2'>GRUPO/ARTISTA: {event.musicoId[0].nombreArtistico}</p>
+                                        <hr className='hr'></hr>
                                     </div>
                                     <div className='card-title"'>
                                     <p className='textcard'><strong>DATOS EVENTO: </strong></p>   
@@ -65,7 +66,7 @@ export const ReservationAccepted = () => {
                                        <p className='textcard'><strong>Calle:</strong>&nbsp;&nbsp; {event.calle}</p>
                                        <p className='textcard'><strong>Colonia:</strong>&nbsp; {event.colonia}</p>
                                        <p className='textcard'><strong>Ciudad: </strong>&nbsp;{event.ciudad}</p>
-                                       <p className='textcard'><strong>Dia:</strong>&nbsp; {event.fechaInicio}</p>
+                                       <p className='textcard'><strong>Dia:</strong>&nbsp; {(event.fechaInicio).slice(0,10)}</p>
                                        <p className='textcard'><strong>Hora: </strong>&nbsp; De {event.horaInicio} a {event.horaFinalizacion}</p>
                                     </div>
 
@@ -131,9 +132,9 @@ export const ReservationAccepted = () => {
                                             
                                             </div>
                                             
-                                            <a href="#" class="btn btn-primary">
-                                                Evento cumplido
-                                            </a>
+                                            <button href="#" class="btn " className='BotonGeneral2'>
+                                                EVENTO CUMPLIDO
+                                            </button>
                                         </div>
 
                                         <div></div>
