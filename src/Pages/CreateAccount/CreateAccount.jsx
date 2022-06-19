@@ -7,9 +7,16 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 export const CreateAccount = () => {
     return (
-        <div className="bodyCreateAccount">
+        <div>
             <NavbarOp2 />
             <div className="CreateAccount">
+                 <div className='left-container'>
+                    <div className="shot1"> <img src={require('../../Images/cantante0.jpg')} className='foto1'/></div>             
+                    <div className="shot1"> <img src={require('../../Images/cantante2.jpg')}  className='foto1'/></div>
+                    <div className="shot1"> <img src={require('../../Images/cantante3.jpg')} className='foto1' /></div>
+
+                </div>
+
                 <div className="CreateAccount-Container">
                     <p className="CreateAccount-Title">CREAR CUENTA</p>
                     <p className="Bienvenida">Bienvenido a</p>
@@ -33,7 +40,7 @@ export const CreateAccount = () => {
                             <p className="TitleSoyMusico">SOY MÚSICO</p>
                             <hr className="hr"></hr>
                             <p className="general-text">
-                                Registrate en "TumusAh" como artista musico y
+                                Registrate en "TumusAh" como artista músico y
                                 encuentra tu evento
                             </p>
                             <Link to="/crearcuenta/musican">
@@ -43,6 +50,12 @@ export const CreateAccount = () => {
                             </Link>
                         </div>
                     </div>
+                </div>
+                <div className='left-container'>
+                    <div className='quote1'><p>Enbriaga al silencio</p>
+                    </div>
+                    <div className='quote1'>con el sonido de la música</div>
+                    <div className='quote2'>Tumusah</div>
                 </div>
             </div>
         </div>

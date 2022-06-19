@@ -44,7 +44,7 @@ export const MusicianDescription = () => {
                         </div>
                         <div className="price-city-container">
                             <span className='city'>${musico[0].cobroPorHora}/hora</span>
-                            <span  className='city'>Guadalajara</span>
+                            <span  className='city'>Area de covertura: Guadalajara</span>
                         </div>
                     </div>
                     <div className="complementary-info">

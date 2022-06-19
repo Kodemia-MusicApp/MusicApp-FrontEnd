@@ -35,6 +35,16 @@ export const LoginMusician = () => {
         <section>
             <NavbarOp2 />
             <div className="LoginMusician">
+            <div className='left-container'>
+                    
+                    <div className="shot1"> <img src={require('../../Images/cantante0.jpg')} className='foto1'/></div>
+                    
+                    
+                    <div className="shot1"> <img src={require('../../Images/cantante2.jpg')}  className='foto1'/></div>
+                    <div className="shot1"> <img src={require('../../Images/cantante3.jpg')} className='foto1' /></div>
+
+                </div>
+               
                 <div className="LoginMusician-Container">
                     <p className="Login-Title">INICIAR SESIÓN COMO MÚSICO</p>
 
@@ -73,6 +83,12 @@ export const LoginMusician = () => {
                             ENTRAR
                         </button>
                     </form>
+                </div>
+                <div className='left-container'>
+                    <div className='quote1'><p>Las palabras llegan a los oidos</p>
+                    </div>
+                    <div className='quote1'>pero la musica llega al corazón</div>
+                    <div className='quote2'>Tumusah</div>
                 </div>
             </div>
         </section>

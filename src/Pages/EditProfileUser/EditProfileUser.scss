@@ -1,12 +1,18 @@
+/////SASS
+@import '../../scss/variables.scss';
+
+
 //CONTAINERS
 .EditProfileUserFormulario{
     display: flex;
     justify-content: center;
+    
 }
 
 .EditProfileUserForm{
     margin-top: 35px;
-    width: 350px;
+    width: 350px; 
+    border: 2px double $generalbutton-color;
 }
 
 //BOTONES
@@ -22,8 +28,12 @@
     border-radius: 10px;
     margin-left: 20px;
     margin-bottom: 30px;
+    outline: none;
+    background-color: $inputs-color;
 }
-
+.editUser:focus{
+    background-color: white;
+}
 //TEXTOS
 
 .labelCreateUse {

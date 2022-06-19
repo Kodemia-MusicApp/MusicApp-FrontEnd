@@ -7,6 +7,8 @@
     border-radius: 30px;
     color: #fd4948;
     padding: 3px;
+    font-size: 20px;
+    font-family: Oswald, sans-serif;
 }
 .page-container {
     display: flex;
@@ -146,9 +148,11 @@
 
 ///TEXTS
 .datestext{
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 0px;
-    color:white ;}
+    color:white ;
+    font-size: 20px;
+    font-family: Oswald, sans-serif;}
 .band{
     color: white;
     font-weight: 400;
@@ -156,4 +160,6 @@
 }
 .datestext1{
     margin: 0px;
-    color:white ;}
+    color:white ;
+    font-size: 20px;
+    font-family: Oswald, sans-serif;}
