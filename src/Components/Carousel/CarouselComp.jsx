@@ -13,7 +13,7 @@ export const CarouselComp = (props) => {
                 className="d-block w-100"
                 src={Slash}
                 alt="slash"
-                style={{ width: '100%', height: '500px' }}
+                style={{ width: '100%', maxHeight: '500px', objectFit: 'fill' }}
                 />
                 <Carousel.Caption>
                 <h2 style={{color: '#FD4948'}}>Slash The Best Guitarrist Ever</h2>
@@ -25,7 +25,7 @@ export const CarouselComp = (props) => {
                 className="d-block w-100"
                 src={Slipknot}
                 alt="slipknot"
-                style={{ width: '100%', height: '500px' }}
+                style={{ width: '100%', height: '500px', objectFit: 'fill' }}
                 />
                 <Carousel.Caption>
                 <h2 style={{textShadow: '0 0 0.2em red'}}>SLIPKNOT THE MUSICIANS MONSTERS</h2>
@@ -37,7 +37,7 @@ export const CarouselComp = (props) => {
                 className="d-block w-100"
                 src={Snoop}
                 alt="Snoop"
-                style={{ width: '100%', height: '500px' }}
+                style={{ width: '100%', height: '500px', objectFit: 'fill' }}
                 />
                 <Carousel.Caption>
                 <h2>Third slide label</h2>
