@@ -23,7 +23,6 @@ import { Congrats } from './Pages/Congrats/Congrats'
 import { MusicianEvents } from './Pages/MusicianEvents/MusicianEvents'
 import { Landing2 } from './Pages/Landing2/Landing2'
 import { Login } from './Pages/Login/Login'
-import UploadImg from './Components/UploadImg/UploadImg'
 
 function App() {
     return (
@@ -67,7 +66,6 @@ function App() {
                     element={<ReservationAccepted />}
                 />
                 <Route path="/congrats" element={<Congrats />} />
-                <Route path="/upload" element={<UploadImg />} />
             </Routes>
         </div>
     )
