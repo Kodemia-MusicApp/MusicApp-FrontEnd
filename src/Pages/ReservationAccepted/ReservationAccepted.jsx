@@ -135,6 +135,8 @@ export const ReservationAccepted = () => {
                                             <button href="#" class="btn " className='BotonGeneral2'>
                                                 EVENTO CUMPLIDO
                                             </button>
+                                            <button href="#" class="btn " className='BotonGeneral2'>
+                                            </button>
                                         </div>
 
                                         <div></div>
