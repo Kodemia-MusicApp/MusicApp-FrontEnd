@@ -23,6 +23,7 @@ import { Congrats } from './Pages/Congrats/Congrats'
 import { MusicianEvents } from './Pages/MusicianEvents/MusicianEvents'
 import { Landing2 } from './Pages/Landing2/Landing2'
 import { Login } from './Pages/Login/Login'
+
 function App() {
     return (
         <div>
@@ -65,8 +66,7 @@ function App() {
                     element={<ReservationAccepted />}
                 />
                 <Route path="/congrats" element={<Congrats />} />
-                <Route path="musician/events" element={<MusicianEvents />} />
-                {}
+                <Route path="/musician/events" element={<MusicianEvents />} />
             </Routes>
         </div>
     )

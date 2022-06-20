@@ -14,7 +14,7 @@ export const UserProfile = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiLocal}/event/client`, {
+            .get(`${Context.api.apiUrl}/event/client`, {
                 headers: {
                     token: token,
                 },
@@ -31,19 +31,22 @@ export const UserProfile = () => {
                     <div className="UserProfile-Content">
                         <p className="Login-Title">MI PERFIL CLIENTE</p>
 
-                        <div className="datos">
+                        <div className="datos text-white">
                             <div className="MisDatos">
                                 <div className=" MisDatos-container">
-                                    <p className='misdatos'>MIS DATOS</p>
+                                    <p className="misdatos">MIS DATOS</p>
                                     <p className="name">
                                         Nombre: {Context.user.name}
                                     </p>
                                     <p className="city">Ciudad: CDMX</p>
-                                    <img src="../../Icons/pen.svg" alt="" />
+                                    <img
+                                        src={Context.user.imagenusuario}
+                                        alt=""
+                                    />
                                 </div>
                                 <div className="textEditProfile">
                                     <Link to="/editprofileuser">
-                                        <p className='editarperfil'>
+                                        <p className="editarperfil">
                                             EDITAR PERFIL{' '}
                                             <svg
                                                 width="18"
@@ -62,17 +65,6 @@ export const UserProfile = () => {
                                         </p>
                                     </Link>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="Rerservations">
-                            <Link to="/reservationaccepted" >
-                            <p className="reservationsTitle">
-                                IR A MIS EVENTOS
-                            </p></Link >
-                            <div className="reservationcards">
-                                {events.map((event) => {
-                                    return <ReservationCard event={event} />
-                                })}
                             </div>
                         </div>
                     </div>
