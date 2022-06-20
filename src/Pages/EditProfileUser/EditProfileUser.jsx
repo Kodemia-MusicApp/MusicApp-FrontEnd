@@ -1,11 +1,13 @@
 import React from 'react'
 import './EditProfileUser.scss'
-import { Navbar } from '../../Components/Navbar/Navbar'
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
-import UploadImg from '../../Components/UploadImg/UploadImg'
+import { useState, useEffect } from 'react'
+import Uppy from '@uppy/core'
+import Transloadit from '@uppy/transloadit'
+import Alert from 'react-bootstrap/Alert'
 
 export const EditProfileUser = () => {
     const Context = React.useContext(AppContext)
@@ -13,14 +15,30 @@ export const EditProfileUser = () => {
     const token = localStorage.getItem('musicAppToken')
     const [user, setUser] = React.useState(null)
     const [Loading, setLoading] = React.useState(true)
-    const [uppy, setUppy] = React.useState()
+    const [uppy, setUppy] = useState()
+    const [isUploadingFile, setIsUploadingFile] = useState(false)
+    const [imgeUpload, setImgeUpload] = useState()
+    const [show, setShow] = React.useState(false)
 
     const onCompleteUploadFiles = (assembly) => {
         // aqui pueden tomar la url de la imagen para ponerla en un estado y mandarla al API
         const image = assembly.results?.compress_image[0].ssl_url
-        console.log(image)
+        setImgeUpload({ image: image })
+        setIsUploadingFile(false)
     }
-
+    const onFileInputChange = (event) => {
+        setIsUploadingFile(true)
+        const file = Array.from(event.target.files)[0] || null
+        if (file) {
+            uppy.reset()
+            uppy.addFile({
+                name: file.name,
+                type: file.type,
+                data: file,
+            })
+            uppy.upload()
+        }
+    }
     React.useEffect(() => {
         axios
             .get(`${Context.api.apiUrl}/clients`, {
@@ -32,6 +50,25 @@ export const EditProfileUser = () => {
                 setUser(res.data.payload[0])
                 setLoading(false)
             })
+        const uppyInstance = new Uppy({
+            restrictions: {
+                maxNumberOfFiles: 1,
+            },
+        })
+            .use(Transloadit, {
+                params: {
+                    auth: {
+                        key: process.env
+                            .REACT_APP_NEXT_PUBLIC_TRANSLOADIT_AUTH_KEY,
+                    },
+                    template_id:
+                        process.env
+                            .REACT_APP_NEXT_PUBLIC_TRANSLOADIT_TEMPLATE_ID,
+                },
+                waitForEncoding: true,
+            })
+            .on('transloadit:complete', onCompleteUploadFiles)
+        setUppy(uppyInstance)
     }, [])
 
     const handleSave = (e) => {
@@ -44,6 +81,8 @@ export const EditProfileUser = () => {
                     name: user.name,
                     secondlastname: user.lastname,
                     lastname: user.secondlastname,
+                    state: user.state,
+                    imagenusuario: imgeUpload.image,
                 },
                 {
                     headers: {
@@ -53,11 +92,14 @@ export const EditProfileUser = () => {
             )
             .then((res) => {
                 if (res.data.success) {
-                    alert('Cambios Guardados')
-                    navigate('/userprofile')
+                    setShow(true)
+                    setTimeout(() => {
+                        navigate('/userprofile')
+                    }, 1500)
+                    //
                 } else {
                     alert('Error')
-                    navigate('/userprofile')
+                    //navigate('/userprofile')
                 }
             })
     }
@@ -67,10 +109,13 @@ export const EditProfileUser = () => {
             name: e.value,
         })
     }
-
+    // console.log('lin66', imgeUpload)
     return (
         <div>
             <NavbarOp2 />
+            <Alert show={show} variant="success">
+                <Alert.Heading>Datos actualizados!</Alert.Heading>
+            </Alert>
             {Loading ? (
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
@@ -82,7 +127,6 @@ export const EditProfileUser = () => {
                         <div className="EditProfileUser-content">
                             <div className="EditProfileUserFormulario">
                                 <form className="EditProfileUserForm">
-                                    <UploadImg />
                                     <label className="labelCreateUse">
                                         Nombre
                                     </label>
@@ -150,7 +194,32 @@ export const EditProfileUser = () => {
                                         type="password"
                                         className="editUser"
                                     />
-
+                                    <label className="labelCreateUse">
+                                        Cambia tu imagen de perfil
+                                    </label>
+                                    <div className="">
+                                        <input
+                                            className="text-white"
+                                            type="file"
+                                            name="file"
+                                            id="file"
+                                            onChange={onFileInputChange}
+                                        />
+                                        <div>
+                                            {isUploadingFile ? (
+                                                <div
+                                                    className="spinner-grow text-primary"
+                                                    role="status"
+                                                >
+                                                    <span className="visually-hidden">
+                                                        Loading...
+                                                    </span>
+                                                </div>
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </div>
+                                    </div>
                                     <button
                                         className="BotonGeneral"
                                         onClick={handleSave}

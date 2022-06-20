@@ -14,7 +14,7 @@ export const UserProfile = () => {
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiLocal}/event/client`, {
+            .get(`${Context.api.apiUrl}/event/client`, {
                 headers: {
                     token: token,
                 },
@@ -31,7 +31,7 @@ export const UserProfile = () => {
                     <div className="UserProfile-Content">
                         <p className="Login-Title">MI PERFIL CLIENTE</p>
 
-                        <div className="datos">
+                        <div className="datos text-white">
                             <div className="MisDatos">
                                 <div className=" MisDatos-container">
                                     <p>MIS DATOS</p>
@@ -39,7 +39,10 @@ export const UserProfile = () => {
                                         Nombre: {Context.user.name}
                                     </p>
                                     <p className="city">Ciudad: CDMX</p>
-                                    <img src="../../Icons/pen.svg" alt="" />
+                                    <img
+                                        src={Context.user.imagenusuario}
+                                        alt=""
+                                    />
                                 </div>
                                 <div className="textEditProfile">
                                     <Link to="/editprofileuser">
@@ -62,16 +65,6 @@ export const UserProfile = () => {
                                         </p>
                                     </Link>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="Rerservations">
-                            <p className="reservationsTitle">
-                                MIS RESERVACIONES
-                            </p>
-                            <div className="reservationcards">
-                                {events.map((event) => {
-                                    return <ReservationCard event={event} />
-                                })}
                             </div>
                         </div>
                     </div>
