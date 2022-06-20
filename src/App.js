@@ -66,6 +66,7 @@ function App() {
                     element={<ReservationAccepted />}
                 />
                 <Route path="/congrats" element={<Congrats />} />
+                <Route path="/musician/events" element={<MusicianEvents />} />
             </Routes>
         </div>
     )
