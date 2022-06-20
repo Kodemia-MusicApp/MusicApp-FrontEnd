@@ -5,7 +5,7 @@
 
 .CreateAccountUserFormulario {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: $happy-color;
 }
 
@@ -33,13 +33,20 @@
     border-radius: 10px;
     margin-left: 20px;
     margin-bottom: 30px;
+    font-size: 20px;
+    outline: none;
+    background-color: #AFABB4;
+    
 }
-
+.createUser:focus{
+   background-color: white;
+}
 //TEXTOS
 
 .labelCreateUse {
     margin-left: 20px;
     font-weight: 500;
+    font-size: 20px;
     color:white;
     font-family: Oswald, sans-serif;
 }

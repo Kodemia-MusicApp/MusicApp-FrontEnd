@@ -37,7 +37,13 @@ export const CreateAccountMusician = () => {
             <NavbarOp2 />
             <div className="CreateAccountMusician">
                 <div className="CreateAccountMusician-Container">
-                    <div className="CreateAccountMusicianFormulario">
+                <div className="CreateAccountMusicianFormulario">
+                    <div className='left-container'>
+                    <div className="shot1"> <img src={require('../../Images/cantante0.jpg')} className='foto1'/></div>             
+                    <div className="shot1"> <img src={require('../../Images/cantante2.jpg')}  className='foto1'/></div>
+                    <div className="shot1"> <img src={require('../../Images/cantante3.jpg')} className='foto1' /></div>
+
+                  </div>
                         <form className="CreateAccountMusicianForm">
                             <p className="Login-Title">
                                 CREAR CUENTA COMO MÚSICO
@@ -128,23 +134,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
 
-                            <label className="tipoArtista">
-                                Tipo de artista
-                            </label>
-                            <select className="Tipoartista" id="Tipoartista">
-                                <option
-                                    value="Cantante"
-                                    onChange={({ target }) => {
-                                        setUser({
-                                            ...user,
-                                            tipoMusico: target.value,
-                                        })
-                                    }}
-                                >
-                                    Cantante
-                                </option>
-                                <option value="">Instrumentista</option>
-                            </select>
+                            
                             <button
                                 className="BotonGeneral"
                                 onClick={handleAccount}
@@ -152,6 +142,12 @@ export const CreateAccountMusician = () => {
                                 CREAR CUENTA
                             </button>
                         </form>
+                        <div className='left-container'>
+                    <div className='quote1'><p>Soy músico </p>
+                    </div>
+                    <div className='quote1'>toco almas</div>
+                    <div className='quote2'>Tumusah</div>
+                </div>
                     </div>
                 </div>
             </div>
