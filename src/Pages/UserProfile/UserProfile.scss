@@ -8,59 +8,48 @@
     border: 2px double $generalbutton-color;
     padding: 10px;
     border-radius: 20px;
-    
 }
-<<<<<<< HEAD
+
 .MisDatos-container {
-<<<<<<< HEAD
     background-color: white;
-=======
-.MisDatos-container{
-    background-color:  $happy-color;
->>>>>>> origin/develop
-=======
->>>>>>> origin/develop_uppy
+}
+.MisDatos-container {
+    background-color: $happy-color;
 }
 .UserProfile {
     padding: 5px;
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-    background-color:  $happy-color;
+
+    background-color: $happy-color;
 }
 .UserProfile-Container {
     width: 360px;
     background-color: $happy-color;
 }
 .UserProfile-Content {
-    background-color:  $happy-color;
-=======
+    background-color: $happy-color;
 }
 .UserProfile-Container {
     width: 360px;
 }
 .UserProfile-Content {
->>>>>>> origin/develop_uppy
 }
 .MisDatos {
     width: 100%;
     display: flex;
     justify-content: space-around;
-<<<<<<< HEAD
-    background-color:  $happy-color;
+
+    background-color: $happy-color;
     color: white;
-=======
->>>>>>> origin/develop_uppy
 }
 
 .Rerservations {
     margin-top: 20px;
     margin-bottom: 0px;
-<<<<<<< HEAD
-    background-color: $happy-color;
-=======
 
->>>>>>> origin/develop_uppy
+    background-color: $happy-color;
+
     border-radius: 10px;
 }
 //CARDS
@@ -76,8 +65,8 @@
 }
 
 //TEXTS
-<<<<<<< HEAD
-.misdatos{
+
+.misdatos {
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 20px;
@@ -90,23 +79,21 @@
     font-family: Oswald, sans-serif;
     font-size: 18px;
 }
-.editarperfil{
+.editarperfil {
     font-size: 15px;
-=======
+}
 .textEditProfile {
->>>>>>> origin/develop_uppy
 }
 .name {
     margin: 0;
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 20px;
-
 }
 
 .reservationsTitle {
     margin-left: 10px;
-    color: white; 
+    color: white;
     font-family: Oswald, sans-serif;
     font-size: 20px;
 }
