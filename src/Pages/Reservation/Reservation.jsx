@@ -120,9 +120,9 @@ export const Reservation = () => {
                                     })
                                 }}
                             />
-                            <p className="dataTitles2">
-                                Descripcion del evento
-                            </p>
+                            <label className="labelreservation">
+                                Descripción del evento
+                            </label>
                             <input
                                 type="text"
                                 className="inputReservation"
@@ -134,7 +134,7 @@ export const Reservation = () => {
                                 }}
                             />
                             <p className="dataTitles">DIRECCIÓN DEL EVENTO</p>
-                            <label>Colonia</label>
+                            <label className="labelreservation">Colonia</label>
                             <input
                                 type="text"
                                 className="inputReservation"
@@ -146,7 +146,7 @@ export const Reservation = () => {
                                 }}
                             />
 
-                            <label>Calle</label>
+                            <label className="labelreservation">Calle</label>
                             <input
                                 type="text"
                                 className="inputReservation"
@@ -158,8 +158,9 @@ export const Reservation = () => {
                                 }}
                             />
 
-                            <label>Número</label>
-                            <input
+                            <label className="labelreservation">Número</label>
+                            <input 
+                            
                                 type="text"
                                 className="inputReservation"
                                 onChange={({ target }) => {
@@ -170,7 +171,7 @@ export const Reservation = () => {
                                 }}
                             />
 
-                            <label>Ciudad y/o Municipio</label>
+                            <label className="labelreservation">Ciudad y/o Municipio</label>
                             <input
                                 type="text"
                                 className="inputReservation"
@@ -181,16 +182,17 @@ export const Reservation = () => {
                                     })
                                 }}
                             />
-                            <section>
+                            <section className='calendar'>
                                 <p className="dataTitles2">
                                     Dia y hora de inicio
                                 </p>
                                 <div className="my-3 text-white">
-                                    <LocalizationProvider
+                                    <LocalizationProvider 
                                         dateAdapter={AdapterDateFns}
                                     >
                                         <Stack spacing={3}>
                                             <DateTimePicker
+                                            
                                                 label="Date&Time picker"
                                                 value={dayOne}
                                                 onChange={handleChangeDayOne}
@@ -204,12 +206,13 @@ export const Reservation = () => {
                                 <p className="dataTitles2">
                                     Dia y hora de finalizacion
                                 </p>
-                                <div className="my-3">
-                                    <LocalizationProvider
+                                <div className="my-3" >
+                                    <LocalizationProvider 
                                         dateAdapter={AdapterDateFns}
                                     >
                                         <Stack spacing={3}>
                                             <DateTimePicker
+                                            
                                                 label="Date&Time picker"
                                                 value={dayTwo}
                                                 onChange={handleChangeDayTwo}

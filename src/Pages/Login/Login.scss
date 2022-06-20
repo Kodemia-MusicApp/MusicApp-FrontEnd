@@ -5,25 +5,27 @@
 .Login {
   //background-color: blue;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .Login-Container {
-  background-color: blue;
-  width: 360px;
-  height: 812px;
-  margin-top: 50px;
+width: 360px;
+height: 812px;
+margin-top: 50px;
 border-radius: 30px;
 display: flex;
-justify-content: center;
+justify-content: space-around;
 }
 
 .Login-Content {
 
   display: flex;
   justify-content: center;
+  
 }
-
+.left-container{
+  background-color: $happy-color;
+}
 .Login-Title {
   font-size: 20px;
   font-weight: 400;
@@ -34,21 +36,33 @@ justify-content: center;
   width: 314px;
   height: 46px;
   border-radius: 10px;
+  outline: none;
   align-items: center;
   margin-bottom: 100px;
   margin-left: 20px;
+  background-color: #AFABB4;
+}
+.input-mail:focus{
+  background-color:  white;
 }
 
 .input-password {
+  outline: none;
   width: 314px;
   height: 46px;
   border-radius: 10px;
   margin-left: 20px;
+  background-color: #AFABB4;
 }
+.input-password:focus{
+  background-color: white;
+}
+
 
 .Login-Form {
   border-radius: 30px;
-  background-color: $cards-color;
+  border: 2px double $generalbutton-color;
+
 }
 .Login-footer {
   margin-top: 70px;
@@ -59,9 +73,10 @@ justify-content: center;
 .labelloginmail{
   margin-left: 20px;
   font-weight: 500;
+  font-size: 20px;
   color:white;
   font-family: Oswald, sans-serif;
-margin-top: 30px;
+ margin-top: 30px;
 }
 
 .Login-footer{
