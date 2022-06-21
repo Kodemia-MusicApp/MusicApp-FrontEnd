@@ -43,11 +43,12 @@ export const ReservationAccepted = () => {
             <NavbarOp2 />
             <div className="ReservationAccepted">
                 <div className="ReservationAccepted-container">
-                    <div className="ReservationAccepted-content">
-                        <p className="InicioSesion-Title">
+                <p className="InicioSesion-Title">
                             AGENDA DE EVENTOS
                             <p className="NombreApp1">TumusAh</p>
                         </p>
+                       
+                    <div className="ReservationAccepted-content">
                        
                         {eventsAccepted.map((event, key) => (
                             <section className='tarjeta'>

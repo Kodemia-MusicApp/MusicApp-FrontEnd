@@ -6,12 +6,16 @@
     background-color: #07305C;
     border-radius: 2rem;
     margin: 15px;
-    
+    max-width: 300px;
+    &:hover{
+        cursor: pointer;
+        border: 2px solid  red;
+    }
     .img-card-edit {
         width: 30rem;
         height: 15rem;
         border-radius: 2rem 2rem 0 0;
-        object-fit: fill;
+        object-fit: cover;
     }
 
     .card-boddy-text-edit {
@@ -19,5 +23,15 @@
         border-radius: 0 0 2rem 2rem;
         height: 10rem;
         width: 100%;
+        overflow: hidden;
+        padding: 10px 15px 10px 15px;
     }
+}
+.cardFooter{
+       
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;   
+        margin-top: 15px; 
 }
