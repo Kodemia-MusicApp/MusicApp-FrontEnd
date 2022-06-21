@@ -24,7 +24,7 @@ export const MusicianCardXL = (props) => {
                 </Card.Title>
                 <Card.Text style={{ color: 'white' }}>{props.text}</Card.Text>
             </Card.Body>
-            <Card.Footer className="d-flex justify-content-between align-items-center">
+            <Card.Footer className="cardFooter">
                 <div className="d-flex align-items-center">
                     <AvatarImg src={imgavatar} />
                     <h5 style={{ color: 'white' }}>Artista/Banda</h5>

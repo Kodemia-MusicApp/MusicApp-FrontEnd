@@ -13,18 +13,21 @@
     border-radius: 20px;
     border: 2px double $generalbutton-color;
     font-weight: 500;
+    width: 300px;
 }
 .ReservationAccepted {
     display: flex;
     justify-content: center;
 }
 .ReservationAccepted-container {
-    width: 360px;
     height: 100vh;
+    width: 100%;
+    background-color: blue;
 }
 .ReservationAccepted-content{
-width: 360px;
-
+background-color: red;
+display: flex;
+flex-wrap: wrap;
 }
 .acceptationmessage {
     width: 100%;
