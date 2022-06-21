@@ -5,6 +5,7 @@ import { Navbar } from '../../Components/Navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const MusicianDescription = () => {
     const { id } = useParams()
@@ -12,15 +13,15 @@ export const MusicianDescription = () => {
     const [musico, setMusico] = React.useState([])
     const [Loading, setLoading] = React.useState(true)
     React.useEffect(() => {
-        axios.get(`${Context.api.apiUrl}musician/id/${id}`).then((res) => {
+        axios.get(`${Context.api.apiUrl}/musician/id/${id}`).then((res) => {
             setMusico(res.data.payload)
             setLoading(false)
         })
     }, [])
 
     return (
-        <section>
-            <Navbar />
+        <section className="sectionMusicanDes">
+            <NavbarOp2 />
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -36,20 +37,34 @@ export const MusicianDescription = () => {
                                 alt="img-musician"
                             />
                             <div className="info-group-container">
-                                <span>{musico[0].nombreArtistico}</span>
-                                <span>{musico[0].genero}</span>
-                                <ReserveButton id={musico[0].id} />
+                                <span className="band">
+                                    {musico[0].nombreArtistico}
+                                </span>
+                                <span className="band">
+                                    Genero: {musico[0].genero}
+                                </span>
+                                {Context.user.typeClient != 'Musico' ? (
+                                    <ReserveButton id={musico[0].id} />
+                                ) : (
+                                    <></>
+                                )}
                             </div>
                         </div>
                         <div className="price-city-container">
-                            <span>${musico[0].cobroPorHora}/hora</span>
-                            <span>Guadalajara</span>
+                            <span className="city">
+                                ${musico[0].cobroPorHora}/hora
+                            </span>
+                            <span className="city">
+                                Area de covertura: Guadalajara
+                            </span>
                         </div>
                     </div>
                     <div className="complementary-info">
                         <div className="times">
-                            <h5>Días y Horas de Servicio</h5>
-                            <p>
+                            <p className="datestext">
+                                DÍAS Y HORAS DE SERVICÍO
+                            </p>
+                            <p className="datestext1">
                                 {musico[0].horarioDiaUno} de{' '}
                                 {musico[0].horarioInicio} a{' '}
                                 {musico[0].horarioFin}
@@ -57,14 +72,10 @@ export const MusicianDescription = () => {
                             </p>
                         </div>
                         <div className="about-group">
-                            <p className="fw-bold">ACERCA DE</p>
-                            <span>{musico[0].descripcion}</span>
-                        </div>
-                        <div className="videos">
-                            Aqui se mostraran los videos personales del grupo
-                        </div>
-                        <div className="link-videos">
-                            <a href="">Link YouTube</a>
+                            <p className="datestext">ACERCA DE</p>
+                            <span className="datestext">
+                                {musico[0].descripcion}
+                            </span>
                         </div>
                     </div>
                 </div>

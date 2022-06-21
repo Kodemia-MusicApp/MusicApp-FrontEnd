@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { Login } from './Pages/Login/Login'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { CreateAccount } from './Pages/CreateAccount/CreateAccount'
 import { InicioSesion } from './Pages/InicioSesion/InicioSesion'
@@ -22,12 +21,15 @@ import { SentReservation } from './Pages/SentReservation/SentReservation'
 import { ReservationAccepted } from './Pages/ReservationAccepted/ReservationAccepted'
 import { Congrats } from './Pages/Congrats/Congrats'
 import { MusicianEvents } from './Pages/MusicianEvents/MusicianEvents'
+import { Landing2 } from './Pages/Landing2/Landing2'
+import { Login } from './Pages/Login/Login'
 
 function App() {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<Landing2 />} />
+
                 <Route path="/login/client" element={<Login />} />
                 <Route path="/login/musican" element={<LoginMusician />} />
                 <Route
@@ -64,10 +66,9 @@ function App() {
                     element={<ReservationAccepted />}
                 />
                 <Route path="/congrats" element={<Congrats />} />
-                <Route path="musician/events" element={<MusicianEvents />} />
+                <Route path="/musician/events" element={<MusicianEvents />} />
             </Routes>
         </div>
     )
 }
-
 export default App

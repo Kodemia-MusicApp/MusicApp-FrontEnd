@@ -1,18 +1,36 @@
+/////SASS
+@import '../../scss/variables.scss';
+
 //CONTAINERS
+
 .CreateAccountUserFormulario {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: $happy-color;
 }
 
 .CreateAccountUserForm {
     margin-top: 35px;
     width: 350px;
+    border-radius: 30px;
+    background-color: $happy-color;
+    border: 2px solid $generalbutton-color;
 }
 
 //BOTONES
 .BotonGeneral {
     margin-left: 20px;
     margin-bottom: 20px;
+    background-color: $happy-color;
+    border: 2px double $generalbutton-color;
+    font-weight: 600;
+    color:$generalbutton-color;
+    font-family: Oswald, sans-serif;
+    
+}
+.BotonGeneral:hover{
+    background-color: $generalbutton-color;
+    color: black;
 }
 
 //INPUTS///
@@ -22,10 +40,23 @@
     border-radius: 10px;
     margin-left: 20px;
     margin-bottom: 30px;
+    font-size: 20px;
+    outline: none;
+    background-color: #AFABB4;
+    
 }
-
+.createUser:focus{
+   background-color: white;
+}
 //TEXTOS
 
 .labelCreateUse {
     margin-left: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    color:white;
+    font-family: Oswald, sans-serif;
+}
+.Login-Title{
+    color:white
 }

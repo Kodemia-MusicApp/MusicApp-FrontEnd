@@ -1,113 +1,96 @@
 import React from 'react'
 import './ReservationAccepted.scss'
-import { Navbar } from '../../Components/Navbar/Navbar'
-import { Link } from 'react-router-dom'
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
-import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
+import Alert from 'react-bootstrap/Alert'
+import { CardEventProgress } from '../../Components/CardEventProgress/CardEventProgress'
+import { CardEventPayment } from '../../Components/CardEventPayment/CardEventPayment'
 
 export const ReservationAccepted = () => {
-    const [eventsAccepted, setEvents] = React.useState([])
+    const [eventsAccepted, setEventsAccepted] = React.useState([])
+    const [eventsProgress, setEventsProgress] = React.useState([])
+    const [showAlertAccept, setShowAlertAccept] = React.useState(false)
+    const [showAlertRefused, setShowAlertRefused] = React.useState(false)
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
+    const token = localStorage.getItem('musicAppToken')
+    const [Loading, setLoading] = React.useState(true)
+
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
-            .get(`${Context.api.apiUrl}event/client`, {
+            .get(`${Context.api.apiUrl}/event/client/accepted`, {
                 headers: {
                     token: token,
                 },
             })
             .then((res) => {
-                //console.log(res.data.payload)
-                setEvents(res.data.payload)
+                setEventsAccepted(res.data.payload)
             })
+        axios
+            .get(`${Context.api.apiUrl}/event/client/progress`, {
+                headers: {
+                    token: token,
+                },
+            })
+            .then((res) => {
+                setEventsProgress(res.data.payload)
+            })
+        setLoading(false)
     }, [])
 
     return (
         <div>
-            <Navbar />
-            <div className="ReservationAccepted">
-                <div className="ReservationAccepted-container">
-                    <div className="ReservationAccepted-content">
+            <NavbarOp2 />
+            <Alert show={showAlertAccept} variant="success">
+                <Alert.Heading>Evento Cumplido!</Alert.Heading>
+            </Alert>
+            <Alert show={showAlertRefused} variant="danger">
+                <Alert.Heading>Evento No cumplido!</Alert.Heading>
+            </Alert>
+            {Loading ? (
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            ) : (
+                <div className="ReservationAccepted">
+                    <div className="ReservationAccepted-container">
                         <p className="InicioSesion-Title">
-                            STATUS DE ACEPTACIÓN
+                            AGENDA DE EVENTOS
+                            <p className="NombreApp1">TumusAh</p>
                         </p>
-                        <div className="acceptationmessage">
-                            <p>
-                                El músico a aceptado el servicio de contratación
-                            </p>
+
+                        <div className="ReservationAccepted-content">
+                            {eventsAccepted.map((event, key) => {
+                                return (
+                                    <CardEventPayment key={key} event={event} />
+                                )
+                            })}
+                            <div>
+                                {eventsProgress.map((event, key) => {
+                                    // console.log('lin97', event)
+                                    return (
+                                        <main>
+                                            <CardEventProgress
+                                                key={key}
+                                                event={event}
+                                                setShowAlertAccept={
+                                                    setShowAlertAccept
+                                                }
+                                                setShowAlertRefused={
+                                                    setShowAlertRefused
+                                                }
+                                            />
+                                        </main>
+                                    )
+                                })}
+                            </div>
                         </div>
-                        {eventsAccepted.map((event, key) => (
-                            <main>
-                                {event.pagoAceptado === true &&
-                                event.aceptado === true &&
-                                event.eventoTerminado === false ? (
-                                    <section className="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                {event.nombreArtistico}
-                                            </h5>
-                                            <p class="card-text">
-                                                {event.descripcion}
-                                            </p>
-                                            <div>{event.ciudad}</div>
-                                            <a href="#" class="btn btn-primary">
-                                                Evento cumplido
-                                            </a>
-                                        </div>
-
-                                        <div></div>
-                                    </section>
-                                ) : event.aceptado === true ? (
-                                    <section>
-                                        <article className="card">
-                                            <h5 className='card-title"'>
-                                                {event.descripcion}
-                                            </h5>
-                                            <div className="card-text">
-                                                {event.ciudad}
-                                            </div>
-                                            <div>{event.descripcion}</div>
-                                            <div>{event.nombreArtistico}</div>
-                                        </article>
-
-                                        <button
-                                            className="BotonGeneral"
-                                            onClick={() => {
-                                                //   console.log(event)
-                                                axios
-                                                    .post(
-                                                        `${Context.api.apiUrl}payment/create-payments`,
-                                                        {
-                                                            price: 500,
-                                                            custom_id: `${event._id}`,
-                                                        }
-                                                    )
-                                                    .then((res) => {
-                                                        console.log(
-                                                            res.data.data
-                                                                .links[1].href
-                                                        )
-                                                        //window.open(res.data.data.links[1].href )
-                                                        window.location.href =
-                                                            res.data.data.links[1].href
-                                                    })
-                                            }}
-                                        >
-                                            REALIZAR PAGO DEL SERVICIO
-                                        </button>
-                                    </section>
-                                ) : (
-                                    <></>
-                                )}
-                            </main>
-                        ))}
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }

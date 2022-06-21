@@ -5,50 +5,57 @@
 ////CONTAINERS
 /// 
 /// 
-.bodyCreateAccount{
-    background-color: $happy-color;
-}
+
 .CreateAccount{
+    width: 100%;
     background-color: $happy-color;
+    display: flex;
+    justify-content: space-around;
 }
 .CreateAccount-Container{
     width: 360px;
-    height: 100vh;
+    height: 814px;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    
-   background-color:  rgb(7,48,93);
+    margin-bottom: 30px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color; 
 }
 
 .SoyCliente {
-    margin-top: 84px;
+    margin-top: 74px;
     width: 307px;
-    height: 180px;
+    height: 230px;
     border-radius: 20px;
+    border: 2px double $generalbutton-color;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
-    background-color: $happy-color;
-   // background-color: rgb(6,2,50);
+   
+    
 }
 
 .SoyMusico {
-    margin-top: 84px;
+    margin-top: 74px;
     width: 307px;
-    height: 180px;
+    height: 230px;
     border-radius: 20px;
+    border: 2px double $generalbutton-color;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
     border: line;
-    background-color: $happy-color
+  
 }
 
 .hr {
-    border: 2px solid #fd4948 60%;
+    border: 2px double #fd4948;
+ 
+}
+
+.usuarios{
     
+    border-radius: 30px;
+    margin-top: 0px;
 }
 ///TEXTOS///
 .CreateAccount-Title {
@@ -59,32 +66,38 @@
     font-family: monospace
 }
 .TitleSoyCliente {
+   
     font-family: Oswald, sans-serif;
     font-weight: 600;
+    font-size: 20px;
     text-align: center;
     color: white;
 }
 .general-text{
     color: white;
+    font-size: 18px;
     font-family: Oswald, sans-serif;
 }
 
 .TitleSoyMusico {
+    margin: 0;
     text-align: center;
     font-family: Oswald, sans-serif;
     font-weight: 600;
+    font-size: 20px;
     color:white;
 }
 .Bienvenida{
     font-family: Oswald, sans-serif;
     font-weight: 600;
-    
     color: white;
     
 }
-.NombreApp{
+.NombreApp1{
+    text-align: center;
    font-family: 'Lobster', cursive;
     font-weight: 500;
+    font-size: 60px;
     color: white;}
 //BUTTON///
 .registrate {
@@ -93,8 +106,14 @@
     margin-left: 17px;
     border-radius: 20px;
     font-weight: 600;
-    color:black;
     font-family: Oswald, sans-serif;
-    background-color: #fd4948;
+    background-color: $happy-color;
+    color: $generalbutton-color;
+    border: 5px double $generalbutton-color;
     
+}
+
+.registrate:hover{
+    background-color: #fd4948;
+    color:black;
 }

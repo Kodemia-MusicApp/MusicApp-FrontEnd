@@ -1,0 +1,10 @@
+.text-orange-color {
+    text-decoration-color: #fd4948;
+}
+#Navbar {
+    padding: 15px 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(1, 23, 47, 0.5);
+}

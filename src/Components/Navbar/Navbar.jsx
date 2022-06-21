@@ -12,7 +12,7 @@ export const Navbar = () => {
         const token = localStorage.getItem('musicAppToken')
         axios
             .post(
-                `${Context.api.apiUrl}auth/login/verify`,
+                `${Context.api.apiUrl}/auth/login/verify`,
                 {},
                 {
                     headers: {
@@ -28,7 +28,7 @@ export const Navbar = () => {
     return (
         <div className="d-flex justify-content-between py-1 align-items-center bg-navbar">
             <img src="" alt="" />
-            <p className="NombreApp">Tu musAh</p>
+            <p className="NombreApp">TumusAh</p>
             <Link to="/" className="text-decoration-none text-light">
                 Inicio
             </Link>
@@ -53,15 +53,9 @@ export const Navbar = () => {
 
             {Context.user.name !== '' ? (
                 Context.user.typeClient == 'Musico' ? (
-                    <Link to="/profilemusician">
-                        {' '}
-                        <p>Mi Perfil</p>{' '}
-                    </Link>
+                    <Link to="/profilemusician">Mi Perfil</Link>
                 ) : (
-                    <Link to="/userprofile">
-                        {' '}
-                        <p>Mi Perfil</p>{' '}
-                    </Link>
+                    <Link to="/userprofile">Mi Perfil</Link>
                 )
             ) : (
                 <></>
@@ -69,14 +63,9 @@ export const Navbar = () => {
 
             {Context.user.name !== '' ? (
                 Context.user.typeClient == 'Musico' ? (
-                    <Link to="/musician/events">
-                        {' '}
-                        <p>Mis Eventos</p>{' '}
-                    </Link>
+                    <Link to="/musician/events">Mis Eventos</Link>
                 ) : (
-                    <Link to="/reservationaccepted">
-                        <p>Mis Eventos</p>{' '}
-                    </Link>
+                    <Link to="/reservationaccepted">Mis Eventos</Link>
                 )
             ) : (
                 <></>

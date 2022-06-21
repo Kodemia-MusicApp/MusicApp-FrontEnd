@@ -1,28 +1,58 @@
-////CONTAINERS
+//////****CSSS
+@import '../../scss/variables.scss';
+
+.calendar {
+}
+
+///CONTAINERS
 .Reservation {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .Reservation-Container {
-  width: 360px;
- 
-  padding: 10px;
+    width: 360px;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color;
 }
 .reservationData {
-  width: 100%;
+    width: 100%;
 }
 ////TEXTS
-.inputReservation{
-width: 314px;
-height: 46px;
-border-radius: 10px;
-margin-bottom: 30px;
+.inputReservation {
+    width: 314px;
+    height: 46px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    outline: none;
+    font-size: 20px;
+    background-color: $inputs-color;
 }
-.dataTitles2{
-margin-bottom: 0px;
-margin-top: 20px;
-font-weight: 500;
+.inputReservation:focus {
+    background-color: white;
 }
+
+.dataTitles2 {
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: Oswald, sans-serif;
+    color: white;
+}
+.dataTitles {
+    margin: 0;
+}
+
+.labelreservation {
+    margin-left: 5px;
+    font-weight: 500;
+    color: white;
+    font-family: Oswald, sans-serif;
+
+    font-size: 20px;
+}
+
 ///INPUTS
 
 ////

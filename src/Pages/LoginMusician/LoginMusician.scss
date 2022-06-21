@@ -1,18 +1,26 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+
+
 .LoginMusician {
-    //background-color: blue;
+    
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 .LoginMusician-Container {
-    //background-color: white;
+    background-color: $happy-color;
     width: 360px;
     height: 812px;
     margin-top: 50px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color;
 }
 
 .LoginMusician-Content {
-    //background-color: red;
+   
     display: flex;
     justify-content: center;
 }
@@ -29,19 +37,35 @@
     border-radius: 10px;
     align-items: center;
     margin-bottom: 100px;
+    font-size: 20px;
+    
 }
 
 .input-password {
     width: 314px;
     height: 46px;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .LoginMusician-Form {
-    margin-top: 50px;
-    margin-left: 18px;
+    background-color: $happy-color;
+   
+
 }
 .LoginMusician-footer {
-    margin-top: 70px;
+    margin-top: 10px;
     text-align: center;
 }
+
+
+////////7TEXTS
+/// 
+.labelloginmusician{
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+  margin-top: 30px;
+  font-size: 20px;
+  }
