@@ -45,11 +45,10 @@ export const CreateAccountUser = () => {
                 <div className="CreateAccountUserFormulario">
                     <div className='left-container'>
                     
-                    <div className="shot1"> <img src={require("../../Images/cantante4.jpg")} className='foto1'/></div>
-                    
-                    
-                    <div className="shot1"> <img src={require("../../Images/cantante6.jpg")} className='foto1'/></div>
-                    <div className="shot1"> <img src={require("../../Images/cantante7.jpg")} className='foto1' /></div>
+           
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/5137290/pexels-photo-5137290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1'/></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/5470113/pexels-photo-5470113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'  className='foto1'/></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/878999/pexels-photo-878999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1' /></div>
 
                  </div>
                         <form className="CreateAccountUserForm">

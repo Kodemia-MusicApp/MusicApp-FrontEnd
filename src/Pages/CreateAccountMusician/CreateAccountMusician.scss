@@ -8,14 +8,16 @@
 .CreateAccountMusicianFormulario {
     display: flex;
     justify-content: space-around;
+  
    
 }
 
 .CreateAccountMusicianForm {
     margin-top: 35px;
     width: 350px;
-    background-color: $cards-color;
+   
     border-radius: 30px;
+    border: 2px double $generalbutton-color; 
 
 }
 

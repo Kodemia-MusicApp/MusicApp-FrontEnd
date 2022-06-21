@@ -11,15 +11,16 @@
 }
 
 .LoginMusician-Container {
-    background-color: $cards-color;
+    background-color: $happy-color;
     width: 360px;
     height: 812px;
     margin-top: 50px;
     border-radius: 30px;
+    border: 2px double $generalbutton-color;
 }
 
 .LoginMusician-Content {
-    
+   
     display: flex;
     justify-content: center;
 }
@@ -48,7 +49,9 @@
 }
 
 .LoginMusician-Form {
-    background-color: $cards-color;
+    background-color: $happy-color;
+   
+
 }
 .LoginMusician-footer {
     margin-top: 10px;

@@ -13,17 +13,24 @@
     margin-top: 35px;
     width: 350px;
     border-radius: 30px;
-    background-color: $cards-color;
+    background-color: $happy-color;
+    border: 2px solid $generalbutton-color;
 }
 
 //BOTONES
 .BotonGeneral {
     margin-left: 20px;
     margin-bottom: 20px;
-    background-color: $generalbutton-color;
+    background-color: $happy-color;
+    border: 2px double $generalbutton-color;
     font-weight: 600;
-    color:black;
+    color:$generalbutton-color;
     font-family: Oswald, sans-serif;
+    
+}
+.BotonGeneral:hover{
+    background-color: $generalbutton-color;
+    color: black;
 }
 
 //INPUTS///

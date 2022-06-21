@@ -39,9 +39,9 @@ export const CreateAccountMusician = () => {
                 <div className="CreateAccountMusician-Container">
                 <div className="CreateAccountMusicianFormulario">
                     <div className='left-container'>
-                    <div className="shot1"> <img src={require('../../Images/cantante0.jpg')} className='foto1'/></div>             
-                    <div className="shot1"> <img src={require('../../Images/cantante2.jpg')}  className='foto1'/></div>
-                    <div className="shot1"> <img src={require('../../Images/cantante3.jpg')} className='foto1' /></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/5862809/pexels-photo-5862809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1'/></div>             
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/11794657/pexels-photo-11794657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'  className='foto1'/></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/11794660/pexels-photo-11794660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1' /></div>
 
                   </div>
                         <form className="CreateAccountMusicianForm">
@@ -105,7 +105,7 @@ export const CreateAccountMusician = () => {
                                     })
                                 }}
                             />
-
+                                  
                             <label className="labelCreateMusician">
                                 Escribe tu e-mail
                             </label>

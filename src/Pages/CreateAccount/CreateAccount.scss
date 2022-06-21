@@ -106,8 +106,14 @@
     margin-left: 17px;
     border-radius: 20px;
     font-weight: 600;
-    color:black;
     font-family: Oswald, sans-serif;
-    background-color: #fd4948;
+    background-color: $happy-color;
+    color: $generalbutton-color;
+    border: 5px double $generalbutton-color;
     
+}
+
+.registrate:hover{
+    background-color: #fd4948;
+    color:black;
 }
