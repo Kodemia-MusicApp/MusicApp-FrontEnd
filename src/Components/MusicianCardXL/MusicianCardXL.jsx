@@ -9,16 +9,18 @@ import { useNavigate } from 'react-router-dom'
 export const MusicianCardXL = (props) => {
     const navigate = useNavigate()
     return (
-        <Card className="imgcard-container">
+        <Card
+            className="imgcard-container"
+            onClick={() => {
+                navigate(`/musician/description/${props.id}`)
+            }}
+        >
             <Card.Img
                 className="img-card-edit"
                 src={props.src}
                 alt={props.alt}
-                onClick={() => {
-                    navigate(`/musician/description/${props.id}`)
-                }}
             />
-            <Card.Body className="card-boddy-text-edit" >
+            <Card.Body className="card-boddy-text-edit">
                 <Card.Title style={{ fontSize: '33px', color: 'white' }}>
                     {props.title}
                 </Card.Title>
