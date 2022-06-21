@@ -20,7 +20,7 @@ export const MusicianDescription = () => {
     }, [])
 
     return (
-        <section  className='sectionMusicanDes'>
+        <section className="sectionMusicanDes">
             <NavbarOp2 />
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
@@ -37,20 +37,34 @@ export const MusicianDescription = () => {
                                 alt="img-musician"
                             />
                             <div className="info-group-container">
-                                <span className='band'>{musico[0].nombreArtistico}</span>
-                                <span className='band'>Genero: {musico[0].genero}</span>
-                                <ReserveButton id={musico[0].id} />
+                                <span className="band">
+                                    {musico[0].nombreArtistico}
+                                </span>
+                                <span className="band">
+                                    Genero: {musico[0].genero}
+                                </span>
+                                {Context.user.typeClient != 'Musico' ? (
+                                    <ReserveButton id={musico[0].id} />
+                                ) : (
+                                    <></>
+                                )}
                             </div>
                         </div>
                         <div className="price-city-container">
-                            <span className='city'>${musico[0].cobroPorHora}/hora</span>
-                            <span  className='city'>Area de covertura: Guadalajara</span>
+                            <span className="city">
+                                ${musico[0].cobroPorHora}/hora
+                            </span>
+                            <span className="city">
+                                Area de covertura: Guadalajara
+                            </span>
                         </div>
                     </div>
                     <div className="complementary-info">
                         <div className="times">
-                            <p className='datestext'>DÍAS Y HORAS DE SERVICÍO</p>
-                            <p  className='datestext1'>
+                            <p className="datestext">
+                                DÍAS Y HORAS DE SERVICÍO
+                            </p>
+                            <p className="datestext1">
                                 {musico[0].horarioDiaUno} de{' '}
                                 {musico[0].horarioInicio} a{' '}
                                 {musico[0].horarioFin}
@@ -58,10 +72,11 @@ export const MusicianDescription = () => {
                             </p>
                         </div>
                         <div className="about-group">
-                            <p  className='datestext'>ACERCA DE</p>
-                            <span  className='datestext'>{musico[0].descripcion}</span>
+                            <p className="datestext">ACERCA DE</p>
+                            <span className="datestext">
+                                {musico[0].descripcion}
+                            </span>
                         </div>
-                      
                     </div>
                 </div>
             )}
