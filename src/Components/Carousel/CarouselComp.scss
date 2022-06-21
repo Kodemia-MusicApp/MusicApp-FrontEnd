@@ -1,6 +1,14 @@
 .corousel-img-format {
+    margin: 20px 0;
     width: 100%;
-    min-height:300px;
-    max-height: 500px;
-    object-fit: fill;
+    height: 250px;
+    object-fit: cover;
+}
+@media (min-width: 768px) {
+    .corousel-img-format {
+        margin: 0 0 20px 0;
+        width: 100%;
+        min-height: 500px;
+        object-fit: cover;
+    }
 }

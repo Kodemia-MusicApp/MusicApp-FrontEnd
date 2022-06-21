@@ -15,14 +15,9 @@ export const CarouselComp = (props) => {
                     alt="slash"
                 />
                 <Carousel.Caption>
-                    <h2 style={{ color: '#FD4948' }}>
+                    <h2 style={{ color: '#FFFFFF' }}>
                         Slash The Best Guitarrist Ever
                     </h2>
-                    <p style={{ color: '#FD4948' }}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Veritatis iure, repudiandae voluptatum amet
-                        eligendi perferendis?
-                    </p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -32,12 +27,9 @@ export const CarouselComp = (props) => {
                     alt="slipknot"
                 />
                 <Carousel.Caption>
-                    <h2 style={{ textShadow: '0 0 0.2em red' }}>
+                    <h2 style={{ color: '#FFFFFF' }}>
                         SLIPKNOT THE MUSICIANS MONSTERS
                     </h2>
-                    <p style={{ textShadow: '0 0 0.2em red' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -47,11 +39,7 @@ export const CarouselComp = (props) => {
                     alt="Snoop"
                 />
                 <Carousel.Caption>
-                    <h2>Third slide label</h2>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl
-                        consectetur.
-                    </p>
+                    <h2 style={{ color: '#FFFFFF' }}>Third slide label</h2>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
