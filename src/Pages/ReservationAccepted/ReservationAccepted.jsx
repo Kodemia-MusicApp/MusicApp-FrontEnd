@@ -1,20 +1,22 @@
 import React from 'react'
 import './ReservationAccepted.scss'
-import { Navbar } from '../../Components/Navbar/Navbar'
-import { Link } from 'react-router-dom'
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { ReservationCard } from '../../Components/ReservationCard/ReservationCard'
-import { CardNewEvents } from '../../Components/CardNewEvents/CardNewEvents'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
-import { Divider } from '@mui/material'
+import Alert from 'react-bootstrap/Alert'
+import { CardEventProgress } from '../../Components/CardEventProgress/CardEventProgress'
+import { CardEventPayment } from '../../Components/CardEventPayment/CardEventPayment'
 
 export const ReservationAccepted = () => {
     const [eventsAccepted, setEventsAccepted] = React.useState([])
     const [eventsProgress, setEventsProgress] = React.useState([])
+    const [showAlertAccept, setShowAlertAccept] = React.useState(false)
+    const [showAlertRefused, setShowAlertRefused] = React.useState(false)
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
+    const token = localStorage.getItem('musicAppToken')
+    const [Loading, setLoading] = React.useState(true)
 
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
@@ -36,119 +38,56 @@ export const ReservationAccepted = () => {
             .then((res) => {
                 setEventsProgress(res.data.payload)
             })
+        setLoading(false)
     }, [])
 
     return (
         <div>
             <NavbarOp2 />
-            <div className="ReservationAccepted">
-                <div className="ReservationAccepted-container">
-                <p className="InicioSesion-Title">
+            <Alert show={showAlertAccept} variant="success">
+                <Alert.Heading>Evento Cumplido!</Alert.Heading>
+            </Alert>
+            <Alert show={showAlertRefused} variant="danger">
+                <Alert.Heading>Evento No cumplido!</Alert.Heading>
+            </Alert>
+            {Loading ? (
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            ) : (
+                <div className="ReservationAccepted">
+                    <div className="ReservationAccepted-container">
+                        <p className="InicioSesion-Title">
                             AGENDA DE EVENTOS
                             <p className="NombreApp1">TumusAh</p>
                         </p>
-                       
-                    <div className="ReservationAccepted-content">
-                       
-                        {eventsAccepted.map((event, key) => (
-                            <section className='tarjeta'>
-                                <article className="card">
-                                    <div >
-                                        <p className='textcard2'>GRUPO/ARTISTA: {event.musicoId[0].nombreArtistico}</p>
-                                        <hr className='hr'></hr>
-                                    </div>
-                                    <div className='card-title"'>
-                                    <p className='textcard'><strong>DATOS EVENTO: </strong></p>   
-                                       <p className='textcard'> <strong>Tipo de evento:</strong>&nbsp; {event.descripcion}</p>    
-                                        
-                                    </div>
-                                    <div className="card-text">
 
-                                       <p className='textcard'><strong>Calle:</strong>&nbsp;&nbsp; {event.calle}</p>
-                                       <p className='textcard'><strong>Colonia:</strong>&nbsp; {event.colonia}</p>
-                                       <p className='textcard'><strong>Ciudad: </strong>&nbsp;{event.ciudad}</p>
-                                       <p className='textcard'><strong>Dia:</strong>&nbsp; {(event.fechaInicio).slice(0,10)}</p>
-                                       <p className='textcard'><strong>Hora: </strong>&nbsp; De {event.horaInicio} a {event.horaFinalizacion}</p>
-                                    </div>
-
-                                
-                                    <img src={event.musicoId[0].imagenMusico} />
-                                </article>
-
-                                <button
-                                    className="BotonGeneral"
-                                    onClick={() => {
-                                        //   console.log(event)
-                                        axios
-                                            .post(
-                                                `${Context.api.apiUrl}/payment/create-payments`,
-                                                {
-                                                    price: 500,
-                                                    custom_id: `${event._id}`,
-                                                }
-                                            )
-                                            .then((res) => {
-                                                console.log(
-                                                    res.data.data.links[1].href
-                                                )
-                                                //window.open(res.data.data.links[1].href )
-                                                window.location.href =
-                                                    res.data.data.links[1].href
-                                            })
-                                    }}
-                                >
-                                    REALIZAR PAGO DEL SERVICIO
-                                </button>
-                            </section>
-                        ))}
-                        <div>
-                            {eventsProgress.map((event) => {
-                                console.log('lin97', event)
+                        <div className="ReservationAccepted-content">
+                            {eventsAccepted.map((event, key) => {
                                 return (
-                                    <div className='tarjeta2'>
-                                    <section className="card">
-                                        <div class="card-body">
-                                            <div class="card-title">
-                                                <p className='textcard2'>{
-                                                    event.musicoId[0]
-                                                        .nombreArtistico
-                                                }</p>
-                                            </div>
-                                            <img
-                                                src={
-                                                    event.musicoId[0]
-                                                        .imagenMusico
-                                                }
-                                                alt=""
-                                            />
-                                            <p className='textcard'>
-                                              <strong> Tipo de evento:</strong>  {event.descripcion}
-                                            </p>
-                                            <div> <p className='textcard'> <strong>Ciudad: </strong>  {event.ciudad}</p>
-                                            <p className='textcard'><strong>Calle: </strong>&nbsp;&nbsp; {event.calle}</p>
-                                            <p className='textcard'><strong>Colonia:</strong>&nbsp; {event.colonia}</p>
-                                            <p className='textcard'><strong>Ciudad:</strong>&nbsp;{event.ciudad}</p>
-                                            <p className='textcard'><strong>Día: </strong>&nbsp; {event.fechaInicio}</p>
-                                            <p className='textcard'><strong>Hora: </strong>&nbsp; De {event.horaInicio} a {event.horaFinalizacion}</p>
-                                            
-                                            </div>
-                                            
-                                            <button href="#" class="btn " className='BotonGeneral2'>
-                                                EVENTO CUMPLIDO
-                                            </button>
-                                            <button href="#" class="btn " className='BotonGeneral2'>
-                                            </button>
-                                        </div>
-
-                                        <div></div>
-                                    </section>
-                                    </div>
+                                    <CardEventPayment key={key} event={event} />
                                 )
                             })}
+                            <div>
+                                {eventsProgress.map((event, key) => {
+                                    // console.log('lin97', event)
+                                    return (
+                                        <main>
+                                            <CardEventProgress
+                                                key={key}
+                                                event={event}
+                                                setShowAlertRefused={
+                                                    setShowAlertRefused
+                                                }
+                                            />
+                                        </main>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }

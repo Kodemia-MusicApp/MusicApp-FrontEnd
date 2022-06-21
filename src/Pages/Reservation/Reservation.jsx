@@ -73,6 +73,8 @@ export const Reservation = () => {
         diff /= 60 * 60
         const result =
             Math.abs(Math.round(diff)) * parseFloat(musico.cobroPorHora)
+        console.log(event)
+
         if (parseDayOne == parseDayTwo || parseDayOne > parseDayTwo) {
             alert('Horas incorrectas')
         } else {
