@@ -71,8 +71,8 @@ export const Reservation = () => {
         const parseDayTwo = Date.parse(dayTwo)
         let diff = (dateOne.getTime() - dateTwo.getTime()) / 1000
         diff /= 60 * 60
-        const result = Math.abs(Math.round(diff))
-        console.log(parseFloat(result) * parseFloat(UserProfile.cobroPorHora))
+        const result =
+            Math.abs(Math.round(diff)) * parseFloat(musico.cobroPorHora)
         if (parseDayOne == parseDayTwo || parseDayOne > parseDayTwo) {
             alert('Horas incorrectas')
         } else {
@@ -91,6 +91,7 @@ export const Reservation = () => {
                         numero: event.calle,
                         ciudad: event.ciudad,
                         titulo: event.titulo,
+                        pago: result,
                     },
                     {
                         headers: {
@@ -141,7 +142,7 @@ export const Reservation = () => {
                                 <img src={musico.imagenMusico} alt="" />
                                 <p className="datatext">
                                     Grupo: {musico.nombreArtistico}
-                                    {console.log(musico)}
+                                    {}
                                 </p>
                                 <p className="datatext">
                                     Area de covertura: {musico.estado}
