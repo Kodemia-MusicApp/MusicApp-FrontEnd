@@ -4,7 +4,11 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import './CardEventProgress.scss'
 
-export const CardEventProgress = ({ event, setShowAlertRefused }) => {
+export const CardEventProgress = ({
+    event,
+    setShowAlertRefused,
+    setShowAlertAccept,
+}) => {
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
     const token = localStorage.getItem('musicAppToken')
@@ -51,11 +55,36 @@ export const CardEventProgress = ({ event, setShowAlertRefused }) => {
                         </p>
                     </div>
 
-                    <button href="#" className="BotonGeneral2">
+                    <button
+                        onClick={() => {
+                            axios
+                                .patch(
+                                    `${Context.api.apiUrl}/event/update/${event._id}`,
+                                    {
+                                        status: 'cumplido',
+                                    },
+                                    {
+                                        headers: {
+                                            token: token,
+                                        },
+                                    }
+                                )
+                                .then((res) => {
+                                    if (res.data.success === true) {
+                                        setShowAlertAccept(true)
+                                        setTimeout(() => {
+                                            navigate('/')
+                                        }, 1500)
+                                    } else {
+                                        alert('Error')
+                                    }
+                                })
+                        }}
+                        className="BotonGeneral2"
+                    >
                         EVENTO CUMPLIDO
                     </button>
                     <button
-                        href="#"
                         className="BotonGeneral2"
                         onClick={() => {
                             axios

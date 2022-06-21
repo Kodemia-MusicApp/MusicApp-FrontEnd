@@ -76,6 +76,9 @@ export const ReservationAccepted = () => {
                                             <CardEventProgress
                                                 key={key}
                                                 event={event}
+                                                setShowAlertAccept={
+                                                    setShowAlertAccept
+                                                }
                                                 setShowAlertRefused={
                                                     setShowAlertRefused
                                                 }
