@@ -31,7 +31,13 @@ export const NavbarOp2 = () => {
             .catch((error) => {})
     }, [])
     return (
-        <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
+        <Navbar
+            collapseOnSelect
+            id="Navbar"
+            expand="lg"
+            sticky="top"
+            variant="dark"
+        >
             <Container>
                 <Navbar.Brand
                     href="/"
