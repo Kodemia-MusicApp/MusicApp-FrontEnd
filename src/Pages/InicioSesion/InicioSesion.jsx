@@ -25,11 +25,19 @@ export const InicioSesion = () => {
                     <p className="Bienvenida">Bienvenido a</p>
                     <p className="NombreApp1">TumusAh</p>
                     <div className="BotonesInicio">
+
+                        <br />
+                        <br />
+                        <br />
                         <Link to="/login/client">
-                            <button className="BotonInicio">SOY CLIENTE</button>
+                            <button className="BotonGeneral">SOY CLIENTE</button>
                         </Link>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                         <Link to="/login/musican">
-                            <button className="BotonInicio">SOY MÚSICO</button>
+                            <button className="BotonGeneral">SOY MÚSICO</button>
                         </Link>
                     </div>
                 </div>

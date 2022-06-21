@@ -37,11 +37,11 @@ export const LoginMusician = () => {
             <div className="LoginMusician">
             <div className='left-container'>
                     
-                    <div className="shot1"> <img src={require('../../Images/cantante0.jpg')} className='foto1'/></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/5137290/pexels-photo-5137290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1'/></div>
                     
                     
-                    <div className="shot1"> <img src={require('../../Images/cantante2.jpg')}  className='foto1'/></div>
-                    <div className="shot1"> <img src={require('../../Images/cantante3.jpg')} className='foto1' /></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/5470113/pexels-photo-5470113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'  className='foto1'/></div>
+                    <div className="shot1"> <img src='https://images.pexels.com/photos/878999/pexels-photo-878999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className='foto1' /></div>
 
                 </div>
                
