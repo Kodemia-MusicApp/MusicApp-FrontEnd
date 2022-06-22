@@ -55,7 +55,7 @@ export const ReservationAccepted = () => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <div className="ReservationAccepted">
+                <div className="ReservationAccepted1">
                     <div className="ReservationAccepted-container">
                         <p className="InicioSesion-Title">
                             AGENDA DE EVENTOS
@@ -63,12 +63,15 @@ export const ReservationAccepted = () => {
                         </p>
 
                         <div className="ReservationAccepted-content">
+                            <div className="tarjetasPago">
                             {eventsAccepted.map((event, key) => {
                                 return (
                                     <CardEventPayment key={key} event={event} />
                                 )
                             })}
-                            <div>
+                            </div>
+                            <p className='EventosporHacer'>EVENTOS POR REALIZAR</p>
+                            <div className="eventoenProceso">
                                 {eventsProgress.map((event, key) => {
                                     // console.log('lin97', event)
                                     return (
