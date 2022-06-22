@@ -57,10 +57,10 @@ export const ReservationAccepted = () => {
             ) : (
                 <div className="ReservationAccepted1">
                     <div className="ReservationAccepted-container">
-                        <p className="InicioSesion-Title">
+                       <p className="InicioSesion-Title">
                             AGENDA DE EVENTOS
                             <p className="NombreApp1">TumusAh</p>
-                        </p>
+                        </p> 
 
                         <div className="ReservationAccepted-content">
                             <div className="tarjetasPago">
