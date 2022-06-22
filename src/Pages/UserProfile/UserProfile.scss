@@ -1,0 +1,99 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+//CONTAINERS
+.datos {
+    width: 360px;
+    display: flex;
+    border: 2px double $generalbutton-color;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.MisDatos-container {
+    background-color: white;
+}
+.MisDatos-container {
+    background-color: $happy-color;
+}
+.UserProfile {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+
+    background-color: $happy-color;
+}
+.UserProfile-Container {
+    width: 360px;
+    background-color: $happy-color;
+}
+.UserProfile-Content {
+    background-color: $happy-color;
+}
+.UserProfile-Container {
+    width: 360px;
+}
+.UserProfile-Content {
+}
+.MisDatos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    background-color: $happy-color;
+    color: white;
+}
+
+.Rerservations {
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+    background-color: $happy-color;
+
+    border-radius: 10px;
+}
+//CARDS
+
+.reservationcard {
+    width: 340px;
+    height: 75px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+//TEXTS
+
+.misdatos {
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.textEditProfile {
+    background-color: $happy-color;
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 18px;
+}
+.editarperfil {
+    font-size: 15px;
+}
+.textEditProfile {
+}
+.name {
+    margin: 0;
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+}
+
+.reservationsTitle {
+    margin-left: 10px;
+    color: white;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+}

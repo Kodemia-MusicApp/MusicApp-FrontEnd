@@ -1,0 +1,71 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+
+
+.LoginMusician {
+    
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.LoginMusician-Container {
+    background-color: $happy-color;
+    width: 360px;
+    height: 812px;
+    margin-top: 50px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color;
+}
+
+.LoginMusician-Content {
+   
+    display: flex;
+    justify-content: center;
+}
+
+.LoginMusician-Title {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.input-mail {
+    width: 314px;
+    height: 46px;
+    border-radius: 10px;
+    align-items: center;
+    margin-bottom: 100px;
+    font-size: 20px;
+    
+}
+
+.input-password {
+    width: 314px;
+    height: 46px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.LoginMusician-Form {
+    background-color: $happy-color;
+   
+
+}
+.LoginMusician-footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+////////7TEXTS
+/// 
+.labelloginmusician{
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+  margin-top: 30px;
+  font-size: 20px;
+  }

@@ -1,0 +1,22 @@
+
+.Navbar-Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: none;
+    
+}
+
+.bg-navbar {
+    background-color: rgb(44,44,44);
+}
+
+.NombreApp{
+    text-align: center;   
+   font-family: 'Lobster', cursive;
+    font-weight: 500;
+    font-size: 40px;
+    color: white;
+    padding: 0;
+    margin: 0;
+}

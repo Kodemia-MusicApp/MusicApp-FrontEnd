@@ -1,0 +1,69 @@
+/////SASS
+@import '../../scss/variables.scss';
+
+
+//CONTAINERS
+
+
+.CreateAccountMusicianFormulario {
+    display: flex;
+    justify-content: space-around;
+  
+   
+}
+
+.CreateAccountMusicianForm {
+    margin-top: 35px;
+    width: 350px;
+   
+    border-radius: 30px;
+    border: 2px double $generalbutton-color; 
+
+}
+
+//INPUTS///
+.createMusician {
+    width: 314px;
+    height: 46px;
+    border-radius: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    background-color: #AFABB4;
+    font-size: 20px;
+}
+
+.Tipoartista{
+    margin-left: 20px;
+}
+//TEXTOS
+.Bienvenida2 {
+    font-size: 2.3rem;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+}
+.labelCreateMusician {
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+}
+
+.tipoArtista {
+    display: block;
+    margin-left: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: Oswald, sans-serif;
+
+}
+//BOTON//
+.BotonGeneral {
+    width: 314px;
+    height: 46px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+

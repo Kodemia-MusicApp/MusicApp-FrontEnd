@@ -1,0 +1,138 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+
+
+////CONTAINERS
+/// 
+/// 
+/// 
+/// 
+//FOTOS
+
+.foto1{
+    width:345px;
+    border: 2px doble blue;
+    border-radius: 30px;
+    
+}
+
+
+.shot1{
+    width:353px;
+    margin-bottom: 30px;
+    height: 231px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color;
+    display: flex;
+    justify-content: center;
+}
+.shot2{
+    margin-bottom: 30px;
+    height: 231px;
+    border-radius: 30px;
+    border: 2px solid $generalbutton-color;
+
+}
+
+.quote1{
+    width: 350px;
+    height: 230px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+   align-items: center;
+    border: 2px solid $generalbutton-color;
+    font-family:Oswald, sans-serif; 
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    color:$generalbutton-color ;
+}
+
+.quote2{
+    width: 350px;
+    height: 230px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+   align-items: center;
+    border: 2px solid $generalbutton-color;
+    font-family: 'Lobster', cursive;
+    font-weight: 500;
+    font-size: 40px;
+    color:$generalbutton-color ;
+}
+
+
+
+.left-container{
+    color: white;
+    background-color: $happy-color;
+    width:355px;
+    height: 100vh;
+    margin-top: 40px;
+}
+.InicioSesion {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.InicioSesion-Container {
+    width: 360px;
+    height: 100vh;
+    margin-top: 50px;
+    border-radius: 30px;
+    border: 2px double $generalbutton-color;
+    
+}
+
+.InicioSesion-Content {
+    display: flex;
+    justify-content: center;
+}
+
+.InicioSesion-Title {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+///BOTONES////
+.BotonInicio {
+    margin-top: 61px;
+    display: block;
+    width: 307px;
+    height: 46px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $cards-color;
+    color:$generalbutton-color;;
+    font-size:20px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    border: 2px solid $generalbutton-color;
+   
+    
+}
+.BotonInicio:hover{
+    background-color: $generalbutton-color;
+    color: black;
+}
+
+///////TEXTOS////
+.Bienvenida {
+    font-size: 2.3rem;
+    font-style: normal;
+    margin-top: 35px;
+    text-align: center;
+    margin:0;
+}
+

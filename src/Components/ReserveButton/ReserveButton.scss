@@ -1,0 +1,18 @@
+
+//////****CSSS
+@import '../../scss/variables.scss';
+
+.btn-reserve {
+    background-color: #fd4948;
+    border-radius: 18px;
+    border: none;
+    width: 10rem;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Oswald, sans-serif;
+    :hover {
+        font-weight: bold;
+        background-color: white;
+    }
+}

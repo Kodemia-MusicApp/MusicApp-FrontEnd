@@ -1,38 +1,122 @@
 import React from 'react'
 import './NavbarOp2.scss'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import { ButtonTranspOrg } from '../ButtonTranspOrg/ButtonTranspOrg';
-import { ButtonOrange } from '../ButtonOrange/ButtonOrange';
+import { ButtonTranspOrg } from '../ButtonTranspOrg/ButtonTranspOrg'
+import { ButtonOrange } from '../ButtonOrange/ButtonOrange'
+import { AppContext } from '../../Context/AppContext'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export const NavbarOp2 = () => {
+    const Context = React.useContext(AppContext)
+    const navigate = useNavigate()
+    React.useEffect(() => {
+        const token = localStorage.getItem('musicAppToken')
+        axios
+            .post(
+                `${Context.api.apiUrl}/auth/login/verify`,
+                {},
+                {
+                    headers: {
+                        token: token,
+                    },
+                }
+            )
+            .then((res) => {
+                Context.setUserId(res.data.payload[0])
+            })
+            .catch((error) => {})
+    }, [])
     return (
-        <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
+        <Navbar
+            collapseOnSelect
+            id="Navbar"
+            expand="lg"
+            sticky="top"
+            variant="dark"
+        >
             <Container>
-                <Navbar.Brand href="#home" style={{color: '#FD4948', fontWeight: 'bold'}}>TuMusAh</Navbar.Brand>
+                <Navbar.Brand
+                    href="/"
+                    style={{ color: '#FD4948', fontWeight: 'bold' }}
+                >
+                    TuMusAh
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="Musicos" style={{color: '#FD4948', fontWeight: '600'}}>Musicos</Nav.Link>
-                        <Nav.Link href="Contrataciones" style={{color: '#FD4948', fontWeight: '600'}}>Contrataciones</Nav.Link>
-                        {/* <NavDropdown title="Generos" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1" style={{color: '#FD4948'}}>Bachata</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2" style={{color: '#FD4948'}}>Rock & Roll</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3" style={{color: '#FD4948'}}>Reggaeton</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4" style={{color: '#FD4948'}}>
-                                Propon algun Genero
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
+                        <Nav.Link
+                            href="/"
+                            style={{ color: '#FD4948', fontWeight: '600' }}
+                        >
+                            Musicos
+                        </Nav.Link>
+                        <Nav.Link
+                            href="/"
+                            style={{ color: '#FD4948', fontWeight: '600' }}
+                        >
+                            Contrataciones
+                        </Nav.Link>
                     </Nav>
                     <Nav>
-                        <ButtonTranspOrg label='Inicia Sesion' />
-                        <ButtonOrange label='Registrate'/>
+                        {Context.user.name !== '' ? (
+                            Context.user.typeClient == 'Musico' ? (
+                                <ButtonTranspOrg
+                                    href="/profilemusician"
+                                    label="Mi perfil"
+                                />
+                            ) : (
+                                <ButtonTranspOrg
+                                    href="/userprofile"
+                                    label="Mi perfil"
+                                />
+                            )
+                        ) : (
+                            <ButtonTranspOrg
+                                href="/login"
+                                label="Inicia Sesion"
+                            />
+                        )}
+                        {Context.user.name !== '' ? (
+                            Context.user.typeClient == 'Musico' ? (
+                                <ButtonTranspOrg
+                                    href="/musician/events"
+                                    label="Mis Eventos"
+                                />
+                            ) : (
+                                <ButtonTranspOrg
+                                    href="/reservationaccepted"
+                                    label="Mis Eventos"
+                                />
+                            )
+                        ) : (
+                            <></>
+                        )}
+
+                        {Context.user.name !== '' ? (
+                            <button
+                                className="btn btn-outline-primary"
+                                onClick={() => {
+                                    navigate('/')
+                                    window.location.reload(true)
+                                    localStorage.removeItem('musicAppToken')
+                                    //
+                                }}
+                            >
+                                Cerrar sesion
+                            </button>
+                        ) : (
+                            <ButtonOrange
+                                href="/crearcuenta"
+                                label="Registrate"
+                            />
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     )
-};
+}

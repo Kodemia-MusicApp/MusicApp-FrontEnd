@@ -1,42 +1,85 @@
-import React from 'react';
-import { ButtonRose } from '../../Components/ButtonRose/ButtonRose';
-import './MusicianDescription.scss';
+import React from 'react'
+import { ReserveButton } from '../../Components/ReserveButton/ReserveButton'
+import './MusicianDescription.scss'
+import { Navbar } from '../../Components/Navbar/Navbar'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { AppContext } from '../../Context/AppContext'
+import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 
 export const MusicianDescription = () => {
+    const { id } = useParams()
+    const Context = React.useContext(AppContext)
+    const [musico, setMusico] = React.useState([])
+    const [Loading, setLoading] = React.useState(true)
+    React.useEffect(() => {
+        axios.get(`${Context.api.apiUrl}/musician/id/${id}`).then((res) => {
+            setMusico(res.data.payload)
+            setLoading(false)
+        })
+    }, [])
+
     return (
-        <div className='page-container'>
-            <h3 className='title'>INFORMACIÓN DEL GRUPO</h3>
-            <div className='group-container'>
-                <div className='img-info-container'>
-                    <img className='img-musician' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPmYeGr8-oxntSGzVkT5ra5KUfT65ShaR9CQ&usqp=CAU" alt="img-musician" />
-                    <div className='info-group-container'>
-                        <span>Musico: Snoop Dogg</span>
-                        <span>Hip-Hop</span>
-                        <ButtonRose />
+        <section className="sectionMusicanDes">
+            <NavbarOp2 />
+            {Loading ? (
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            ) : (
+                <div className="page-container">
+                    <h3 className="title">{musico[0].nombreArtistico}</h3>
+                    <div className="group-container">
+                        <div className="img-info-container">
+                            <img
+                                className="img-musician"
+                                src={musico[0].imagenMusico}
+                                alt="img-musician"
+                            />
+                            <div className="info-group-container">
+                                <span className="band">
+                                    {musico[0].nombreArtistico}
+                                </span>
+                                <span className="band">
+                                    Genero: {musico[0].genero}
+                                </span>
+                                {Context.user.typeClient != 'Musico' ? (
+                                    <ReserveButton id={musico[0].id} />
+                                ) : (
+                                    <></>
+                                )}
+                            </div>
+                        </div>
+                        <div className="price-city-container">
+                            <span className="city">
+                                ${musico[0].cobroPorHora}/hora
+                            </span>
+                            <span className="city">
+                                Area de covertura: Guadalajara
+                            </span>
+                        </div>
+                    </div>
+                    <div className="complementary-info">
+                        <div className="times">
+                            <p className="datestext">
+                                DÍAS Y HORAS DE SERVICÍO
+                            </p>
+                            <p className="datestext1">
+                                {musico[0].horarioDiaUno} de{' '}
+                                {musico[0].horarioInicio} a{' '}
+                                {musico[0].horarioFin}
+                                {` ${musico[0].horarioDiaDos}`}
+                            </p>
+                        </div>
+                        <div className="about-group">
+                            <p className="datestext">ACERCA DE</p>
+                            <span className="datestext">
+                                {musico[0].descripcion}
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div className='price-city-container'>
-                    <span>$50,000/hora</span>
-                    <span>Guadalajara</span>
-                </div>
-            </div>
-            <div className='complementary-info'>
-                <div className='times'>
-                    <h5>Días y Horas de Servicio</h5>
-                    <p>Sabados de 2:00 pm a 5:00 am</p>
-                    <p>Domingos de 2:00 pm a 5:00 am</p>
-                </div>
-                <div className='about-group'>
-                    <p>ACERCA DE</p>
-                    <span>Lorem ipsum. Velit ab, voluptatibus quas reiciendis eveniet nam. Doloremque nemo, reiciendis laborum fugit ipsum sint temporibus asperiores modi?</span>
-                </div>
-                <div className='videos'>
-                    Aqui se mostraran los videos personales del grupo
-                </div>
-                <div className='link-videos'>
-                    <a href="">Link YouTube</a>
-                </div>
-            </div>
-        </div>
+            )}
+        </section>
     )
 }

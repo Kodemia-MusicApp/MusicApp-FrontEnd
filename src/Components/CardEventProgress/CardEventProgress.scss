@@ -1,0 +1,83 @@
+//////****CSSS
+@import '../../scss/variables.scss';
+
+//CONTAINERS
+.card {
+    background-color: $happy-color;
+    border-radius: 15px;
+    padding: 5px;
+}
+.tarjeta {
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px double $generalbutton-color;
+    font-weight: 500;
+    width: 300px;
+}
+.ReservationAccepted {
+    display: flex;
+    justify-content: center;
+}
+.ReservationAccepted-container {
+    height: 100vh;
+    width: 100%;
+    background-color: blue;
+}
+.ReservationAccepted-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.acceptationmessage {
+    width: 100%;
+    height: 189px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.tarjeta2 {
+    margin-top: 15px;
+    border: 2px double $generalbutton-color;
+    border-radius: 20px;
+}
+
+//////TEXTOS
+.textcard {
+    font-weight: 400;
+    margin: 0;
+    font-size: 20px;
+    color: white;
+}
+
+.textcard2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    font-family: Oswald, sans-serif;
+    margin: 0;
+}
+
+.InicioSesion-Title {
+    color: white;
+    font-size: 20px;
+    font-family: Oswald, sans-serif;
+    font-weight: 500;
+}
+
+//BOTON
+.BotonGeneral2 {
+    margin-left: 7px;
+    margin-top: 20px;
+    border-radius: 30px;
+    width: 300px;
+    height: 46px;
+    background-color: $generalbutton-color;
+    font-family: Oswald, sans-serif;
+    font-weight: 600;
+    color: black;
+}

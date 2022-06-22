@@ -1,22 +1,31 @@
+
+//////****CSSS
+@import '../../scss/variables.scss';
+
 .Login {
   //background-color: blue;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .Login-Container {
-  //background-color: white;
-  width: 360px;
-  height: 812px;
-  margin-top: 50px;
+width: 360px;
+height: 812px;
+margin-top: 50px;
+border-radius: 30px;
+display: flex;
+justify-content: space-around;
 }
 
 .Login-Content {
-  //background-color: red;
+
   display: flex;
   justify-content: center;
+  
 }
-
+.left-container{
+  background-color: $happy-color;
+}
 .Login-Title {
   font-size: 20px;
   font-weight: 400;
@@ -27,21 +36,58 @@
   width: 314px;
   height: 46px;
   border-radius: 10px;
+  outline: none;
   align-items: center;
   margin-bottom: 100px;
+  margin-left: 20px;
+  background-color: #AFABB4;
+}
+.input-mail:focus{
+  background-color:  white;
 }
 
 .input-password {
+  outline: none;
   width: 314px;
   height: 46px;
   border-radius: 10px;
+  margin-left: 20px;
+  background-color: #AFABB4;
+}
+.input-password:focus{
+  background-color: white;
 }
 
+
 .Login-Form {
-  margin-top: 50px;
-  margin-left: 18px;
+  border-radius: 30px;
+  border: 2px double $generalbutton-color;
+
 }
 .Login-footer {
   margin-top: 70px;
   text-align: center;
+}
+///////TEXTS
+/// 
+.labelloginmail{
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  color:white;
+  font-family: Oswald, sans-serif;
+ margin-top: 30px;
+}
+
+.Login-footer{
+  
+  font-weight: 500;
+  color:white;
+  font-family: Oswald, sans-serif;
+margin-top: 10px;
+margin-bottom: 80px;
+}
+
+.linktocreateaccount{
+  color: aqua;
 }

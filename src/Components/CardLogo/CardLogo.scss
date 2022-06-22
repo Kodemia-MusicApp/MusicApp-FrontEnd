@@ -1,0 +1,20 @@
+.CardLogo {
+    background-image: url('https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/styles/bi_876/public/media/image/2021/04/cantante-2298449.jpg?itok=ipDTsoIA');
+    min-height: 100vh;
+}
+
+.Card-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container-img {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
