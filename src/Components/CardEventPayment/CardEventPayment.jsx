@@ -17,44 +17,44 @@ export const CardEventPayment = ({ event }) => {
                     <hr className="hr"></hr>
                 </div>
                 <div className='card-title"'>
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>DATOS EVENTO: </strong>
                     </p>
-                    <p className="textcard">
+                    <p className="textcard1">
                         {' '}
                         <strong>Tipo de evento:</strong>
                         &nbsp; {event.descripcion}
                     </p>
                 </div>
                 <div className="card-text">
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>Calle:</strong>
                         &nbsp;&nbsp; {event.calle}
                     </p>
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>Colonia:</strong>
                         &nbsp; {event.colonia}
                     </p>
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>Ciudad: </strong>
                         &nbsp;
                         {event.ciudad}
                     </p>
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>Dia:</strong>&nbsp;{' '}
                         {event.fechaInicio.slice(0, 10)}
                     </p>
-                    <p className="textcard">
+                    <p className="textcard1">
                         <strong>Hora: </strong>
                         &nbsp; De {event.horaInicio} a {event.horaFinalizacion}
                     </p>
                 </div>
 
-                <img src={event.musicoId[0].imagenMusico} />
+                <img src={event.musicoId[0].imagenMusico} className="musicoImg"/>
             </article>
 
             <button
-                className="BotonGeneral"
+                className="BotonGeneral3"
                 onClick={() => {
                     //   console.log(event)
                     axios
