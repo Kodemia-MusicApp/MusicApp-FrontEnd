@@ -487,9 +487,11 @@ export const EditProfileMusician = () => {
                                             Descripción de la agrupación o
                                             servicio
                                         </label>
-                                        <input
+                                        <textarea
+                                            row='8'
+                                            col='22'
                                             type="text"
-                                            className="editUser"
+                                            className="editUser4"
                                             value={user.descripcion}
                                             onChange={({ target }) => {
                                                 setUser({
@@ -497,11 +499,11 @@ export const EditProfileMusician = () => {
                                                     descripcion: target.value,
                                                 })
                                             }}
-                                        />
+                                        > </textarea>
                                         <label className="banddescription">
                                             Cambia tu imagen de perfil
                                         </label>
-                                        <div className="">
+                                        <div className="elegirArchivo">
                                             <input
                                                 className="text-white"
                                                 type="file"
