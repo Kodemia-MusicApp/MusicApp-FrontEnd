@@ -1,13 +1,19 @@
 
 //////CONTAINERS
 .card{
+    width: 90%;
     border: 2px solid #01172f; 
+    background-color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 .tarjeta{
     background-color: #01172f;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 360px;
 }
 
 .BotonGeneral3{
@@ -19,6 +25,29 @@
 }
 .textcard1{
     color: white; 
-    font-size: 18px;
+    font-size: 17px;
     margin: 0;
 }
+.card-title{
+    background-color: red;
+}
+.nombregrupo{
+    background-color: blue;
+    height: 90px; 
+    color: white;
+    padding: 10px; 
+}
+.musicoImgContenedor{
+    width: 100%;
+    background-color: aqua;
+}
+.card-text{
+    height: 200px;
+    background-color: green;
+}
+///TEXTO
+/// 
+.textcardtitle{
+    font-size: 20px;
+}
+

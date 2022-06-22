@@ -10,23 +10,28 @@ export const CardEventPayment = ({ event }) => {
     return (
         <section className="tarjeta">
             <article className="card">
-                <div>
-                    <p className="textcard2">
+                <div className='musicoImgContenedor'> <img src={event.musicoId[0].imagenMusico} className="musicoImg"/></div>
+           
+                <div className='nombregrupo'>
+                    <p className="textcardtitle">
                         GRUPO/ARTISTA: {event.musicoId[0].nombreArtistico}
                     </p>
-                    <hr className="hr"></hr>
+                    
                 </div>
-                <div className='card-title"'>
+                <div className='card-title'>
                     <p className="textcard1">
                         <strong>DATOS EVENTO: </strong>
                     </p>
+                </div>
+                
+                <div className="card-text">
                     <p className="textcard1">
                         {' '}
                         <strong>Tipo de evento:</strong>
                         &nbsp; {event.descripcion}
                     </p>
-                </div>
-                <div className="card-text">
+                
+                
                     <p className="textcard1">
                         <strong>Calle:</strong>
                         &nbsp;&nbsp; {event.calle}
@@ -50,7 +55,7 @@ export const CardEventPayment = ({ event }) => {
                     </p>
                 </div>
 
-                <img src={event.musicoId[0].imagenMusico} className="musicoImg"/>
+                
             </article>
 
             <button
