@@ -3,6 +3,7 @@
 
 
 //CONTAINERS
+
 .labelCreateUse1 {
     margin-top: 20px;
     margin-left: 20px;
@@ -19,6 +20,9 @@
     margin-left: 20px;
     background-color: $inputs-color;
     border-radius: 10px;
+    &:hover{
+        background-color: white;
+    }
 }
 //TEXTS
 

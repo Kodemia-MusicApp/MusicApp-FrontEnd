@@ -113,8 +113,9 @@ export const EditProfileMusician = () => {
             })
     }
     return (
-        <div>
+        <div classname="editarperfilmusicoContent">
             <NavbarOp2 />
+          
             {Loading ? (
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
