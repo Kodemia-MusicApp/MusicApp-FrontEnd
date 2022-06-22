@@ -197,7 +197,7 @@ export const EditProfileUser = () => {
                                     <label className="labelCreateUse">
                                         Cambia tu imagen de perfil
                                     </label>
-                                    <div className="">
+                                    <div className="elegirArchivo">
                                         <input
                                             className="text-white"
                                             type="file"

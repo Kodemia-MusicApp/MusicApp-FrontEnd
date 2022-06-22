@@ -91,3 +91,10 @@ margin-bottom: 80px;
 .linktocreateaccount{
   color: aqua;
 }
+
+/////MEDIA RESPONSIVE
+@media (max-width: 1054px) {
+  .left-container{
+    display: none;
+  }
+}
