@@ -3,44 +3,41 @@
 
 //CONTAINERS
 .datos {
-    width: 360px;
+    width: 600px;
+    height: 500px;
     display: flex;
-    border: 2px double $generalbutton-color;
     padding: 10px;
     border-radius: 20px;
+  
 }
 
-.MisDatos-container {
-    background-color: white;
-}
+
 .MisDatos-container {
     background-color: $happy-color;
+  
 }
 .UserProfile {
     padding: 5px;
     display: flex;
     justify-content: center;
+    background-color: $happy-color;
+}
 
-    background-color: $happy-color;
-}
-.UserProfile-Container {
-    width: 360px;
-    background-color: $happy-color;
-}
 .UserProfile-Content {
-    background-color: $happy-color;
+    width: 600px;
+    border-radius: 30px;
+    background-color: $cards-color;
+    border: 2px solid $cards-color;
+    &:hover{border: 2px solid $generalbutton-color;} 
 }
-.UserProfile-Container {
-    width: 360px;
-}
-.UserProfile-Content {
-}
+
+
 .MisDatos {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
     background-color: $happy-color;
+    border-radius: 30px;
     color: white;
 }
 
@@ -52,26 +49,37 @@
 
     border-radius: 10px;
 }
-//CARDS
 
-.reservationcard {
-    width: 340px;
-    height: 75px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    background-color: aqua;
+.userimage{
+    width: 250px;
+    height: 100px;
+    max-width: 150px;
+    
 }
 
-//TEXTS
 
+.imgn{
+    margin-top: 30px;
+    width: 250px;
+    height: 100px;}
+
+
+
+
+//TEXTS
+.links{
+    text-decoration: none;
+    &:hover{
+        text-decoration:underline;
+    }
+}
 .misdatos {
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
+
 }
 .textEditProfile {
     background-color: $happy-color;
@@ -80,12 +88,14 @@
     font-size: 18px;
 }
 .editarperfil {
-    font-size: 15px;
+    margin-top: 50px;
+    font-size: 20px;
+    color: $generalbutton-color;
+    text-decoration: none;
 }
-.textEditProfile {
-}
+
 .name {
-    margin: 0;
+    margin: 30px 0 0 0;
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 20px;
@@ -95,5 +105,9 @@
     margin-left: 10px;
     color: white;
     font-family: Oswald, sans-serif;
+    font-size: 20px;
+}
+
+.userCity{
     font-size: 20px;
 }
