@@ -123,7 +123,7 @@ export const EditProfileMusician = () => {
     return (
         <div classname="editarperfilmusicoContent">
             <NavbarOp2 />
-          
+
             {Loading ? (
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
@@ -497,8 +497,8 @@ export const EditProfileMusician = () => {
                                             servicio
                                         </label>
                                         <textarea
-                                            row='8'
-                                            col='22'
+                                            row="8"
+                                            col="22"
                                             type="text"
                                             className="editUser4"
                                             value={user.descripcion}
@@ -508,7 +508,9 @@ export const EditProfileMusician = () => {
                                                     descripcion: target.value,
                                                 })
                                             }}
-                                        > </textarea>
+                                        >
+                                            {' '}
+                                        </textarea>
                                         <label className="banddescription">
                                             Cambia tu imagen de perfil
                                         </label>
