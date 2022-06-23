@@ -68,14 +68,16 @@ export const MusicianEvents = () => {
                         </div>
                         <div>
                             <h2>Otros eventos</h2>
-                            {eventsAccepted.map((event, key) => {
-                                return (
-                                    <MusicianPaidEvents
-                                        event={event}
-                                        key={key}
-                                    />
-                                )
-                            })}
+                            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                                {eventsAccepted.map((event, key) => {
+                                    return (
+                                        <MusicianPaidEvents
+                                            event={event}
+                                            key={key}
+                                        />
+                                    )
+                                })}
+                            </div>
                         </div>
                     </section>
                 </main>

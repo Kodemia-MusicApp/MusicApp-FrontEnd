@@ -1,0 +1,22 @@
+.card-accepted-event-container {
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #07305C;
+    margin: 20px;
+
+    .text-card-container {
+        width: 250px;
+        height: 130px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #01172f;
+        margin-bottom: 10px;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: space-around;
+    }
+}
