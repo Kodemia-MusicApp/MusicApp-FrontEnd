@@ -89,6 +89,8 @@ export const Reservation = () => {
             parseDayOne > parseDayTwo ||
             event === null ||
             estado === null ||
+            estado.estado === [] ||
+            estado.municipality == [] ||
             event.calle == '' ||
             event.colonia == '' ||
             event.descripcion == '' ||
@@ -108,11 +110,12 @@ export const Reservation = () => {
                         horaFinalizacion: hourTwo,
                         musicoId: id,
                         colonia: event.colonia,
+                        numero: event.numero,
                         calle: event.calle,
-                        numero: event.calle,
-                        ciudad: event.ciudad,
                         titulo: event.titulo,
                         pago: result,
+                        estado: estado.estado,
+                        municipio: estado.municipality,
                     },
                     {
                         headers: {
@@ -127,8 +130,7 @@ export const Reservation = () => {
                             navigate('/reservationaccepted')
                         }, 1500)
                     } else {
-                        alert('Error')
-                        navigate('/userprofile')
+                        setShowFalse(true)
                     }
                 })
         }
