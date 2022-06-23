@@ -215,7 +215,7 @@ export const CreateAccountMusician = () => {
                                 }}
                             />
                             <label className="labelCreateMusician">
-                                Cobro por hora
+                                Genero
                             </label>
                             <GenderMusician user={user} setUser={setUser} />
 
