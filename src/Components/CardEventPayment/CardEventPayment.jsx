@@ -10,28 +10,32 @@ export const CardEventPayment = ({ event }) => {
     return (
         <section className="tarjeta">
             <article className="card">
-                <div className='musicoImgContenedor'> <img src={event.musicoId[0].imagenMusico} className="musicoImg"/></div>
-           
-                <div className='nombregrupo'>
+                <div className="musicoImgContenedor">
+                    {' '}
+                    <img
+                        src={event.musicoId[0].imagenMusico}
+                        className="musicoImg"
+                    />
+                </div>
+
+                <div className="nombregrupo">
                     <p className="textcardtitle">
                         GRUPO/ARTISTA: {event.musicoId[0].nombreArtistico}
                     </p>
-                    
                 </div>
-                <div className='card-title'>
+                <div className="card-title">
                     <p className="textcard1">
                         <strong>DATOS EVENTO: </strong>
                     </p>
                 </div>
-                
+
                 <div className="card-text">
                     <p className="textcard1">
                         {' '}
                         <strong>Tipo de evento:</strong>
                         &nbsp; {event.descripcion}
                     </p>
-                
-                
+
                     <p className="textcard1">
                         <strong>Calle:</strong>
                         &nbsp;&nbsp; {event.calle}
@@ -54,22 +58,23 @@ export const CardEventPayment = ({ event }) => {
                         &nbsp; De {event.horaInicio} a {event.horaFinalizacion}
                     </p>
                 </div>
-
-                
             </article>
 
             <button
                 className="BotonGeneral3"
                 onClick={() => {
-                    //   console.log(event)
                     axios
                         .post(`${Context.api.apiUrl}/payment/create-payments`, {
-                            price: `${event.pago}`,
+                            price: event.pago,
                             custom_id: `${event._id}`,
                         })
                         .then((res) => {
+                            console.log(res.data)
                             //window.open(res.data.data.links[1].href )
                             window.location.href = res.data.data.links[1].href
+                        })
+                        .catch((error) => {
+                            console.log(error)
                         })
                 }}
             >

@@ -8,3 +8,18 @@
     -webkit-backdrop-filter: blur(10px);
     background-color: rgba(1, 23, 47, 0.5);
 }
+
+.Button-Close-session {
+    width: 160px;
+    height: 36px;
+    background-color: #01172f;
+    border-radius: 30px;
+    border: 1px solid #72b6ff;
+    color: #72b6ff;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #07305C;
+    }
+
+}
