@@ -6,9 +6,17 @@ import { useNavigate } from 'react-router-dom'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
 import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
+import Alert from 'react-bootstrap/Alert'
 
 export const CreateAccountUser = () => {
-    const [user, setUser] = React.useState(null)
+    const [showFalse, setShowFalse] = React.useState(false)
+    const [user, setUser] = React.useState({
+        name: '',
+        lastname: '',
+        secondlastname: '',
+        email: '',
+        password: '',
+    })
     const [estado, setEstado] = React.useState(null)
     const context = React.useContext(AppContext)
     const navigate = useNavigate()
@@ -16,31 +24,53 @@ export const CreateAccountUser = () => {
     const handleAccount = (e) => {
         e.preventDefault()
         //
-        axios
-            .post(`${context.api.apiUrl}/clients`, {
-                name: user.name,
-                lastname: user.lastname,
-                secondlastname: user.secondlastname,
-                email: user.email,
-                password: user.password,
-                estado: estado.estado,
-                municipio: estado.municipality,
-            })
-            .then((response) => {
-                if (response.data.success === true) {
-                    localStorage.setItem(
-                        'musicAppToken',
-                        response.data.payload[0].token
-                    )
-                    navigate('/')
-                    context.setUserId(response.data.payload[0])
-                }
-            })
+        const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+        if (
+            estado === null ||
+            estado.estado === [] ||
+            estado.municipality == [] ||
+            user.email === '' ||
+            user.lastname === '' ||
+            user.name === '' ||
+            user.password === '' ||
+            user.secondlastname === ''
+        )
+            setShowFalse(true)
+        else {
+            if (user.email.match(mailformat)) {
+                axios
+                    .post(`${context.api.apiUrl}/clients`, {
+                        name: user.name,
+                        lastname: user.lastname,
+                        secondlastname: user.secondlastname,
+                        email: user.email,
+                        password: user.password,
+                        estado: estado.estado,
+                        municipio: estado.municipality,
+                    })
+                    .then((response) => {
+                        if (response.data.success === true) {
+                            localStorage.setItem(
+                                'musicAppToken',
+                                response.data.payload[0].token
+                            )
+                            navigate('/')
+                            context.setUserId(response.data.payload[0])
+                        }
+                    })
+            } else setShowFalse(true)
+        }
     }
 
     return (
         <section className="bodyCreateAccountUser">
             <NavbarOp2 />
+            <Alert show={showFalse} variant="danger">
+                <Alert.Heading className="d-flex justify-content-center">
+                    Datos incorrectos
+                </Alert.Heading>
+            </Alert>
             <div className="CreateAccountUser">
                 <div className="CreateAccountUser-Container">
                     <div className="CreateAccountUserFormulario">
