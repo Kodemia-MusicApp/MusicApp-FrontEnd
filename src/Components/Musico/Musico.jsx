@@ -3,14 +3,15 @@ import './Musico.scss';
 
 import Header from '../Header/Header';
 
-export default function Musico() {
+export default function Musico({musician}) {
+  console.log(musician)
   return (
     <div className="wrap">
-      <Header img="https://i.postimg.cc/RhKcnmVB/young-african-american-jazz-musician-singing-song-on-gradient-pink-2.png" />
+      <Header img={musician.imagenMusico} />
       <section className="Music">
         <div className="profile">
           <img
-            src="https://i.postimg.cc/vZg9Djbh/band-g772da0cbe-640-3.png"
+            src={musician.imagenMusico}
             alt="music"
           />
           <h1>Musico</h1>
@@ -18,7 +19,7 @@ export default function Musico() {
         <div className="detail">
           <h2>Detalles</h2>
           <h3>
-            Genero : <span>Cumbia</span>
+            Genero : <span>{musician.genero}</span>
           </h3>
           <h3>
             Representante : <span>Alvaro </span>

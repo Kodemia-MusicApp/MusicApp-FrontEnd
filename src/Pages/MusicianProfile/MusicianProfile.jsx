@@ -27,11 +27,15 @@ export const MusicianProfile = () => {
                 setLoading(false)
             })
     }, [])
+    console.log(musician)
     return (
         <div>
             <NavbarOp2 />
 
-            <Musico></Musico>
+            <Musico musician ={musician}>
+                
+
+            </Musico>
             
         </div>
     )

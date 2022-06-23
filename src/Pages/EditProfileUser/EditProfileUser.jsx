@@ -10,7 +10,9 @@ import Transloadit from '@uppy/transloadit'
 import Alert from 'react-bootstrap/Alert'
 import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
 import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
-
+import { dark } from '@mui/material/styles/createPalette'
+import '@uppy/core/dist/style.css'
+import '@uppy/file-input/dist/style.css'
 export const EditProfileUser = () => {
     const Context = React.useContext(AppContext)
     const navigate = useNavigate()
@@ -38,6 +40,7 @@ export const EditProfileUser = () => {
                 name: file.name,
                 type: file.type,
                 data: file,
+                
             })
             uppy.upload()
         }
@@ -202,13 +205,14 @@ export const EditProfileUser = () => {
                                         Cambia tu imagen de perfil
                                     </label>
                                     <div className="elegirArchivo">
-                                        <input
+                                    <input
+                                        
                                             className="text-whites"
                                             type="file"
                                             name="file"
                                             id="file"
                                             onChange={onFileInputChange}
-                                        />
+                                        />   
                                         <div>
                                             {isUploadingFile ? (
                                                 <div
