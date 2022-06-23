@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
-
+import Header from '../../Components/Header/Header'
 export const MusicianDescription = () => {
     const { id } = useParams()
     const Context = React.useContext(AppContext)
@@ -18,17 +18,20 @@ export const MusicianDescription = () => {
             setLoading(false)
         })
     }, [])
-
+    console.log(musico)
     return (
         <section className="sectionMusicanDes">
             <NavbarOp2 />
+            
             {Loading ? (
                 <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             ) : (
+                <>
+                <Header img={musico[0].imagenMusico}  />
                 <div className="page-container">
-                    <h3 className="title">{musico[0].nombreArtistico}</h3>
+                    <h3></h3>
                     <div className="group-container">
                         <div className="img-info-container">
                             <img
@@ -79,6 +82,7 @@ export const MusicianDescription = () => {
                         </div>
                     </div>
                 </div>
+                </>
             )}
         </section>
     )
