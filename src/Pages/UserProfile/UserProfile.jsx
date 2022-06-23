@@ -38,14 +38,15 @@ export const UserProfile = () => {
                                     <p className="name">
                                         Nombre: {Context.user.name}
                                     </p>
-                                    <p className="city">Ciudad: CDMX</p>
-                                    <img
+                                    <p className="userCity"> <span>Ciudad: </span>   CDMX</p>
+                                    <div className='imgn'><img 
                                         src={Context.user.imagenusuario}
-                                        alt=""
-                                    />
+                                        alt="" className='userimagen'
+                                    /></div>
+                                    
                                 </div>
                                 <div className="textEditProfile">
-                                    <Link to="/editprofileuser">
+                                    <Link to="/editprofileuser" className='links'>
                                         <p className="editarperfil">
                                             EDITAR PERFIL{' '}
                                             <svg
