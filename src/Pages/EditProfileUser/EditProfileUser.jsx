@@ -180,15 +180,15 @@ export const EditProfileUser = () => {
                                     <label className="labelCreateUse">
                                         Estado
                                     </label>
-
-                                    <StatesSelect setEstado={setEstado} />
+                                    <div className='state'>
+                                    <StatesSelect setEstado={setEstado} /></div> 
                                     {estado == null ? (
                                         <></>
                                     ) : (
-                                        <MunicipalitySelect
+                                    <div className='state'>  <MunicipalitySelect
                                             setEstado={setEstado}
                                             estado={estado}
-                                        />
+                                        /></div>  
                                     )}
 
                                     <label className="labelCreateUse">
@@ -203,7 +203,7 @@ export const EditProfileUser = () => {
                                     </label>
                                     <div className="elegirArchivo">
                                         <input
-                                            className="text-white"
+                                            className="text-whites"
                                             type="file"
                                             name="file"
                                             id="file"
