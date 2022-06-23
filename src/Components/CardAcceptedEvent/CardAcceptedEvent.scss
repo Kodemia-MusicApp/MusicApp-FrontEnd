@@ -18,5 +18,35 @@
     .buttons-container {
         display: flex;
         justify-content: space-around;
+        
+        .button-acept-style1 {
+            width: 90px;
+            height: 39px;
+            border-radius: 15px;
+            border: 2px solid #1480F5;
+            color: #1480F5;
+            font-weight: bold;
+            background-color: transparent;
+
+            &:hover {
+                background-color: #1480F5;
+                color: #01172f;
+            }
+        }
+
+        .button-denegade-style1 {
+            width: 90px;
+            height: 39px;
+            border-radius: 15px;
+            border: 2px solid #fd4948;
+            color: #fd4948;
+            font-weight: bold;
+            background-color: transparent;
+
+            &:hover {
+                background-color: #fd4948;
+                color: #07305C;
+            }
+        }
     }
 }
