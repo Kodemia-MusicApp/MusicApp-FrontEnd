@@ -17,9 +17,9 @@
     border: 1px solid #72b6ff;
     color: #72b6ff;
     font-weight: bold;
-}
 
-.Button-Close-session :hover {
-    background-color: #07305C;
-    color: #fd4948;
+    &:hover {
+        background-color: #07305C;
+    }
+
 }
