@@ -99,15 +99,7 @@ export const Landing2 = () => {
                     </div>
                     <div className="MusicianCards-Container">
                         {musico.map((musico, key) => {
-                            return (
-                                <MusicianCardXL
-                                    key={key}
-                                    src={musico.imagenMusico}
-                                    title={musico.nombreArtistico}
-                                    text={musico.descripcion}
-                                    id={musico.id}
-                                />
-                            )
+                            return <MusicianCardXL musico={musico} />
                         })}
                     </div>
                 </main>
