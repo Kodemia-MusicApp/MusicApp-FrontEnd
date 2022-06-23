@@ -199,7 +199,7 @@ export const EditProfileUser = () => {
                                     </label>
                                     <div className="elegirArchivo">
                                         <input
-                                            className="text-white"
+                                            className="text-whites"
                                             type="file"
                                             name="file"
                                             id="file"

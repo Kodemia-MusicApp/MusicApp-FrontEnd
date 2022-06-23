@@ -118,15 +118,15 @@ export const CreateAccountUser = () => {
                                 }}
                             />
                             <label className="labelCreateUse">Estado</label>
-
-                            <StatesSelect setEstado={setEstado} />
+                                <div className='state'>
+                            <StatesSelect setEstado={setEstado} /></div>
                             {estado == null ? (
                                 <></>
                             ) : (
-                                <MunicipalitySelect
+                           <div className='state'>    <MunicipalitySelect
                                     setEstado={setEstado}
                                     estado={estado}
-                                />
+                                /></div>
                             )}
                             <label className="labelCreateUse">
                                 Escribe una contraseña
