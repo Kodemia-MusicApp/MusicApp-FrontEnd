@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react'
 import Uppy from '@uppy/core'
 import Transloadit from '@uppy/transloadit'
 import Alert from 'react-bootstrap/Alert'
+import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
+import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
 
 export const EditProfileMusician = () => {
     const Context = React.useContext(AppContext)
@@ -17,10 +19,11 @@ export const EditProfileMusician = () => {
     const [Loading, setLoading] = React.useState(true)
     const [uppy, setUppy] = useState()
     const [isUploadingFile, setIsUploadingFile] = useState(false)
-    const [imgeUpload, setImgeUpload] = useState({
-        image: 'https://tu-musico-ahora.s3.us-east-2.amazonaws.com/perfilImge/Blue+-+Dark.svg',
-    })
+    const [estado, setEstado] = React.useState(null)
+    const [passwordUser, setPasswordUser] = React.useState(null)
+    const [imgeUpload, setImgeUpload] = useState(null)
     const [show, setShow] = React.useState(false)
+    const [showError, setshowError] = React.useState(false)
 
     const onCompleteUploadFiles = (assembly) => {
         // aqui pueden tomar la url de la imagen para ponerla en un estado y mandarla al API
@@ -49,8 +52,8 @@ export const EditProfileMusician = () => {
                 },
             })
             .then((res) => {
-                console.log(res.data.payload[0])
                 setUser(res.data.payload[0])
+
                 setLoading(false)
             })
         const uppyInstance = new Uppy({
@@ -83,14 +86,19 @@ export const EditProfileMusician = () => {
                     name: user.name,
                     secondlastname: user.lastname,
                     lastname: user.secondlastname,
-                    state: user.state,
-                    imagenMusico: imgeUpload.image,
+                    estado: estado === null ? user.state : estado.estado,
+                    imagenMusico:
+                        imgeUpload === null
+                            ? user.imagenMusico
+                            : imgeUpload.image,
                     nombreArtistico: user.nombreArtistico,
                     horarioDiaUno: user.horarioDiaUno,
                     horarioDiaDos: user.horarioDiaDos,
                     horarioInicio: user.horarioInicio,
                     horarioFin: user.horarioFin,
                     descripcion: user.descripcion,
+                    municipio:
+                        estado === null ? user.municipio : estado.municipality,
                 },
                 {
                     headers: {
@@ -99,7 +107,6 @@ export const EditProfileMusician = () => {
                 }
             )
             .then((res) => {
-                console.log(res.data)
                 if (res.data.success === true) {
                     setShow(true)
                     setTimeout(() => {
@@ -112,6 +119,7 @@ export const EditProfileMusician = () => {
                 }
             })
     }
+
     return (
         <div>
             <NavbarOp2 />
@@ -126,6 +134,7 @@ export const EditProfileMusician = () => {
                             Datos actualizados
                         </Alert.Heading>
                     </Alert>
+
                     <div className="EditProfileUser">
                         <div className="EditProfileUser-container">
                             <p className="Login-Title">
@@ -182,6 +191,14 @@ export const EditProfileMusician = () => {
                                         />
 
                                         <label className="labelCreateUse">
+                                            Escribe una contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            className="editUser"
+                                        />
+
+                                        <label className="labelCreateUse">
                                             Nombre artistico
                                         </label>
                                         <input
@@ -198,27 +215,18 @@ export const EditProfileMusician = () => {
                                         />
 
                                         <label className="labelCreateUse">
-                                            Ciudad
+                                            Estado
                                         </label>
-                                        <input
-                                            value={user.state}
-                                            onChange={({ target }) => {
-                                                setUser({
-                                                    ...user,
-                                                    state: target.value,
-                                                })
-                                            }}
-                                            type="text"
-                                            className="editUser"
-                                        />
 
-                                        <label className="labelCreateUse">
-                                            Escribe una contraseña
-                                        </label>
-                                        <input
-                                            type="password"
-                                            className="editUser"
-                                        />
+                                        <StatesSelect setEstado={setEstado} />
+                                        {estado == null ? (
+                                            <></>
+                                        ) : (
+                                            <MunicipalitySelect
+                                                setEstado={setEstado}
+                                                estado={estado}
+                                            />
+                                        )}
 
                                         <div className="disponibilidad">
                                             <div className="diasdisponibles">
