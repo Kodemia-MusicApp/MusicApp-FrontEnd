@@ -2,6 +2,7 @@ import React from 'react'
 import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './CardAcceptedEvent.scss'
 
 export const CardAcceptedEvent = ({
     event,
@@ -12,12 +13,14 @@ export const CardAcceptedEvent = ({
     const token = localStorage.getItem('musicAppToken')
     const navigate = useNavigate()
     return (
-        <div class="col-4">
+        <div class="col-4 card-accepted-event-container">
             <h2>{event.titulo}</h2>
-            <h4>{event.clienteId[0].name}</h4>
-            <p>{event.descripcion}</p>
+            <div className='text-card-container'>
+                <h4>{event.clienteId[0].name}</h4>
+                <p>{event.descripcion}</p>
+            </div>
 
-            <section>
+            <section className='buttons-container'>
                 <button
                     type="button"
                     class="btn btn-outline-danger"
