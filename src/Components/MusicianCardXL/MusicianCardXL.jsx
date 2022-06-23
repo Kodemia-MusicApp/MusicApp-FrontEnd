@@ -3,35 +3,39 @@ import Card from 'react-bootstrap/Card'
 import './MusicianCardXL.scss'
 import { AvatarImg } from '../AvatarImg/AvatarImg'
 import { ButtonTranspOrg } from '../ButtonTranspOrg/ButtonTranspOrg'
-import imgavatar from './img/avatar.png'
 import { useNavigate } from 'react-router-dom'
 
-export const MusicianCardXL = (props) => {
+export const MusicianCardXL = (musico) => {
     const navigate = useNavigate()
+    console.log(musico.musico)
     return (
         <Card
             className="imgcard-container"
             onClick={() => {
-                navigate(`/musician/description/${props.id}`)
+                navigate(`/musician/description/${musico.musico.id}`)
             }}
         >
             <Card.Img
                 className="img-card-edit"
-                src={props.src}
-                alt={props.alt}
+                src={musico.musico.imagenMusico}
             />
             <Card.Body className="card-boddy-text-edit">
                 <Card.Title style={{ fontSize: '33px', color: 'white' }}>
-                    {props.title}
+                    {musico.musico.nombreArtistico}
                 </Card.Title>
-                <Card.Text style={{ color: 'white' }}>{props.text}</Card.Text>
+                <Card.Text style={{ color: 'white' }}>
+                    {musico.musico.descripcion}
+                </Card.Text>
             </Card.Body>
             <Card.Footer className="cardFooter">
                 <div className="d-flex align-items-center">
-                    <AvatarImg src={imgavatar} />
-                    <h5 style={{ color: 'white' }}>Artista/Banda</h5>
+                    <h5
+                        style={{ color: 'white' }}
+                    >{`${musico.musico.horarioDiaDos} a ${musico.musico.horarioDiaUno} de  ${musico.musico.horarioInicio} ${musico.musico.horarioFin}`}</h5>
                 </div>
-                <ButtonTranspOrg label="$200/h - CDMX" />
+                <ButtonTranspOrg
+                    label={`$${musico.musico.cobroPorHora}/h ${musico.musico.estado} `}
+                />
             </Card.Footer>
         </Card>
     )
