@@ -1,10 +1,58 @@
 @import '../../scss/variables.scss';
 
+.Paid-Events-Container {
+    width: fit-content;
+    height: auto;
+    background-color: #07305C;
+    border-radius: 2rem;
+    padding: 0 15px;
+    margin: 1.5rem;
 
-.cardMusicianPaidEvents{
-background-color: $cards-color;
-padding: 10px;
-color: white;
-border-radius: 30px;
-margin-top: 15px;
+    .Client-Name-Container {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        .Client-img {
+            width: 35px;
+            height: 35px;
+            background-color: grey;
+            margin-right: 15px;
+        }
+    }
+
+    .Event-Data-Container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: auto;
+        height: 350px;
+        border-radius: 9px;
+        background-color: #01172f;
+        padding: 16px;
+
+        .Data-Label-Container {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+        }
+
+        .Data-Desc-Container {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+        }
+    }
+
+    .Hour-Event-Container {
+        display: flex;
+        justify-content: space-around;
+        margin: 6px 0;
+        font-size: 17px;
+
+        .Text-Orange {
+            color: #fd4948;
+            font-weight: bold;
+        }
+    }
 }
