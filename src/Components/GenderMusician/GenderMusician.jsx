@@ -9,7 +9,7 @@ export const GenderMusician = ({ setUser, user }) => {
             <option>Seleccione un Genero</option>
             <option value="Mariachi">Mariachi</option>
             <option value="Ranchera">Ranchera</option>
-            <option value="Mayapax">Mayapax</option>
+            <option value="Versatil">Versatil</option>
             <option value="Norteña  ">Norteña</option>
             <option
                 value="La Banda Sinaloense
