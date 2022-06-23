@@ -7,7 +7,9 @@ export const StatesSelect = ({ setEstado }) => {
         <>
             <Form.Select
                 aria-label="Default select example"
-                onChange={(e) => setEstado({ estado: e.target.value })}
+                onChange={(e) =>
+                    setEstado({ estado: e.target.value, municipality: '' })
+                }
             >
                 <option>Seleccione un estado</option>
 
