@@ -40,7 +40,6 @@ export const EditProfileUser = () => {
                 name: file.name,
                 type: file.type,
                 data: file,
-                
             })
             uppy.upload()
         }
@@ -80,7 +79,19 @@ export const EditProfileUser = () => {
 
     const handleSave = (e) => {
         e.preventDefault()
-
+        if (user.password) {
+            axios.patch(
+                `${Context.api.apiUrl}/clients/password`,
+                {
+                    password: user.password,
+                },
+                {
+                    headers: {
+                        token: token,
+                    },
+                }
+            )
+        }
         axios
             .put(
                 `${Context.api.apiUrl}/clients`,
@@ -109,10 +120,8 @@ export const EditProfileUser = () => {
                     setTimeout(() => {
                         navigate('/userprofile')
                     }, 1500)
-                    //
                 } else {
                     alert('Error')
-                    //navigate('/userprofile')
                 }
             })
     }
@@ -183,15 +192,19 @@ export const EditProfileUser = () => {
                                     <label className="labelCreateUse">
                                         Estado
                                     </label>
-                                    <div className='state'>
-                                    <StatesSelect setEstado={setEstado} /></div> 
+                                    <div className="state">
+                                        <StatesSelect setEstado={setEstado} />
+                                    </div>
                                     {estado == null ? (
                                         <></>
                                     ) : (
-                                    <div className='state'>  <MunicipalitySelect
-                                            setEstado={setEstado}
-                                            estado={estado}
-                                        /></div>  
+                                        <div className="state">
+                                            {' '}
+                                            <MunicipalitySelect
+                                                setEstado={setEstado}
+                                                estado={estado}
+                                            />
+                                        </div>
                                     )}
 
                                     <label className="labelCreateUse">
@@ -200,19 +213,24 @@ export const EditProfileUser = () => {
                                     <input
                                         type="password"
                                         className="editUser"
+                                        onChange={({ target }) => {
+                                            setUser({
+                                                ...user,
+                                                password: target.value,
+                                            })
+                                        }}
                                     />
                                     <label className="labelCreateUse">
                                         Cambia tu imagen de perfil
                                     </label>
                                     <div className="elegirArchivo">
-                                    <input
-                                        
+                                        <input
                                             className="text-whites"
                                             type="file"
                                             name="file"
                                             id="file"
                                             onChange={onFileInputChange}
-                                        />   
+                                        />
                                         <div>
                                             {isUploadingFile ? (
                                                 <div
