@@ -10,6 +10,7 @@ import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
 import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
 import Alert from 'react-bootstrap/Alert'
 import { GenderMusician } from '../../Components/GenderMusician/GenderMusician'
+import { HoursMusician } from '../../Components/HoursMusician/HoursMusician'
 
 export const CreateAccountMusician = () => {
     const [showFalse, setShowFalse] = React.useState(false)
@@ -23,6 +24,10 @@ export const CreateAccountMusician = () => {
         cobroPorHora: '',
         genero: '',
         nombreArtistico: '',
+        horarioDiaDos: '',
+        horarioFin: '',
+        horarioInicio: '',
+        horarioDiaUno: '',
     })
     const [estado, setEstado] = React.useState(null)
     const context = React.useContext(AppContext)
@@ -41,7 +46,11 @@ export const CreateAccountMusician = () => {
             user.contrasenia === '' ||
             user.cobroPorHora === '' ||
             user.genero === '' ||
-            user.nombreArtistico == ''
+            user.nombreArtistico == '' ||
+            user.horarioDiaDos == '' ||
+            user.horarioDiaUno == '' ||
+            user.horarioFin == '' ||
+            user.horarioInicio == ''
         )
             setShowFalse(true)
         else {
@@ -60,6 +69,10 @@ export const CreateAccountMusician = () => {
                         municipio: estado.municipality,
                         nombreArtistico: user.nombreArtistico,
                         genero: user.genero,
+                        horarioDiaDos: user.horarioDiaDos,
+                        horarioDiaUno: user.horarioDiaUno,
+                        horarioFin: user.horarioFin,
+                        horarioInicio: user.horarioInicio,
                     })
                     .then((response) => {
                         if (response.data.success === true) {
@@ -68,7 +81,7 @@ export const CreateAccountMusician = () => {
                                 'musicAppToken',
                                 response.data.payload[0].token
                             )
-                            // navigate('/')
+                            navigate('/')
                             context.setUserId(response.data.payload[0])
                         }
                     })
@@ -220,7 +233,7 @@ export const CreateAccountMusician = () => {
                                     />
                                 </div>
                             )}
-
+                            <HoursMusician setUser={setUser} user={user} />
                             <label className="labelCreateMusician">
                                 Escribe una contraseña
                             </label>
