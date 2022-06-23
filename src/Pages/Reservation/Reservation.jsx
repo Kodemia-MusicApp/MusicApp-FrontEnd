@@ -16,6 +16,8 @@ import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { purple } from '@mui/material/colors'
 import { UserProfile } from '../UserProfile/UserProfile'
+import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
+import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
 
 export const Reservation = () => {
     const Context = React.useContext(AppContext)
@@ -23,11 +25,19 @@ export const Reservation = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [loading, setLoading] = React.useState(true)
-    const [event, setEvent] = React.useState(null)
+    const [event, setEvent] = React.useState({
+        descripcion: '',
+        colonia: '',
+        calle: '',
+        numero: '',
+        titulo: '',
+    })
     const [dayOne, setdayOne] = React.useState(new Date())
     const [dayTwo, setdayTwo] = React.useState(new Date())
     const [musico, setMusico] = React.useState(null)
     const [show, setShow] = React.useState(false)
+    const [showFalse, setShowFalse] = React.useState(false)
+    const [estado, setEstado] = React.useState(null)
 
     React.useEffect(() => {
         axios.get(`${Context.api.apiUrl}/musician/id/${id}`).then((res) => {
@@ -73,10 +83,21 @@ export const Reservation = () => {
         diff /= 60 * 60
         const result =
             Math.abs(Math.round(diff)) * parseFloat(musico.cobroPorHora)
-        console.log(event)
 
-        if (parseDayOne == parseDayTwo || parseDayOne > parseDayTwo) {
-            alert('Horas incorrectas')
+        if (
+            parseDayOne == parseDayTwo ||
+            parseDayOne > parseDayTwo ||
+            event === null ||
+            estado === null ||
+            estado.estado === [] ||
+            estado.municipality == [] ||
+            event.calle == '' ||
+            event.colonia == '' ||
+            event.descripcion == '' ||
+            event.numero == '' ||
+            event.titulo == ''
+        ) {
+            setShowFalse(true)
         } else {
             axios
                 .post(
@@ -89,11 +110,12 @@ export const Reservation = () => {
                         horaFinalizacion: hourTwo,
                         musicoId: id,
                         colonia: event.colonia,
+                        numero: event.numero,
                         calle: event.calle,
-                        numero: event.calle,
-                        ciudad: event.ciudad,
                         titulo: event.titulo,
                         pago: result,
+                        estado: estado.estado,
+                        municipio: estado.municipality,
                     },
                     {
                         headers: {
@@ -108,8 +130,7 @@ export const Reservation = () => {
                             navigate('/reservationaccepted')
                         }, 1500)
                     } else {
-                        alert('Error')
-                        navigate('/userprofile')
+                        setShowFalse(true)
                     }
                 })
         }
@@ -126,6 +147,11 @@ export const Reservation = () => {
                     <div className="d-flex justify-content-center">
                         <p>El evento fue creado y enviado al musico</p>
                     </div>
+                </Alert>
+                <Alert show={showFalse} variant="danger">
+                    <Alert.Heading className="d-flex justify-content-center">
+                        Datos incorrectos
+                    </Alert.Heading>
                 </Alert>
             </section>
             {loading ? (
@@ -223,19 +249,17 @@ export const Reservation = () => {
                                     }}
                                 />
 
-                                <label className="labelreservation">
-                                    Ciudad y/o Municipio
-                                </label>
-                                <input
-                                    type="text"
-                                    className="inputReservation"
-                                    onChange={({ target }) => {
-                                        setEvent({
-                                            ...event,
-                                            ciudad: target.value,
-                                        })
-                                    }}
-                                />
+                                <label className="labelCreateUse">Estado</label>
+
+                                <StatesSelect setEstado={setEstado} />
+                                {estado == null ? (
+                                    <></>
+                                ) : (
+                                    <MunicipalitySelect
+                                        setEstado={setEstado}
+                                        estado={estado}
+                                    />
+                                )}
                                 <section className="calendar">
                                     <p className="dataTitles2">
                                         Dia y hora de inicio

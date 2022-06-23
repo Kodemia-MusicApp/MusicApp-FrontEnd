@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react'
 import Uppy from '@uppy/core'
 import Transloadit from '@uppy/transloadit'
 import Alert from 'react-bootstrap/Alert'
+import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
+import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
 
 export const EditProfileUser = () => {
     const Context = React.useContext(AppContext)
@@ -17,8 +19,9 @@ export const EditProfileUser = () => {
     const [Loading, setLoading] = React.useState(true)
     const [uppy, setUppy] = useState()
     const [isUploadingFile, setIsUploadingFile] = useState(false)
-    const [imgeUpload, setImgeUpload] = useState()
+    const [imgeUpload, setImgeUpload] = useState(null)
     const [show, setShow] = React.useState(false)
+    const [estado, setEstado] = React.useState(null)
 
     const onCompleteUploadFiles = (assembly) => {
         // aqui pueden tomar la url de la imagen para ponerla en un estado y mandarla al API
@@ -48,6 +51,7 @@ export const EditProfileUser = () => {
             })
             .then((res) => {
                 setUser(res.data.payload[0])
+
                 setLoading(false)
             })
         const uppyInstance = new Uppy({
@@ -82,7 +86,13 @@ export const EditProfileUser = () => {
                     secondlastname: user.lastname,
                     lastname: user.secondlastname,
                     state: user.state,
-                    imagenusuario: imgeUpload.image,
+                    imagenusuario:
+                        imgeUpload === null
+                            ? user.imagenusuario
+                            : imgeUpload.image,
+                    estado: estado === null ? user.state : estado.estado,
+                    municipio:
+                        estado === null ? user.municipio : estado.municipality,
                 },
                 {
                     headers: {
@@ -103,13 +113,8 @@ export const EditProfileUser = () => {
                 }
             })
     }
-    const handleUser = (e) => {
-        e.preventDefault()
-        setUser(...user, {
-            name: e.value,
-        })
-    }
-    // console.log('lin66', imgeUpload)
+
+    //
     return (
         <div>
             <NavbarOp2 />
@@ -173,19 +178,18 @@ export const EditProfileUser = () => {
                                     />
 
                                     <label className="labelCreateUse">
-                                        Ciudad
+                                        Estado
                                     </label>
-                                    <input
-                                        value={user.state}
-                                        type="text"
-                                        className="editUser"
-                                        onChange={({ target }) => {
-                                            setUser({
-                                                ...user,
-                                                state: target.value,
-                                            })
-                                        }}
-                                    />
+                                    <div className='state'>
+                                    <StatesSelect setEstado={setEstado} /></div> 
+                                    {estado == null ? (
+                                        <></>
+                                    ) : (
+                                    <div className='state'>  <MunicipalitySelect
+                                            setEstado={setEstado}
+                                            estado={estado}
+                                        /></div>  
+                                    )}
 
                                     <label className="labelCreateUse">
                                         Escribe una contraseña
@@ -197,9 +201,9 @@ export const EditProfileUser = () => {
                                     <label className="labelCreateUse">
                                         Cambia tu imagen de perfil
                                     </label>
-                                    <div className="">
+                                    <div className="elegirArchivo">
                                         <input
-                                            className="text-white"
+                                            className="text-whites"
                                             type="file"
                                             name="file"
                                             id="file"

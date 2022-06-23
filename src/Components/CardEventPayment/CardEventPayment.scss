@@ -1,0 +1,64 @@
+
+//////CONTAINERS
+.card{
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: #01172f;
+   
+}
+
+.tarjeta{
+    background-color: rgb(7,48,93); 
+    
+    width: 360px;
+    border: 2px solid rgb(7,48,93);
+   
+}
+
+.BotonGeneral3{
+    width: 90%;
+    margin: 10px 0 10px 20px;
+    border-radius: 30px;
+    height: 40px;
+    background-color: rgb(7,48,93);
+    border: 2px solid #fd4948; 
+    color: #fd4948;
+    font-weight: 700;
+    &:hover{
+        background-color: #fd4948;
+        color: black;
+    }
+}
+.musicoImg{
+    width: 100%;
+    height: 200px
+}
+.textcard1{
+    color: white; 
+    font-size: 17px;
+    margin: 0;
+}
+
+.nombregrupo{
+    
+    height: 90px; 
+    color: white;
+    padding: 10px; 
+}
+.musicoImgContenedor{
+    width: 100%;
+  
+}
+.card-text{
+    height: 230px;
+
+}
+///TEXTO
+/// 
+.textcardtitle{
+    font-size: 20px;
+}
+

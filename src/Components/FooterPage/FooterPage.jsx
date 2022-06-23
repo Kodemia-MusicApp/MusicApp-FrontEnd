@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './FooterPage.scss';
 
 export const FooterPage = () => {
@@ -8,7 +9,7 @@ export const FooterPage = () => {
                 <h6>Tu Musico Ahora</h6>
             </div>
             <div>
-                
+                <i class="bi bi-instagram"></i>
             </div>
         </div>
     )

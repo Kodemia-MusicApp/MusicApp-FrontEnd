@@ -54,12 +54,6 @@ export const NavbarOp2 = () => {
                         >
                             Musicos
                         </Nav.Link>
-                        <Nav.Link
-                            href="/"
-                            style={{ color: '#FD4948', fontWeight: '600' }}
-                        >
-                            Contrataciones
-                        </Nav.Link>
                     </Nav>
                     <Nav>
                         {Context.user.name !== '' ? (
