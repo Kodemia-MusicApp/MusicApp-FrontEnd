@@ -8,18 +8,30 @@ export const MusicianPaidEvents = ({ event }) => {
             <div className="MusicianPaidEvents-Container">
                 <div className="MusicianPaidEvents-Content">
                     <div className="cardMusicianPaidEvents">
-                        <p className="reservedtext">DATOS DEL CLIENTE</p>
+                        <h5 className="text-center">DATOS DEL CLIENTE</h5>
                         <p className="reservedtext">
-                            Titulo del evento: {event.titulo}
+                            Titulo del evento:&nbsp;
+                            <span className="reservedtext-styled">
+                                {event.titulo}
+                            </span>
                         </p>
                         <p className="reservedtext">
-                            Cliente: {event.clienteId[0].name}
+                            Cliente:&nbsp;
+                            <span className="reservedtext-styled">
+                                {event.clienteId[0].name}
+                            </span>
                         </p>
                         <p className="reservedtext">
-                            Direccion: {`${event.colonia} ${event.numero}`}
+                            Direccion:&nbsp;
+                            <span className="reservedtext-styled">
+                                {`${event.colonia} ${event.numero}`}
+                            </span>
                         </p>
                         <p className="reservedtext">
-                            Ciudad: {event.clienteId[0].estado}
+                            Ciudad:&nbsp;
+                            <span className="reservedtext-styled">
+                                {event.clienteId[0].estado}
+                            </span>
                         </p>
                         <p className="reservedtext">
                             Fecha: 23 junio de 1 pm a 8pm

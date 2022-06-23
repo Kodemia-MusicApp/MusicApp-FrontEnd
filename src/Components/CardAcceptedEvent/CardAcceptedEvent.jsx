@@ -23,7 +23,7 @@ export const CardAcceptedEvent = ({
             <section className='buttons-container'>
                 <button
                     type="button"
-                    class="btn btn-outline-danger"
+                    class="button-denegade-style1"
                     onClick={() => {
                         axios
                             .patch(
@@ -51,7 +51,7 @@ export const CardAcceptedEvent = ({
                     Rechazar
                 </button>
                 <button
-                    className="btn btn-outline-success"
+                    className="button-acept-style1"
                     onClick={() => {
                         axios
                             .patch(

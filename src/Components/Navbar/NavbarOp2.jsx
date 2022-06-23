@@ -92,7 +92,7 @@ export const NavbarOp2 = () => {
 
                         {Context.user.name !== '' ? (
                             <button
-                                className="btn btn-outline-primary"
+                                className="Button-Close-session"
                                 onClick={() => {
                                     navigate('/')
                                     window.location.reload(true)
