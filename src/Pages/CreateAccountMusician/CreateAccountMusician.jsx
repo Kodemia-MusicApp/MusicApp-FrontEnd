@@ -9,6 +9,7 @@ import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 import { StatesSelect } from '../../Components/StatesSelect/StatesSelect'
 import { MunicipalitySelect } from '../../Components/MunicipalitySelect/MunicipalitySelect'
 import Alert from 'react-bootstrap/Alert'
+import { GenderMusician } from '../../Components/GenderMusician/GenderMusician'
 
 export const CreateAccountMusician = () => {
     const [showFalse, setShowFalse] = React.useState(false)
@@ -20,6 +21,8 @@ export const CreateAccountMusician = () => {
         contrasenia: '',
         genero: '',
         cobroPorHora: '',
+        genero: '',
+        nombreArtistico: '',
     })
     const [estado, setEstado] = React.useState(null)
     const context = React.useContext(AppContext)
@@ -36,7 +39,9 @@ export const CreateAccountMusician = () => {
             user.nombre === '' ||
             user.apellidoPaterno === '' ||
             user.contrasenia === '' ||
-            user.cobroPorHora === ''
+            user.cobroPorHora === '' ||
+            user.genero === '' ||
+            user.nombreArtistico == ''
         )
             setShowFalse(true)
         else {
@@ -53,6 +58,8 @@ export const CreateAccountMusician = () => {
                         cobroPorHora: user.cobroPorHora,
                         estado: estado.estado,
                         municipio: estado.municipality,
+                        nombreArtistico: user.nombreArtistico,
+                        genero: user.genero,
                     })
                     .then((response) => {
                         if (response.data.success === true) {
@@ -194,6 +201,11 @@ export const CreateAccountMusician = () => {
                                     })
                                 }}
                             />
+                            <label className="labelCreateMusician">
+                                Cobro por hora
+                            </label>
+                            <GenderMusician user={user} setUser={setUser} />
+
                             <label className="labelCreateUse">Estado</label>
                             <div className="state">
                                 <StatesSelect setEstado={setEstado} />
