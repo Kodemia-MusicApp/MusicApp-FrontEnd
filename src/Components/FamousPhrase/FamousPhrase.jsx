@@ -11,7 +11,7 @@ export const FamousPhrase = () => {
             }}
         >
             <Card.Body>
-                <blockquote className="blockquote mb-0">
+                <blockquote className="blockquote text-center mb-0">
                     <p style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
                         {' '}
                         La Música es la aritmética de los sonidos, como la
