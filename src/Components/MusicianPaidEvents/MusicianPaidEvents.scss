@@ -1,7 +1,8 @@
 @import '../../scss/variables.scss';
 
 .MusicianPaidEvents-Content {
-    width: 250px;
+    width: 300px;
+    min-height: 500px;
     height: auto;
     background-color: #07305C;
     margin: 15px;
@@ -10,7 +11,7 @@
 
     .cardMusicianPaidEvents {
         width: auto;
-        height: 250px;
+        height: 450px;
         background-color: #01172f;
         border-radius: 20px;
         padding: 10px;
@@ -21,5 +22,10 @@
         .reservedtext-styled {
             color: rgb(154, 154, 154);
         }
+    }
+
+    .description-container {
+        overflow-y: auto;
+        height: 150px;
     }
 }
