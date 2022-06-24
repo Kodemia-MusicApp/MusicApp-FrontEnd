@@ -217,7 +217,7 @@ export const CreateAccountMusician = () => {
                             <label className="labelCreateMusician">
                                 Genero
                             </label>
-                            <GenderMusician user={user} setUser={setUser} />
+                            <div className="state"> <GenderMusician user={user} setUser={setUser} /></div>
 
                             <label className="labelCreateUse">Estado</label>
                             <div className="state">
