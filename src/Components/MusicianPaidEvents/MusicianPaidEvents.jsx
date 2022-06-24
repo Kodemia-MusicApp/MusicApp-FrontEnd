@@ -36,9 +36,7 @@ export const MusicianPaidEvents = ({ event }) => {
                         <p className="reservedtext">
                             Fecha: 23 junio de 1 pm a 8pm
                         </p>
-                        <p>
-                            Descripcion del Evento:&nbsp;
-                        </p>
+                        <p>Descripcion del Evento:&nbsp;</p>
                         <p className="reservedtext-styled description-container">
                             {event.descripcion}
                         </p>

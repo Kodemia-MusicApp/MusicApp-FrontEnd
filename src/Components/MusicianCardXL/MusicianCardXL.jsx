@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const MusicianCardXL = (musico) => {
     const navigate = useNavigate()
-    console.log(musico.musico)
+
     return (
         <Card
             className="imgcard-container"

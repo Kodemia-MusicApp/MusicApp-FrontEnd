@@ -9,7 +9,6 @@ import axios from 'axios'
 import { AppContext } from '../../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
-
 export const Landing2 = () => {
     const Context = React.useContext(AppContext)
     const [musico, setMusico] = React.useState([])
@@ -17,13 +16,11 @@ export const Landing2 = () => {
     const [showClient, setShowClient] = React.useState(false)
     const [showMusician, setShowMusician] = React.useState(false)
     const [Loading, setLoading] = React.useState(true)
-
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios.get(`${Context.api.apiUrl}/musician/all`).then((res) => {
             setMusico(res.data.payload)
         })
-
         if (Context.user.typeClient == 'Client') {
             axios
                 .get(`${Context.api.apiUrl}/event/client/eventAccept`, {

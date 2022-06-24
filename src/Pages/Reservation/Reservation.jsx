@@ -249,16 +249,22 @@ export const Reservation = () => {
                                     }}
                                 />
 
-                                <label className="labelCreateUse">Estado</label>
+                                <label className="labelreservation">
+                                    Estado
+                                </label>
 
-                                <StatesSelect setEstado={setEstado} />
+                                <div className="stateSelect">
+                                    <StatesSelect setEstado={setEstado} />
+                                </div>
                                 {estado == null ? (
                                     <></>
                                 ) : (
-                                    <MunicipalitySelect
-                                        setEstado={setEstado}
-                                        estado={estado}
-                                    />
+                                    <div className="stateSelect">
+                                        <MunicipalitySelect
+                                            setEstado={setEstado}
+                                            estado={estado}
+                                        />
+                                    </div>
                                 )}
                                 <section className="calendar">
                                     <p className="dataTitles2">

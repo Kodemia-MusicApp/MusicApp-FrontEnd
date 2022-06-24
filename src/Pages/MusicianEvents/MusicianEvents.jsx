@@ -6,7 +6,6 @@ import Alert from 'react-bootstrap/Alert'
 import { MusicianPaidEvents } from '../../Components/MusicianPaidEvents/MusicianPaidEvents'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 import { CardAcceptedEvent } from '../../Components/CardAcceptedEvent/CardAcceptedEvent'
-
 export const MusicianEvents = () => {
     const Context = React.useContext(AppContext)
     const [events, setEvents] = React.useState([])
@@ -15,7 +14,6 @@ export const MusicianEvents = () => {
     const token = localStorage.getItem('musicAppToken')
     const [showAlertAccept, setShowAlertAccept] = React.useState(false)
     const [showAlertRefused, setShowAlertRefused] = React.useState(false)
-
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
@@ -36,10 +34,8 @@ export const MusicianEvents = () => {
             .then((res) => {
                 seteventsAccepted(res.data.payload)
             })
-
         setLoading(false)
     }, [])
-    console.log(eventsAccepted)
     return (
         <>
             <NavbarOp2 />
@@ -56,7 +52,10 @@ export const MusicianEvents = () => {
                         <Alert.Heading>Evento Rechazado!</Alert.Heading>
                     </Alert>
                     <section className="text-white">
-                        <div className="d-flex flex-wrap">
+                        <div
+                            className="d-flex flex-wrap"
+                            style={{ 'max-width': '1200px', margin: 'auto' }}
+                        >
                             {events.map((event, key) => (
                                 <CardAcceptedEvent
                                     key={key}
@@ -67,8 +66,16 @@ export const MusicianEvents = () => {
                             ))}
                         </div>
                         <div>
-                            <h2 style={{margin: '60px', textAlign: 'center'}}>Otros eventos</h2>
-                            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                            <h2 style={{ marginLeft: '30px' }}>
+                                Otros eventos
+                            </h2>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'center',
+                                }}
+                            >
                                 {eventsAccepted.map((event, key) => {
                                     return (
                                         <MusicianPaidEvents
