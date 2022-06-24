@@ -7,7 +7,7 @@ import { AppContext } from '../../Context/AppContext'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
-import Musico  from '../../Components/Musico/Musico'
+import Musico from '../../Components/Musico/Musico'
 export const MusicianProfile = () => {
     const Context = React.useContext(AppContext)
     const [musician, setMusician] = React.useState([])
@@ -27,16 +27,12 @@ export const MusicianProfile = () => {
                 setLoading(false)
             })
     }, [])
-    console.log(musician)
+
     return (
         <div>
             <NavbarOp2 />
 
-            <Musico musician ={musician}>
-                
-
-            </Musico>
-            
+            <Musico musician={musician}></Musico>
         </div>
     )
 }
