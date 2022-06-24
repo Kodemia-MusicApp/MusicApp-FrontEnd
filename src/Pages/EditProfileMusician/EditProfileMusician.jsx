@@ -219,14 +219,14 @@ export const EditProfileMusician = () => {
                                             Estado
                                         </label>
 
-                                        <StatesSelect setEstado={setEstado} />
+                                       <div className="estados"> <StatesSelect setEstado={setEstado} /></div>
                                         {estado == null ? (
                                             <></>
                                         ) : (
-                                            <MunicipalitySelect
+                                            <div className="estados">      <MunicipalitySelect
                                                 setEstado={setEstado}
                                                 estado={estado}
-                                            />
+                                            /></div>
                                         )}
 
                                         <div className="disponibilidad">

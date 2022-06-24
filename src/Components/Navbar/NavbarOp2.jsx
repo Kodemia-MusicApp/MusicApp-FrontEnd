@@ -52,7 +52,7 @@ export const NavbarOp2 = () => {
                             href="/"
                             style={{ color: '#FD4948', fontWeight: '600' }}
                         >
-                            Musicos
+                            
                         </Nav.Link>
                     </Nav>
                     <Nav>
