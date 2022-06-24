@@ -55,25 +55,30 @@ export const ReservationAccepted = () => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <div className="ReservationAccepted1">
+                <div className="">
                     <div className="ReservationAccepted-container">
-                       <p className="InicioSesion-Title">
+                        <p className="InicioSesion-Title">
                             AGENDA DE EVENTOS
                             <p className="NombreApp1">TumusAh</p>
-                        </p> 
+                        </p>
 
                         <div className="ReservationAccepted-content">
                             <div className="tarjetasPago">
-                            {eventsAccepted.map((event, key) => {
-                                return (
-                                    <CardEventPayment key={key} event={event} />
-                                )
-                            })}
+                                {eventsAccepted.map((event, key) => {
+                                    return (
+                                        <CardEventPayment
+                                            key={key}
+                                            event={event}
+                                        />
+                                    )
+                                })}
                             </div>
-                            <p className='EventosporHacer'>EVENTOS POR REALIZAR</p>
+                            <p className="EventosporHacer">
+                                EVENTOS POR REALIZAR
+                            </p>
                             <div className="eventoenProceso">
                                 {eventsProgress.map((event, key) => {
-                                    // console.log('lin97', event)
+                                    //
                                     return (
                                         <main>
                                             <CardEventProgress
