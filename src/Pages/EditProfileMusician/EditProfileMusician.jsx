@@ -78,7 +78,23 @@ export const EditProfileMusician = () => {
     }, [])
     const handleSave = (e) => {
         e.preventDefault()
-
+        if (user.password) {
+            axios
+                .patch(
+                    `${Context.api.apiUrl}/musician/password`,
+                    {
+                        password: user.password,
+                    },
+                    {
+                        headers: {
+                            token: token,
+                        },
+                    }
+                )
+                .then((res) => {
+                    console.log(res)
+                })
+        }
         axios
             .patch(
                 `${Context.api.apiUrl}/musician`,
@@ -197,6 +213,12 @@ export const EditProfileMusician = () => {
                                         <input
                                             type="password"
                                             className="editUser"
+                                            onChange={({ target }) => {
+                                                setUser({
+                                                    ...user,
+                                                    password: target.value,
+                                                })
+                                            }}
                                         />
 
                                         <label className="labelCreateUse">
