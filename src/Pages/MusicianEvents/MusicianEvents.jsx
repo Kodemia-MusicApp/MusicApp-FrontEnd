@@ -67,7 +67,7 @@ export const MusicianEvents = () => {
                             ))}
                         </div>
                         <div>
-                            <h2 style={{marginLeft: '30px'}}>Otros eventos</h2>
+                            <h2 style={{margin: '60px', textAlign: 'center'}}>Otros eventos</h2>
                             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
                                 {eventsAccepted.map((event, key) => {
                                     return (

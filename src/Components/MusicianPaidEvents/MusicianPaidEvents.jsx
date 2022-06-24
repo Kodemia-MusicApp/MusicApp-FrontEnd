@@ -8,7 +8,7 @@ export const MusicianPaidEvents = ({ event }) => {
             <div className="MusicianPaidEvents-Container">
                 <div className="MusicianPaidEvents-Content">
                     <div className="cardMusicianPaidEvents">
-                        <h5 className="text-center">DATOS DEL CLIENTE</h5>
+                        <h5 className="text-center m-4">DATOS DEL CLIENTE</h5>
                         <p className="reservedtext">
                             Titulo del evento:&nbsp;
                             <span className="reservedtext-styled">
@@ -35,6 +35,12 @@ export const MusicianPaidEvents = ({ event }) => {
                         </p>
                         <p className="reservedtext">
                             Fecha: 23 junio de 1 pm a 8pm
+                        </p>
+                        <p>
+                            Descripcion del Evento:&nbsp;
+                        </p>
+                        <p className="reservedtext-styled description-container">
+                            {event.descripcion}
                         </p>
                     </div>
                 </div>
