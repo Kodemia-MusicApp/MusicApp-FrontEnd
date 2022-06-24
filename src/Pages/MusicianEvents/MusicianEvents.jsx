@@ -56,7 +56,10 @@ export const MusicianEvents = () => {
                         <Alert.Heading>Evento Rechazado!</Alert.Heading>
                     </Alert>
                     <section className="text-white">
-                        <div className="d-flex flex-wrap">
+                        <div
+                            className="d-flex flex-wrap"
+                            style={{ 'max-width': '1200px', margin: 'auto' }}
+                        >
                             {events.map((event, key) => (
                                 <CardAcceptedEvent
                                     key={key}
@@ -67,8 +70,16 @@ export const MusicianEvents = () => {
                             ))}
                         </div>
                         <div>
-                            <h2 style={{marginLeft: '30px'}}>Otros eventos</h2>
-                            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                            <h2 style={{ marginLeft: '30px' }}>
+                                Otros eventos
+                            </h2>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'center',
+                                }}
+                            >
                                 {eventsAccepted.map((event, key) => {
                                     return (
                                         <MusicianPaidEvents

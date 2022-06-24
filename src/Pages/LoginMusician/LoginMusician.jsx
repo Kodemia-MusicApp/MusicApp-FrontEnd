@@ -29,11 +29,10 @@ export const LoginMusician = () => {
                         )
                         navigate('/')
                         context.setUserId(res.data.payload[0])
-                    }
+                    } else setShow(true)
                 })
                 .catch((error) => {
-                    console.log(error.response.data.success)
-                    if (error.response.data.success === false) setShow(true)
+                    setShow(true)
                 })
         } else setShow(true)
     }
