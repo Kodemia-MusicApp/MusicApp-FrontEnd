@@ -12,15 +12,78 @@ export const CardAcceptedEvent = ({
     const Context = React.useContext(AppContext)
     const token = localStorage.getItem('musicAppToken')
     const navigate = useNavigate()
+    const [Loading, setLoading] = React.useState(true)
+    const months = [
+        'enero',
+        'febrero',
+        'marzo',
+        'abril',
+        'mayo',
+        'junio',
+        'julio',
+        'agosto',
+        'septiembre',
+        'octubre',
+        'noviembre',
+        'diciembre',
+    ]
+    const days = [
+        'domingo',
+        'lunes',
+        'martes',
+        'miércoles',
+        'jueves',
+        'viernes',
+        'sábado',
+    ]
+
+    const secondDate = new Date(event.fechaFinalizacion)
+    const firstDate = new Date(event.fechaInicio)
+    const firstHour =
+        firstDate.getMinutes() < 10
+            ? `0${firstDate.getMinutes()}`
+            : firstDate.getMinutes()
+    const secondHour =
+        secondDate.getMinutes() < 10
+            ? `0${secondDate.getMinutes()}`
+            : secondDate.getMinutes()
+
     return (
         <div class="col-4 card-accepted-event-container">
             <h2>{event.titulo}</h2>
-            <div className='text-card-container'>
+            <div className="text-card-container">
                 <h4>{event.clienteId[0].name}</h4>
+                <article className="d-flex">
+                    <h5 className="me-2">Telefono: </h5>
+                    <span>{`${event.clienteId[0].phone}`}</span>
+                </article>
+                <article className="d-flex">
+                    <h5 className="me-2">Direccion</h5>
+                    <span>{`${event.colonia} ${event.calle}`}</span>
+                </article>
+                <h5>Fecha</h5>
+                <article>
+                    <span>
+                        {' '}
+                        {`${days[firstDate.getDay()]} ${firstDate.getDate()} ${
+                            months[firstDate.getMonth()]
+                        } ${firstDate.getHours()}:${firstHour}`}
+                    </span>
+                </article>
+                <article>
+                    <span>
+                        {' '}
+                        {`${
+                            days[secondDate.getDay()]
+                        } ${secondDate.getDate()} ${
+                            months[secondDate.getMonth()]
+                        } ${secondDate.getHours()}:${secondHour}`}
+                    </span>
+                </article>
                 <p>{event.descripcion}</p>
             </div>
 
-            <section className='buttons-container'>
+            <section className="buttons-container">
                 <button
                     type="button"
                     class="button-denegade-style1"
