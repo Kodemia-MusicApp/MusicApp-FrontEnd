@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 
 export default function Musico({ musician }) {
-    console.log(musician)
     return (
         <div className="wrap">
             <Header img={musician.imagenMusico} />

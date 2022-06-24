@@ -6,7 +6,6 @@ import Alert from 'react-bootstrap/Alert'
 import { MusicianPaidEvents } from '../../Components/MusicianPaidEvents/MusicianPaidEvents'
 import { NavbarOp2 } from '../../Components/Navbar/NavbarOp2'
 import { CardAcceptedEvent } from '../../Components/CardAcceptedEvent/CardAcceptedEvent'
-
 export const MusicianEvents = () => {
     const Context = React.useContext(AppContext)
     const [events, setEvents] = React.useState([])
@@ -15,7 +14,6 @@ export const MusicianEvents = () => {
     const token = localStorage.getItem('musicAppToken')
     const [showAlertAccept, setShowAlertAccept] = React.useState(false)
     const [showAlertRefused, setShowAlertRefused] = React.useState(false)
-
     React.useEffect(() => {
         const token = localStorage.getItem('musicAppToken')
         axios
@@ -36,10 +34,8 @@ export const MusicianEvents = () => {
             .then((res) => {
                 seteventsAccepted(res.data.payload)
             })
-
         setLoading(false)
     }, [])
-    console.log(eventsAccepted)
     return (
         <>
             <NavbarOp2 />

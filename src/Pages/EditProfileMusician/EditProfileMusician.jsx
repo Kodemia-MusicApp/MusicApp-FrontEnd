@@ -79,21 +79,17 @@ export const EditProfileMusician = () => {
     const handleSave = (e) => {
         e.preventDefault()
         if (user.password) {
-            axios
-                .patch(
-                    `${Context.api.apiUrl}/musician/password`,
-                    {
-                        password: user.password,
+            axios.patch(
+                `${Context.api.apiUrl}/musician/password`,
+                {
+                    password: user.password,
+                },
+                {
+                    headers: {
+                        token: token,
                     },
-                    {
-                        headers: {
-                            token: token,
-                        },
-                    }
-                )
-                .then((res) => {
-                    console.log(res)
-                })
+                }
+            )
         }
         axios
             .patch(
@@ -241,14 +237,22 @@ export const EditProfileMusician = () => {
                                             Estado
                                         </label>
 
-                                       <div className="estados"> <StatesSelect setEstado={setEstado} /></div>
+                                        <div className="estados">
+                                            {' '}
+                                            <StatesSelect
+                                                setEstado={setEstado}
+                                            />
+                                        </div>
                                         {estado == null ? (
                                             <></>
                                         ) : (
-                                            <div className="estados">      <MunicipalitySelect
-                                                setEstado={setEstado}
-                                                estado={estado}
-                                            /></div>
+                                            <div className="estados">
+                                                {' '}
+                                                <MunicipalitySelect
+                                                    setEstado={setEstado}
+                                                    estado={estado}
+                                                />
+                                            </div>
                                         )}
 
                                         <div className="disponibilidad">
