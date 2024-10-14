@@ -89,7 +89,7 @@ export const Reservation = () => {
             parseDayOne > parseDayTwo ||
             event === null ||
             estado === null ||
-            estado.estado === [] ||
+            estado.estado == [] ||
             estado.municipality == [] ||
             event.calle == '' ||
             event.colonia == '' ||

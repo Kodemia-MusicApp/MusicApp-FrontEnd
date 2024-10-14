@@ -26,6 +26,8 @@ export const LandingPage = () => {
             axios
                 .get(`${Context.api.apiUrl}/event/client/eventAccept`, {
                     headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': 'true',
                         token: token,
                     },
                 })

@@ -48,6 +48,8 @@ export const EditProfileMusician = () => {
         axios
             .get(`${Context.api.apiUrl}/musician`, {
                 headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'true',
                     token: token,
                 },
             })
